@@ -1,0 +1,8 @@
+<ul>
+<%if user_signed_in? %>
+  
+  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+<%else%>
+  <li><%= link_to "ログイン", user_twitter_omniauth_authorize_path %></li>
+<%end%>
+</ul>
