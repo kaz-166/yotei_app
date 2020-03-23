@@ -4,9 +4,12 @@
 
 <section>
 <%= current_user.username %>さんの本日の予定<br>
+<!-- すべてのイベントの中から現在のユーザが作成したものを表示する -->
 <% Event.all.each do |event| %>
-    <%= link_to(event.name, event_path(event.id)) %>　
-    開始時刻:<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %>　終了時刻:<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>  <%= link_to("編集", edit_event_path(event.id)) %>  <%= link_to("削除", event, :method => :delete) %><br>
+    <% if current_user.id == event.user_id %>
+        <%= link_to(event.name, event_path(event.id)) %>　
+        開始時刻:<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %>　終了時刻:<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>  <%= link_to("編集", edit_event_path(event.id)) %>  <%= link_to("削除", event, :method => :delete) %><br>
+    <% end %>
 <% end %>
 
 <hr>

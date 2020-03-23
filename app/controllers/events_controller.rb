@@ -23,6 +23,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by(id: params[:id])
+    #位置情報をJavaScriptに渡す
     gon.location = @event.location
   end
 
@@ -33,6 +34,7 @@ class EventsController < ApplicationController
   end
 
   private
+    #Strong Parameters
     def event_params
       params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :location)
     end
