@@ -39,3 +39,36 @@ body {
     letter-spacing: 0mm;
     word-spacing: 10pt;
   }
+
+  /* 予定表示関連 */
+  #event_top{
+    font-size:28px;
+    font-weight: bold;
+    font-family:'Noto Sans JP';
+  }
+  #event_title{
+    font-size:25px;
+    font-weight: bold;
+    font-family:'Noto Sans JP';
+  }
+  #event_time{
+    font-size:15px;
+  }
+  #event_edit{
+    font-size:15px;
+  }
+
+  .roundbox {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    width: 600px;
+}
+.roundbox p {
+    margin: 0; 
+    padding: 0;
+}

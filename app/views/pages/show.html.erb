@@ -1,24 +1,34 @@
 <center>
 <h1>こんにちは、<%= current_user.username %>さん</h1>
-<p>ユーザー用ページです。</p>
 <br>
 
+
 <section>
-<%= current_user.username %>さんの本日の予定<br>
+<div id="event_top">
+<%= current_user.username %>さんの最近の予定
+</div>
 <!-- すべてのイベントの中から現在のユーザが作成したものを表示する -->
 <% Event.all.each do |event| %>
     <% if current_user.id == event.user_id %>
-        <%= link_to(event.name, event_path(event.id)) %>　
-        開始時刻:<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %>
-        　終了時刻:<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
-          <%= link_to("編集", edit_event_path(event.id)) %>
-            <%= link_to("削除", event, :method => :delete, 
-            title: 'イベントを削除', 
-            data: { confirm: 'イベントを削除しますか?',
-            commit: 'Destroy',
-            cancel: 'Cancel' 
-          } ) %><br>
-            
+        <div class="roundbox">
+            <div id="event_title">
+                <%= link_to(event.name, event_path(event.id)) %>　
+            </div>
+            <div id="event_time">
+                開始時刻:<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %><br>
+                終了時刻:<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
+            </div>
+            <div id="event_edit">
+                <%= link_to("編集", edit_event_path(event.id)) %>
+                <br>
+                <%= link_to("削除", event, :method => :delete, 
+                title: 'イベントを削除', 
+                data: { confirm: 'イベントを削除しますか?',
+                commit: 'Destroy',
+                cancel: 'Cancel' 
+            } ) %>
+            </div>
+        </div>
     <% end %>
 <% end %>
 
