@@ -68,3 +68,9 @@ gem 'gon'
 
 gem 'jquery-rails'
 gem 'data-confirm-modal'
+gem 'dotenv-rails'
+
+#本番環境の設定
+group :production do
+  gem 'pg'
+end
