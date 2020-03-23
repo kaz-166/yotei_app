@@ -67,8 +67,12 @@ body {
     border: solid 3px #6091d3;/*線*/
     border-radius: 10px;/*角の丸み*/
     width: 600px;
+    background: linear-gradient(to top, rgb(228, 244, 255), #FFF);
 }
 .roundbox p {
     margin: 0; 
     padding: 0;
+}
+
+#home_top{
 }
