@@ -1,3 +1,4 @@
+<center>
 <h1>こんにちは、<%= current_user.username %>さん</h1>
 <p>ユーザー用ページです。</p>
 <br>
@@ -8,7 +9,16 @@
 <% Event.all.each do |event| %>
     <% if current_user.id == event.user_id %>
         <%= link_to(event.name, event_path(event.id)) %>　
-        開始時刻:<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %>　終了時刻:<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>  <%= link_to("編集", edit_event_path(event.id)) %>  <%= link_to("削除", event, :method => :delete) %><br>
+        開始時刻:<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %>
+        　終了時刻:<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
+          <%= link_to("編集", edit_event_path(event.id)) %>
+            <%= link_to("削除", event, :method => :delete, 
+            title: 'イベントを削除', 
+            data: { confirm: 'イベントを削除しますか?',
+            commit: 'Destroy',
+            cancel: 'Cancel' 
+          } ) %><br>
+            
     <% end %>
 <% end %>
 
@@ -18,10 +28,5 @@
 <%= link_to "新しい予定を作成する", '/events/new' %>
 </section>
 
-<% @followers.each do |friend| %>
-    <%= image_tag "#{friend.profile_image_url}" %>
-    <a href="https://twitter.com/<%= friend.screen_name %>" target="_blank"><%= friend.name %></a>
-    @<%= friend.screen_name %>
-    <hr>
-    <% end %>
+</center>
 

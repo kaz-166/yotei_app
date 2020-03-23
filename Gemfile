@@ -63,6 +63,8 @@ gem 'twitter'
 
 gem 'bootstrap-sass', '3.3.7'
 
-gem 'nokogiri'
 gem 'gmaps4rails'
 gem 'gon'
+
+gem 'jquery-rails'
+gem 'data-confirm-modal'

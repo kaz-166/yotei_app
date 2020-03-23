@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    before_action :twitter
     def index
     end
   
@@ -8,10 +7,5 @@ class UsersController < ApplicationController
   
     def follow
     end
-  
-    private
-      def twitter
-
-      end
 
 end

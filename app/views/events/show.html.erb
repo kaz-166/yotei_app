@@ -1,6 +1,4 @@
 <center>
-
-
 <% event = Event.find(params[:id]) %>
 <h1><strong><%= event.name %></strong></h1>
 <p>開始：<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %> 

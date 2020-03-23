@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    @followers = twitter.friends(current_user).take(3)
+    #@followers = twitter.friends(current_user).take(3)
   end
 
   private
