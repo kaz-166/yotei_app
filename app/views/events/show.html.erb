@@ -1,5 +1,5 @@
 <center>
-<% event = Event.find(params[:id]) %>
+<% event = @event %>
 <h1><strong><%= event.name %></strong></h1>
 <p>開始：<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %> 
 <br>
@@ -10,6 +10,7 @@
 <p><%= event.location %></p>
 
 <%= render '/events/map' %>
+
 <hr>
 <h2><strong>参加者</strong></h2>
 <hr>

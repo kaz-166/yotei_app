@@ -13,15 +13,16 @@ let map
 let geocoder
 
 function initMap(){
-  geocoder = new google.maps.Geocoder()
-
+  console.log('called initMap()');
+  geocoder = new google.maps.Geocoder();
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.7828, lng:-73.9653},
+    center: {lat: 80.7828, lng:-73.9653},
     zoom: 12,
   });
   codeAddress();
 }
 
+//GoogleMapにピン表示を行う関数
 function codeAddress(){
   geocoder.geocode( { 'address': gon.location}, function(results, status) {
     if (status == 'OK') {
@@ -32,11 +33,20 @@ function codeAddress(){
       });
       getNearStation(results[0].geometry.location.lng(), results[0].geometry.location.lat());
     } else {
+      console.log('位置取得失敗');
+      //位置が取得できない場合はスクリーンオーバーレイでその旨の情報表示を行う
+      //var screenXY = new GScreenPoint(10, 10);
+      //var overlayXY = new GScreenPoint(0, 0);
+      //var size = new GScreenSize(100, 100);
+      //var soverlay = new GScreenOverlay("/app/assets/images/error_no_location.png", screenXY, overlayXY, size);
+      //map.addOverlay(soverlay);
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
+  
 }
 
+//近隣の駅情報を取得する関数
 function getNearStation(lng, lat) {
  heartrailsURL = "http://express.heartrails.com/api/json?method=getStations&";
  heartrailsURL += "x=" + lng + "&";

@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
         end
 
         def configure_permitted_parameters
+            #devise用のStrong Parameters設定
             devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
             devise_parameter_sanitizer.permit(:sign_in, keys: [:username])
             devise_parameter_sanitizer.permit(:account_update, keys: [:username])
