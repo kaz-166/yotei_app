@@ -58,7 +58,7 @@ function getStation(result) {
   stationStr += getTrainIconUrl(result["response"]["station"][i].line);
   stationStr += result["response"]["station"][i].line + " ";
   stationStr += result["response"]["station"][i].name;
-  stationStr += "駅：" + result["response"]["station"][i].distance + "<br>";
+  stationStr += "駅：徒歩約" + getRequiredTime(result["response"]["station"][i].distance) + "分<br>";
  }
  stationStr += "Searched by <a href = \"http://www.heartrails.com/\">http://www.heartrails.com/</a>";
  var g_map_tag = document.getElementById('station');
@@ -137,6 +137,18 @@ function getTrainIconUrl(line){
     break;
   }
   return url;
+}
+
+//目的地までの所要時間を返す関数
+function getRequiredTime(distance){
+  var time;
+  const speed = 67; //歩行速度を分速67mとする
+
+  time = parseInt(distance.split('m')[0]); 
+  time /= speed;
+  time = Math.round(time);
+
+  return time.toString();
 }
 
 </script>
