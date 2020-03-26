@@ -55,6 +55,7 @@ function getStation(result) {
  var numOfStations = Math.min(result["response"]["station"].length, STATION_MAX);
 
  for(i = 0; i < numOfStations; i++) {
+  stationStr += getTrainIconUrl(result["response"]["station"][i].line);
   stationStr += result["response"]["station"][i].line + " ";
   stationStr += result["response"]["station"][i].name;
   stationStr += "駅：" + result["response"]["station"][i].distance + "<br>";
@@ -62,6 +63,80 @@ function getStation(result) {
  stationStr += "Searched by <a href = \"http://www.heartrails.com/\">http://www.heartrails.com/</a>";
  var g_map_tag = document.getElementById('station');
  $(g_map_tag).append(stationStr);
+}
+
+//路線ごとにアイコンを取得する関数
+function getTrainIconUrl(line){
+  var url;
+  switch(line){
+    //東日本旅客鉄道(JR東日本)
+    case "JR山手線":
+      url = "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/JR_JY_line_symbol.svg/800px-JR_JY_line_symbol.svg.png\" width=\"30\" height=\"30\">";
+      break;
+    case "JR中央線":
+      url = "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/JR_JC_line_symbol.svg/800px-JR_JC_line_symbol.svg.png\" width=\"30\" height=\"30\">";
+      break;
+    case "JR京浜東北線":
+      url = "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/JR_JK_line_symbol.svg/800px-JR_JK_line_symbol.svg.png\" width=\"30\" height=\"30\">";
+      break;
+    case "JR常磐線":
+      url = "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/JR_JJ_line_symbol.svg/800px-JR_JJ_line_symbol.svg.png\" width=\"30\" height=\"30\">";
+      break;
+
+    //新幹線
+    case "上越新幹線":
+      url = "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Shinkansen-E.svg/1024px-Shinkansen-E.svg.png\" width=\"30\" height=\"30\">";
+      break;
+
+
+    //東京メトロ
+    case "東京メトロ銀座線":
+      url = "<img src=\"https://www.tokyometro.jp/library/common/img/route/icon_ginza.png\" width=\"30\" height=\"30\">";
+      break;
+    case "東京メトロ丸ノ内線":
+      url = "<img src=\"https://www.tokyometro.jp/library/common/img/route/icon_marunouchi.png\" width=\"30\" height=\"30\">";
+      break;
+    case "東京メトロ日比谷線":
+      url = "<img src=\"https://www.tokyometro.jp/library/common/img/route/icon_hibiya.png\" width=\"30\" height=\"30\">";
+      break;
+    case "東京メトロ東西線":
+      url = "<img src=\"https://www.tokyometro.jp/library/common/img/route/icon_tozai.png\" width=\"30\" height=\"30\">";
+      break;
+    case "東京メトロ千代田線":
+      url = "<img src=\"https://www.tokyometro.jp/library/common/img/route/icon_chiyoda.png\" width=\"30\" height=\"30\">";
+      break;
+    case "東京メトロ有楽町線":
+      url = "<img src=\"https://www.tokyometro.jp/library/common/img/route/icon_yurakucho.png\" width=\"30\" height=\"30\">";
+      break;
+    case "東京メトロ半蔵門線":
+      url = "<img src=\"https://www.tokyometro.jp/library/common/img/route/icon_hanzomon.png\" width=\"30\" height=\"30\">";
+      break;
+    case "東京メトロ南北線":
+      url = "<img src=\"https://www.tokyometro.jp/library/common/img/route/icon_namboku.png\" width=\"30\" height=\"30\">";
+      break;
+    case "東京メトロ副都心線":
+      url = "<img src=\"https://www.tokyometro.jp/library/common/img/route/icon_fukutoshin.png\" width=\"30\" height=\"30\">";
+      break;
+    
+    //東京都営地下鉄
+    case "都営新宿線":
+      url = "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Toei_Shinjuku_line_symbol.svg/800px-Toei_Shinjuku_line_symbol.svg.png\" width=\"30\" height=\"30\">";
+      break;
+    case "都営三田線":
+      url = "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Toei_Mita_line_symbol.svg/800px-Toei_Mita_line_symbol.svg.png\" width=\"30\" height=\"30\">";
+      break;
+    case "都営浅草線":
+      url = "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Toei_Asakusa_line_symbol.svg/800px-Toei_Asakusa_line_symbol.svg.png\" width=\"30\" height=\"30\">";
+      break;
+    case "都営大江戸線":
+      url = "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Toei_Oedo_line_symbol.svg/800px-Toei_Oedo_line_symbol.svg.png\" width=\"30\" height=\"30\">";
+      break;
+
+    default:
+      url = "";
+    break;
+  }
+  return url;
 }
 
 </script>
