@@ -1,9 +1,11 @@
-<div id='map'></div>
 
+<div id='map'></div>
+<div id='station'></div>
 <script>
 let map
 let geocoder
 
+//初期化関数
 function initMap(){
   let initlat = 80.7828;
   let initlng = -73.9653;
@@ -48,13 +50,17 @@ function getNearStation(lng, lat) {
  
 //コールバック関数
 function getStation(result) {
- var resultStr = "最寄り駅\n";
- for(i = 0; i < result["response"]["station"].length; i++) {
-  resultStr += result["response"]["station"][i].line + " ";
-  resultStr += result["response"]["station"][i].name;
-  resultStr += "駅：" + result["response"]["station"][i].distance + "\n";
+ var stationStr = "";
+ const STATION_MAX = 3;
+ var numOfStations = Math.min(result["response"]["station"].length, STATION_MAX);
+
+ for(i = 0; i < numOfStations; i++) {
+  stationStr += result["response"]["station"][i].line + " ";
+  stationStr += result["response"]["station"][i].name;
+  stationStr += "駅：" + result["response"]["station"][i].distance + "<br>";
  }
- alert(resultStr);
+ var g_map_tag = document.getElementById('station');
+ $(g_map_tag).append(stationStr);
 }
 
 </script>
