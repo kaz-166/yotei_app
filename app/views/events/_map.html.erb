@@ -59,6 +59,7 @@ function getStation(result) {
   stationStr += result["response"]["station"][i].name;
   stationStr += "駅：" + result["response"]["station"][i].distance + "<br>";
  }
+ stationStr += "Searched by <a href = \"http://www.heartrails.com/\">http://www.heartrails.com/</a>";
  var g_map_tag = document.getElementById('station');
  $(g_map_tag).append(stationStr);
 }
