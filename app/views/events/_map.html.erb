@@ -39,7 +39,7 @@ function codeAddress(){
 
 //近隣の駅情報を取得する関数
 function getNearStation(lng, lat) {
- heartrailsURL = "http://express.heartrails.com/api/json?method=getStations&";
+ heartrailsURL = "https://express.heartrails.com/api/json?method=getStations&";
  heartrailsURL += "x=" + lng + "&";
  heartrailsURL += "y=" + lat + "&";
  heartrailsURL += "jsonp=getStation";//JSONPのコールバック関数
@@ -60,7 +60,7 @@ function getStation(result) {
   stationStr += result["response"]["station"][i].name;
   stationStr += "駅：徒歩約" + getRequiredTime(result["response"]["station"][i].distance) + "分<br>";
  }
- stationStr += "Searched by <a href = \"http://www.heartrails.com/\">http://www.heartrails.com/</a>";
+ stationStr += "Searched by <a href = \"https://www.heartrails.com/\">https://www.heartrails.com/</a>";
  var g_map_tag = document.getElementById('station');
  $(g_map_tag).append(stationStr);
 }
