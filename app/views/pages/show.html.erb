@@ -23,8 +23,8 @@
                 <%= link_to("編集", edit_event_path(event.id)) %>
                 <br>
                 <%= link_to("削除", event, :method => :delete, 
-                title: 'イベントを削除', 
-                data: { confirm: 'イベントを削除しますか?',
+                title: event.name, 
+                data: { confirm: 'このイベントを削除しますか?',
                 commit: 'Destroy',
                 cancel: 'Cancel' 
             } ) %>
