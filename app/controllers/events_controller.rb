@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :sign_in_required, only: [:edit, :update, :show, :destroy]
 
   def new
     @event = Event.new

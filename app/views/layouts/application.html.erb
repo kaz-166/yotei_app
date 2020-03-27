@@ -8,32 +8,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all'%>
     <%= javascript_include_tag 'application' %>
+
+    <meta name="viewport" content="width=device-width,
+                          initial-scale=1.0,
+                          minimum-scale=1.0",
+                          user-scalable=no>
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-              <%= image_tag('home.png', :size =>'32x32') %>
-              <%= link_to "HOME", pages_show_path %>
-              <%= image_tag('new.png', :size =>'32x32') %>
-              <%= link_to 'NEW', events_new_path %>
-              <%= image_tag('edit.png', :size =>'32x32') %>
-              <%= link_to 'EDIT', edit_user_registration_path %>
-              <%= image_tag('logout.png', :size =>'32x32') %>
-              <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
-            <% else %>
-            <%= image_tag('signup.png', :size =>'32x32') %>
-              <%= link_to 'SIGNUP', new_user_registration_path %>
-              <%= image_tag('login.png', :size =>'32x32') %>
-              <%= link_to 'LOGIN', new_user_session_path %>
-              <% end %>
-          </ul>  
-        </nav>    
-      </div>    
-    </header>
+    <%= render '/layouts/header' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

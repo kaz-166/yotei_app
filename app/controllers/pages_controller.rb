@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :sign_in_required, only: [:show]
+  before_action :sign_in_required, only: [:show, :show_old]
   def index
     if user_signed_in?
       redirect_to '/pages/show'
@@ -9,6 +9,9 @@ class PagesController < ApplicationController
   end
 
   def show
+  end
+
+  def show_old
   end
 
 
