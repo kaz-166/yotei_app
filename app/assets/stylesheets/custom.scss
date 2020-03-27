@@ -1,11 +1,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,300,600);
 
+*{box-sizing:border-box;}
 /* universal */
 
 body {
     padding-top: 60px;
+    font-family: 'open sans', helvetica, arial, sans;
+    //background:url(http://farm8.staticflickr.com/7064/6858179818_5d652f531c_h.jpg) no-repeat center center fixed; 
+    //  -webkit-background-size: cover;
+    //  -moz-background-size: cover;
+     // -o-background-size: cover;
+     // background-size: cover;
+
+      background-image: image-url('background.jpg');
+      background-size: cover;
   }
+
   
   section {
     overflow: auto;
@@ -32,42 +44,59 @@ body {
   }
 
   div.container{
-      font-size: 17px;
-      margin-top: 10px;
+    font-size: 22px;
+    margin-top: 10px;
     margin-bottom: 10px;
-    margin-right: 7rem;
-    letter-spacing: 0mm;
-    word-spacing: 10pt;
+    word-spacing: 5pt;
+    font-family:'open sans condensed';
+    color: #464646;/*文字色*/
   }
+
+  /* 上部バー関連 */
+  .navbar {
+    background-color:    #0c0c0c;/*文字色*/
+  }
+
+  a{
+    color:    #616161;/*文字色*/
+    margin-right : 50px;
+  }
+
 
   /* 予定表示関連 */
   #event_top{
     font-size:28px;
     font-weight: bold;
-    font-family:'Noto Sans JP';
+    font-family:'open sans condensed';
+    letter-spacing: 0.5mm;
   }
   #event_title{
     font-size:25px;
     font-weight: bold;
-    font-family:'Noto Sans JP';
+    font-family:'open sans condensed';
+    letter-spacing: 0.5mm;
   }
   #event_time{
     font-size:15px;
+    font-family:'open sans condensed';
+    letter-spacing: 0.5mm;
   }
   #event_edit{
     font-size:15px;
+    font-family:'open sans condensed';
+    letter-spacing: 0.5mm;
   }
 
   .roundbox {
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
-    color: #6091d3;/*文字色*/
+    color: #464646;/*文字色*/
     background: #FFF;
-    border: solid 3px #6091d3;/*線*/
+    border: solid 3px #818181;/*線*/
     border-radius: 10px;/*角の丸み*/
     width: 600px;
-    background: linear-gradient(to top, rgb(228, 244, 255), #FFF);
+    //background: linear-gradient(to top, rgb(228, 244, 255), #FFF);
 }
 .roundbox p {
     margin: 0; 
