@@ -1,3 +1,4 @@
+
 <%= form_for(@event) do |f| %>
     <%= f.label :イベント名 %>
     <%= f.text_field :name %>
@@ -14,5 +15,16 @@
     <%= f.label :終了時刻 %>
     <%= f.datetime_select :end_time %>
     <br>
+    <%= f.label :参加者 %>
+    <div class='follower_list'>
+    <% followers(10).each do |friend| %>
+        <div class='follower'>
+        <%= image_tag "#{friend.profile_image_url}" %>
+        <a href="https://twitter.com/<%= friend.screen_name %>" target="_blank"><%= friend.name %></a>
+        @<%= friend.screen_name %>
+        </div>
+    <% end %>
+    </div>
+    <hr>
     <%= f.submit "作成" %>
 <% end %>

@@ -79,3 +79,15 @@ body {
   height: 200px;
   width: 400px;
 }
+
+.follower_list{
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.follower{
+  width: calc(33.3% - 10px);
+  margin: 5px;
+}
