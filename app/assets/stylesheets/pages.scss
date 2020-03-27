@@ -23,6 +23,10 @@
     @extend .event-common;
 }
 
+.event-list-old{
+    @extend .event-common;
+}
+
 .event-info{
     @extend .event-common;
 }
