@@ -19,6 +19,12 @@ class EventsController < ApplicationController
   def update
     @event = Event.find_by(id: params[:id])
     @event.update(event_params)
+
+    unless params[:friend_ids] == nil
+      params[:friend_ids].each do |f_id|
+        Event.add_user(params[:id], f_id)
+      end
+    end
     redirect_to "/pages/show"
   end
 
@@ -37,7 +43,7 @@ class EventsController < ApplicationController
   private
     #Strong Parameters
     def event_params
-      params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :location)
+      params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :location, :friend_ids => [])
     end
 
 end

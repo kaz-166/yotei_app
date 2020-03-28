@@ -7,6 +7,7 @@
         <br>
         終了：<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
         </p>
+        作成者：<%= User.find_by(id: event.user_id).username %>
         <hr>
         <h2><strong>場所</strong></h2>
         <p><%= event.location %></p>
@@ -15,6 +16,11 @@
 
         <hr>
         <h2><strong>参加者</strong></h2>
+        <br>
+        <% event.participants.each do |participants| %>
+          <%= image_tag('user.png', :size =>'32x32') %>
+          <%= User.find_by(id: participants.user_id).username %>
+        <% end %>
         <hr>
         <h2><strong>イベント概要</strong></h2>
         <p><%= event.abstract %></p>

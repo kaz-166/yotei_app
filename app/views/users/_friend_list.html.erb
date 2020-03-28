@@ -1,0 +1,5 @@
+<% User.friend(current_user.id).each do |u| %>
+    <%= image_tag('user.png', :size =>'32x32') %>
+    <%= u.username %>
+    <hr>
+<% end %>

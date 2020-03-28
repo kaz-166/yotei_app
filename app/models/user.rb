@@ -1,14 +1,19 @@
 class User < ApplicationRecord
+  #フレンドのデータベース関連
   has_many :friends, class_name:  "Friend",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy
   has_many :following, through: :friends, source: :followed
   has_many :followed, through: :friends, source: :follower
+  
+  #イベント参加者のデータベース関連
+  has_many :events, through: :participants, source: :users
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable, :omniauthable
-        
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
     unless user
