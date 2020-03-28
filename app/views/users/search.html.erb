@@ -1,0 +1,17 @@
+<div class="user-search">
+    <center>
+        <h2>These Users are searched</h2>
+        <br>
+        <% unless @user.empty? %>
+            <% @user.each do |u| %>
+                <%= image_tag('user.png', :size =>'48x48') %>
+                <%= u.username %>
+                (<%= u.email %>)
+                <%= button_to 'フレンド申請', '/users/follow', params: {id: u.id}, :method => :post %>
+                <hr>
+            <% end %>
+        <% else %>
+            該当するユーザはいませんでした。
+        <% end %>
+    </center>
+</div>

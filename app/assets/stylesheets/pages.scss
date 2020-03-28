@@ -11,28 +11,40 @@
     min-width: 320px;
     max-width: 475px;
 }
+
+.user-search{
+    @extend .event-common;
+    width: 100%;
+}
+
 .event-new {
     @extend .event-common;
+    width: 100%;
 }
 
 .event-edit{
     @extend .event-common;
+    width: 100%;
 }
 
 .event-list{
     @extend .event-common;
+    width: 60%;
 }
 
 .event-list-old{
     @extend .event-common;
+    width: 60%;
 }
 
 .event-info{
     @extend .event-common;
+    width: 100%;
 }
 
 .user-edit{
     @extend .event-common;
+    width: 100%;
 }
 
 .event-common{
@@ -40,7 +52,6 @@
     position: absolute;
     left: 10%;
     top: 80px;
-    width: 100%;
     min-width: 320px;
     max-width: 1000px;
 }
@@ -54,6 +65,15 @@
         max-width: 1000px;
     }
 }
+
+.friend-list{
+    @extend .common-form;
+    position: absolute;
+    left: 75%;
+    top: 80px;
+    width: 300px;
+}
+
 
 $grey:#2a2a2a;
 $blue:#1fb5bf;

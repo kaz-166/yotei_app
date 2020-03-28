@@ -16,4 +16,21 @@
     </center>
 </div>
 
+<div class="friend-list">
+    <center>
+        <h2>FRIEND</h2>
+        <p>フレンド一覧を表示</p>
+        <% User.friend(current_user.id).each do |u| %>
+            <%= image_tag('user.png', :size =>'48x48') %>
+            <%= u.username %>
+            <br>
+        <% end %>
+
+        <%= form_tag("/users/search",:method => 'get') do %>
+            <%= text_field_tag :search %>
+            <%= submit_tag 'Search', :name => nil %>
+        <% end %>
+    </center>
+</div>
+
 
