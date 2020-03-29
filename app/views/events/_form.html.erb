@@ -18,7 +18,7 @@
     <%= f.label :参加者の追加 %>
     <br>
     <% User.friend(current_user.id).each do |u| %>
-        <%= check_box_tag('friend_ids[]', value = u.id, checked = false, options = {}) %>
+        <%= check_box_tag('add_ids[]', value = u.id, checked = event_participants?(@event.id, u.id), options = {}) %>
         <%= image_tag('user.png', :size =>'32x32') %>
         <%= u.username %>
         <br>

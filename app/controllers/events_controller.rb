@@ -39,12 +39,23 @@ class EventsController < ApplicationController
   private
     #Strong Parameters
     def event_params
-      params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :location, :friend_ids => [])
+      params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :location, :add_ids => [])
     end
 
+    #イベントの参加者を登録
     def add_participants_to_event(event_id)
-      unless params[:friend_ids] == nil
-        params[:friend_ids].each do |f_id|
+
+      #[TODO]追加削除の処理に無駄があるので要最適化
+      #まずすべて削除してから
+      user = User.friend(current_user.id)
+      unless user.empty?
+        user.each do |u|
+          Event.delete_user(event_id, u.id)
+        end
+      end
+      #CheckBoxがオンのものを追加
+      unless params[:add_ids] == nil
+        params[:add_ids].each do |f_id|
           Event.add_user(event_id, f_id)
         end
       end

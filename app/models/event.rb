@@ -14,7 +14,10 @@ has_many :users, through: :participants, source: :events
 
   #参加者を削除する
   def self.delete_user(id, user_id)
-    Participant.where(event_id: id, user_id: user_id).destroy
+    p = Participant.find_by(event_id: id, user_id: user_id)
+    if p != nil
+        Participant.destroy(p.id)
+    end
   end
 
 
