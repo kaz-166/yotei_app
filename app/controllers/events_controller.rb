@@ -9,6 +9,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     @event.save
+    add_participants_to_event(@event.id)
     redirect_to '/pages/show'
   end
 
@@ -19,12 +20,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find_by(id: params[:id])
     @event.update(event_params)
-
-    unless params[:friend_ids] == nil
-      params[:friend_ids].each do |f_id|
-        Event.add_user(params[:id], f_id)
-      end
-    end
+    add_participants_to_event(params[:id])
     redirect_to "/pages/show"
   end
 
@@ -46,4 +42,11 @@ class EventsController < ApplicationController
       params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :location, :friend_ids => [])
     end
 
+    def add_participants_to_event(event_id)
+      unless params[:friend_ids] == nil
+        params[:friend_ids].each do |f_id|
+          Event.add_user(event_id, f_id)
+        end
+      end
+    end
 end
