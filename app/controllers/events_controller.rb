@@ -26,6 +26,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by(id: params[:id])
+    @post = Post.where(event_id: params[:id])
     #位置情報をJavaScriptに渡す
     gon.location = @event.location
   end
