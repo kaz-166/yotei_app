@@ -1,5 +1,6 @@
 
 <%= form_for(@event) do |f| %>
+
     <%= f.label :イベント名 %>
     <%= f.text_field :name %>
     <br>
@@ -9,6 +10,11 @@
     <%= f.label :場所 %>
     <%= f.text_field :location %>
     <br>
+    <% if flash[:danger] %>
+        <div class="event_error_message">
+            <%= flash[:danger] %>
+        </div>
+    <% end %>
     <%= f.label :開始時刻 %>
     <%= f.datetime_select :start_time %>
     <br>

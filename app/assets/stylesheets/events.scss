@@ -1,3 +1,12 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event_error_message{
+    font-weight: bold;
+    color: #FF0000;;/*文字色*/
+    background: #FFF;
+    border: solid 2px #FF0000;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    width: 200px;
+}

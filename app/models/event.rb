@@ -29,6 +29,7 @@ validate :date_cannot_be_in_past, :start_date_cannot_be_bigger_than_end_date
       end
     end
 
+    #バリデーション、開始日時は終了日時より前の時間を指定する必要がある
     def start_date_cannot_be_bigger_than_end_date
       if self.start_time > self.end_time
         errors.add(:date_validation, "開始日時は終了日時より前に設定する必要があります")

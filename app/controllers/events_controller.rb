@@ -8,9 +8,13 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user_id = current_user.id
-    @event.save
-    add_participants_to_event(@event.id)
-    redirect_to '/pages/show'
+    if @event.save
+      add_participants_to_event(@event.id)
+      redirect_to '/pages/show'
+    else
+      flash[:danger] = '入力情報が不正です'
+      redirect_to '/events/new'
+    end
   end
 
   def edit 
@@ -19,9 +23,12 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find_by(id: params[:id])
-    @event.update(event_params)
-    add_participants_to_event(params[:id])
-    redirect_to "/pages/show"
+    if @event.update(event_params)
+      add_participants_to_event(params[:id])
+      redirect_to "/pages/show"
+    else
+      flash.now[:danger] = '入力情報が不正です'
+    end
   end
 
   def show
