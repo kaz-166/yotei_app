@@ -13,7 +13,7 @@ class EventsController < ApplicationController
       add_participants_to_event(@event.id)
       redirect_to '/pages/show'
     else
-      flash[:danger] = '入力情報が不正です'
+      flash[:danger] = '入力情報が不正です!'
       redirect_to '/events/new'
     end
   end
