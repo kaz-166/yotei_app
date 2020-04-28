@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include EventsHelper
   before_action :sign_in_required, only: [:edit, :update, :show, :destroy]
 
   def new
@@ -32,10 +33,13 @@ class EventsController < ApplicationController
   end
 
   def show
+   
     @event = Event.find_by(id: params[:id])
     @post = Post.where(event_id: params[:id])
     #位置情報をJavaScriptに渡す
     gon.location = @event.location
+    
+    raise Forbidden unless ((current_user.id == @event.user_id) || (event_participants?(@event.id, current_user.id)))
   end
 
   def destroy

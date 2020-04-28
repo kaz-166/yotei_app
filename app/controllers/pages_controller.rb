@@ -14,5 +14,4 @@ class PagesController < ApplicationController
   def show_old
   end
 
-
 end

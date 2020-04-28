@@ -6,7 +6,16 @@ class ApplicationController < ActionController::Base
         pages_show_path
     end
 
+    class Forbidden < ActionController::ActionControllerError
+    end
+    rescue_from Forbidden, with: :rescue403
+
     private
+        def rescue403(e)
+           @exception = e
+            render template: 'errors/forbidden', status: 403
+        end
+        
         def sign_in_required
             redirect_to new_user_session_url unless user_signed_in?
         end

@@ -5,7 +5,7 @@
         </div>
         <!-- すべてのイベントの中から現在のユーザが作成したものを表示する -->
             <% Event.all.order(start_time: "ASC").each do |event| %>
-                <% if ((current_user.id == event.user_id) || () ) && (!event_finished?(event)) %>
+                <% if ((current_user.id == event.user_id) || (event_participants?(event.id, current_user.id) ) ) && (!event_finished?(event)) %>
                     <%= render partial: 'event_list', locals: {event: event} %>
                 <% end %>
             <% end %>
