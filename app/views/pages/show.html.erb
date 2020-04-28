@@ -5,7 +5,7 @@
         </div>
         <!-- すべてのイベントの中から現在のユーザが作成したものを表示する -->
             <% Event.all.order(start_time: "ASC").each do |event| %>
-                <% if (current_user.id == event.user_id) && (!event_finished?(event)) %>
+                <% if ((current_user.id == event.user_id) || () ) && (!event_finished?(event)) %>
                     <%= render partial: 'event_list', locals: {event: event} %>
                 <% end %>
             <% end %>
@@ -22,7 +22,7 @@
         <br>
         <%= render '/users/friend_list' %>
 
-        <%= form_tag("/users/search",:method => 'get') do %>
+        <%= form_tag("/users/search",:method => 'get', class: "search_form") do %>
             <%= text_field_tag :search %>
             <%= submit_tag 'Search', :name => nil %>
         <% end %>
