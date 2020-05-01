@@ -2,12 +2,13 @@
     <center>
         <h2>EVENT INFORMATION</h2>
         <% event = @event %>
+        <% admin_user = User.find_by(id: event.user_id) %>
         <h1><strong><%= event.name %></strong></h1>
         <p>開始：<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %> 
         <br>
         終了：<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
         </p>
-        作成者：<%= User.find_by(id: event.user_id).username %>
+        作成者：<%= admin_user.username %>
         <hr>
         <h2><strong>場所</strong></h2>
         <p><%= event.location %></p>
@@ -17,9 +18,22 @@
         <hr>
         <h2><strong>参加者</strong></h2>
         <br>
+        
+        <% if admin_user.img? %>
+            <img src=<%= admin_user.img %> class = "icon_mini_image">
+        <% else %>
+            <%= image_tag('user.png', :size =>'32x32') %>
+        <% end %>
+        <%= admin_user.username %>
+
         <% event.participants.each do |participants| %>
-          <%= image_tag('user.png', :size =>'32x32') %>
-          <%= User.find_by(id: participants.user_id).username %>
+          <% user = User.find_by(id: participants.user_id) %>
+          <% if user.img? %>
+            <img src=<%= user.img %> class = "icon_mini_image">
+          <% else %>
+            <%= image_tag('user.png', :size =>'32x32') %>
+          <% end %>
+          <%= user.username %>
         <% end %>
         <hr>
         <h2><strong>イベント概要</strong></h2>
