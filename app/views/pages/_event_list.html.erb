@@ -1,19 +1,21 @@
 <div class="roundbox">
-<div id="event_title">
-    <%= link_to(event.name, event_path(event.id)) %>
-</div>
-<div id="event_time">
-    開始時刻:<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %><br>
-    終了時刻:<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
-</div>
-<div id="event_edit">
-    <%= link_to("編集", edit_event_path(event.id)) %>
-    <br>
-    <%= link_to("削除", event, :method => :delete, 
-    title: event.name, 
-    data: { confirm: 'このイベントを削除しますか?',
-    commit: 'Destroy',
-    cancel: 'Cancel' 
-} ) %>
-</div>
+    <div id="event_title">
+        <%= link_to(event.name, event_path(event.id)) %>
+    </div>
+    <div id="event_time">
+        開始時刻:<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %><br>
+        終了時刻:<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
+    </div>
+    <div id="event_edit">
+        <% if event.user_id == current_user.id %>
+            <%= link_to("編集", edit_event_path(event.id)) %>
+            <br>
+            <%= link_to("削除", event, :method => :delete, 
+            title: event.name, 
+            data: { confirm: 'このイベントを削除しますか?',
+            commit: 'Destroy',
+            cancel: 'Cancel' 
+        } ) %>
+        <% end %>
+    </div>
 </div>

@@ -40,8 +40,14 @@
         <p><%= event.abstract %></p>
         <h2>コメント</h2>
         <% @post.each do |p| %>
-          ・<%= p.content %>(posted by
-          <%= User.find_by(id: p.user_id).username %>)
+          <% user = User.find_by(id: p.user_id) %>
+          <% if user.img? %>
+            <img src=<%= user.img %> class = "icon_mini_image">
+          <% else %>
+            <%= image_tag('user.png', :size =>'32x32') %>
+          <% end %>
+          <%= p.content %>(posted by
+          <%= user.username %>)
           <br>
         <% end %>
         <br>

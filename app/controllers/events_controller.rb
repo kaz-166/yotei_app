@@ -20,6 +20,8 @@ class EventsController < ApplicationController
 
   def edit 
     @event = Event.find_by(id: params[:id])
+    #予定の管理者の場合のみ編集を許可
+    raise Forbidden unless current_user.id == @event.user_id
   end
 
   def update
