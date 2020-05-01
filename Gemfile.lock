@@ -234,6 +234,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    simple_calendar (2.3.0)
+      rails (>= 3.0)
     simple_oauth (0.3.1)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
@@ -306,6 +308,7 @@ DEPENDENCIES
   rails-erd
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_calendar
   sqlite3
   twitter
   tzinfo-data
