@@ -76,3 +76,8 @@ gem 'nokogiri'
 group :production do
   gem 'pg'
 end
+
+#ER図を出力するためのGEM
+gem 'rails-erd'
+
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'

@@ -18,10 +18,11 @@
 
 <div class="friend-list">
     <center>
+        <h2>YOUR IMAGE</h2>
+            <img src=<%= current_user.img %> class = "icon_image">
         <h2>FRIEND</h2>
         <br>
         <%= render '/users/friend_list' %>
-
         <%= form_tag("/users/search",:method => 'get', class: "search_form") do %>
             <%= text_field_tag :search %>
             <%= submit_tag 'Search', :name => nil %>

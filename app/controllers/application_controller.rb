@@ -22,8 +22,8 @@ class ApplicationController < ActionController::Base
 
         def configure_permitted_parameters
             #devise用のStrong Parameters設定
-            devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+            devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :img])
             devise_parameter_sanitizer.permit(:sign_in, keys: [:username])
-            devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+            devise_parameter_sanitizer.permit(:account_update, keys: [:username, :img])
         end
 end
