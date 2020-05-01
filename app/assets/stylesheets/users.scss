@@ -6,8 +6,14 @@
     width: 150px;
     height: 150px;
     //サイズ指定
-    border-radius: 100px;
-    //画像を丸くする
+    object-fit: cover;
+    //タテヨコ比を変えないままトリミング
+  }
+
+  .icon_mini_image {
+    width: 32px;
+    height: 32px;
+    //サイズ指定
     object-fit: cover;
     //タテヨコ比を変えないままトリミング
   }

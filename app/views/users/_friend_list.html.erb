@@ -1,5 +1,9 @@
 <% User.friend(current_user.id).each do |u| %>
-    <%= image_tag('user.png', :size =>'32x32') %>
+    <% if u.img? %>
+        <img src=<%= u.img %> class = "icon_mini_image">
+    <% else %>
+        <%= image_tag('user.png', :size =>'32x32') %>
+    <% end %>
     <%= u.username %>
     <hr>
 <% end %>
