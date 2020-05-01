@@ -19,7 +19,11 @@
 <div class="friend-list">
     <center>
         <h2>YOUR IMAGE</h2>
-            <img src=<%= current_user.img %> class = "icon_image">
+            <% if current_user.img? %>
+                <img src=<%= current_user.img %> class = "icon_image">
+            <% else %>
+                <%= image_tag('user.png', :size =>'150x150') %>
+            <% end %>
         <h2>FRIEND</h2>
         <br>
         <%= render '/users/friend_list' %>
