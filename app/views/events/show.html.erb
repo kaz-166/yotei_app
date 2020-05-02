@@ -19,20 +19,12 @@
         <h2><strong>参加者</strong></h2>
         <br>
         
-        <% if admin_user.img? %>
-            <img src=<%= admin_user.img %> class = "icon_mini_image">
-        <% else %>
-            <%= image_tag('user.png', :size =>'32x32') %>
-        <% end %>
+        <%= render partial: 'users/user_mini_image', locals: {usr: admin_user} %>
         <%= admin_user.username %>
 
         <% event.participants.each do |participants| %>
           <% user = User.find_by(id: participants.user_id) %>
-          <% if user.img? %>
-            <img src=<%= user.img %> class = "icon_mini_image">
-          <% else %>
-            <%= image_tag('user.png', :size =>'32x32') %>
-          <% end %>
+          <%= render partial: 'users/user_mini_image', locals: {usr: user} %>
           <%= user.username %>
         <% end %>
         <hr>
@@ -41,11 +33,7 @@
         <h2>コメント</h2>
         <% @post.each do |p| %>
           <% user = User.find_by(id: p.user_id) %>
-          <% if user.img? %>
-            <img src=<%= user.img %> class = "icon_mini_image">
-          <% else %>
-            <%= image_tag('user.png', :size =>'32x32') %>
-          <% end %>
+          <%= render partial: 'users/user_mini_image', locals: {usr: user} %>
           <%= p.content %>(posted by
           <%= user.username %>)
           <br>

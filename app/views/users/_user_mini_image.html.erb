@@ -1,0 +1,5 @@
+<% if usr.img? %>
+    <img src=<%= usr.img %> class = "icon_mini_image">
+<% else %>
+    <%= image_tag('user.png', :size => "32x32") %>
+<% end %>

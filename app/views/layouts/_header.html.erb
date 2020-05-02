@@ -1,21 +1,16 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
+  <%= favicon_link_tag 'favicon.ico' %>
       <div class="container">
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-              <%= image_tag('home.png', :size =>'32x32') %>
-              <%= link_to "HOME", pages_show_path %>
-              <%= image_tag('new.png', :size =>'32x32') %>
-              <%= link_to 'NEW', events_new_path %>
-              <%= image_tag('edit.png', :size =>'32x32') %>
-              <%= link_to 'EDIT', edit_user_registration_path %>
-              <%= image_tag('logout.png', :size =>'32x32') %>
-              <%= link_to 'LOGOUT', destroy_user_session_path, method: :delete %>
+              <%= render partial: 'layouts/navi', locals: {image_name: 'home.png', link_name: 'HOME', link_path_name: pages_show_path, method: :get} %>
+              <%= render partial: 'layouts/navi', locals: {image_name: 'new.png', link_name: 'NEW', link_path_name: events_new_path, method: :get} %>
+              <%= render partial: 'layouts/navi', locals: {image_name: 'edit.png', link_name: 'EDIT', link_path_name: edit_user_registration_path, method: :get} %>
+              <%= render partial: 'layouts/navi', locals: {image_name: 'logout.png', link_name: 'LOGOUT', link_path_name: destroy_user_session_path, method: :delete} %>
             <% else %>
-            <%= image_tag('signup.png', :size =>'32x32') %>
-              <%= link_to 'SIGNUP', new_user_registration_path %>
-              <%= image_tag('login.png', :size =>'32x32') %>
-              <%= link_to 'LOGIN', new_user_session_path %>
+              <%= render partial: 'layouts/navi', locals: {image_name: 'signup.png', link_name: 'SIGNUP', link_path_name: new_user_registration_path, method: :get} %>
+              <%= render partial: 'layouts/navi', locals: {image_name: 'login.png', link_name: 'LOGIN', link_path_name: new_user_session_path, method: :get} %>
               <% end %>
           </ul>  
         </nav>    

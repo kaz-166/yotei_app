@@ -19,12 +19,7 @@
 <div class="friend-list">
     <center>
         <h2>YOUR IMAGE</h2>
-            <% if current_user.img? %>
-                <img src=<%= current_user.img %> class = "icon_image">
-            <% else %>
-                <%= image_tag('user.png', :size =>'150x150') %>
-            <% end %>
-
+            <%= render partial: 'users/user_image', locals: {usr: current_user} %>
         <h2>CALENDER</h2> 
         <%= month_calendar do |date| %>
             <center>

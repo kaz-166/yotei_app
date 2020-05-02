@@ -25,7 +25,7 @@
     <br>
     <% User.friend(current_user.id).each do |u| %>
         <%= check_box_tag('add_ids[]', value = u.id, checked = event_participants?(@event.id, u.id), options = {}) %>
-        <%= image_tag('user.png', :size =>'32x32') %>
+        <%= render partial: 'users/user_mini_image', locals: {usr: u} %>
         <%= u.username %>
         <br>
     <% end %>
