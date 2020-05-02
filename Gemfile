@@ -82,3 +82,5 @@ gem 'rails-erd'
 
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'simple_calendar'
+gem 'rails_admin'
+gem 'cancancan'

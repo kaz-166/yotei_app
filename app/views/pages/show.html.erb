@@ -20,6 +20,12 @@
     <center>
         <h2>YOUR IMAGE</h2>
             <%= render partial: 'users/user_image', locals: {usr: current_user} %>
+        <br>
+        <% if current_user.try(:admin?) %>
+                管理者
+        <% else %>
+                一般ユーザー
+        <% end %>
         <h2>CALENDER</h2> 
         <%= month_calendar do |date| %>
             <center>
