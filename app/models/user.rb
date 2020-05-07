@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   #フレンドのデータベース関連
-  has_many :friends
+  has_many :friends, class_name:  "Friend",
+                     foreign_key: "follower_id",
+                     dependent:   :destroy
   has_many :following, through: :friends, source: :follower
   has_many :followed, through: :friends, source: :followed
   
@@ -11,8 +13,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :trackable, :omniauthable, :confirmable,
-         :authentication_keys => [:login]
+         :recoverable, :rememberable, :validatable, :trackable, :omniauthable
           
 
   mount_uploader :img, ImgUploader
@@ -48,16 +49,7 @@ class User < ApplicationRecord
     User.find(id).following
   end
 
-  #deviseのログイン認証のメソッドをオーバーライド
-  #usenameとemailの片方でログイン可能
-  def self.find_first_by_auth_conditions(warden_conditions)
-    conditions = warden_conditions.dup
-    if login = conditions.delete(:login)
-      where(conditions).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
-    else
-      where(conditions).first
-    end
-  end
+
 
      
   private 
