@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'events/new'
   get 'events/show'
-  devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks"}
+  devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks", confirmations: 'confirmations' }
   root to: 'pages#index'
   get 'pages/index'
   get 'pages/show'
