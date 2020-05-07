@@ -12,9 +12,12 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :trackable, :omniauthable
+         :recoverable, :rememberable, :validatable, :trackable, :omniauthable, :confirmable,
+         :authentication_keys => [:login]
+          
 
   mount_uploader :img, ImgUploader
+  attr_accessor :login
 
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
@@ -44,6 +47,17 @@ class User < ApplicationRecord
 
   def self.friend(id)
     User.find(id).following
+  end
+
+  #deviseのログイン認証のメソッドをオーバーライド
+  #usenameとemailの片方でログイン可能
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["username = :value OR lower(email) = lower(:value)", { :value => login }]).first
+    else
+      where(conditions).first
+    end
   end
 
      
