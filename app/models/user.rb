@@ -1,13 +1,12 @@
 class User < ApplicationRecord
   #フレンドのデータベース関連
-  has_many :friends, class_name:  "Friend",
-                                  foreign_key: "follower_id",
-                                  dependent:   :destroy
-  has_many :following, through: :friends, source: :followed
-  has_many :followed, through: :friends, source: :follower
+  has_many :friends
+  has_many :following, through: :friends, source: :follower
+  has_many :followed, through: :friends, source: :followed
   
   #イベント参加者のデータベース関連
-  has_many :events, through: :participants, source: :users
+  has_many :participants
+  has_many :events, through: :participants
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
