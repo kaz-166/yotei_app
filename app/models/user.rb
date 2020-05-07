@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :followed, through: :friends, source: :follower
   
   #イベント参加者のデータベース関連
-  has_many :events, through: :participants, source: :users
+  has_many :events, through: :participants
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
