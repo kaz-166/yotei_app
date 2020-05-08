@@ -48,8 +48,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    archive-zip (0.12.0)
-      io-like (~> 0.3.0)
     arel (9.0.0)
     autoprefixer-rails (9.7.4)
       execjs
@@ -78,9 +76,6 @@ GEM
       mime-types (>= 1.16)
     childprocess (3.0.0)
     choice (0.2.0)
-    chromedriver-helper (2.1.1)
-      archive-zip (~> 0.10)
-      nokogiri (~> 1.8)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -180,7 +175,6 @@ GEM
     http_parser.rb (0.6.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    io-like (0.3.1)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     jquery-rails (4.3.5)
@@ -344,6 +338,9 @@ GEM
     simple_calendar (2.3.0)
       rails (>= 3.0)
     simple_oauth (0.3.1)
+    spring (2.1.0)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -383,6 +380,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webdrivers (4.3.0)
+      nokogiri (~> 1.6)
+      rubyzip (>= 1.3.0)
+      selenium-webdriver (>= 3.0, < 4.0)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -399,7 +400,6 @@ DEPENDENCIES
   cancancan
   capybara (>= 2.15)
   carrierwave (~> 1.3, >= 1.3.1)
-  chromedriver-helper
   coffee-rails (~> 4.2)
   config
   data-confirm-modal
@@ -417,15 +417,17 @@ DEPENDENCIES
   rails (~> 5.2.4, >= 5.2.4.1)
   rails-erd
   rails_admin (~> 2.0)
-  rspec-rails (~> 3.7)
+  rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_calendar
+  spring-commands-rspec
   sqlite3
   twitter
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  webdrivers
 
 RUBY VERSION
    ruby 2.6.3p62
