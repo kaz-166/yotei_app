@@ -29,9 +29,14 @@
         <h2>CALENDER</h2> 
         <%= month_calendar do |date| %>
             <center>
-            <%= date.day %>
+            <% if has_event?(date.day) %>
+                <b><font color="red"><%= date.day %></color></b>
+            <% else %>
+                <%= date.day %>
+            <% end %>
             </center>
           <% end %>   
+        
         <h2>FRIEND</h2>
         <br>
         <%= render '/users/friend_list' %>
