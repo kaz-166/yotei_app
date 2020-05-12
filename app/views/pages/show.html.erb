@@ -18,7 +18,7 @@
 
 <div class="friend-list">
     <center>
-        <h2>YOUR IMAGE</h2>
+        <h2><%= image_tag('profile.png', :size => "32x32") %> YOUR IMAGE <%= image_tag('profile.png', :size => "32x32") %> </h2>
             <%= render partial: 'users/user_image', locals: {usr: current_user} %>
         <br>
         <% if current_user.try(:admin?) %>
@@ -26,7 +26,7 @@
         <% else %>
                 一般ユーザー
         <% end %>
-        <h2>CALENDER</h2> 
+        <h2><%= image_tag('calendar.png', :size => "32x32") %> CALENDAR <%= image_tag('calendar.png', :size => "28x28") %> </h2> 
         <%= month_calendar do |date| %>
             <center>
             <% if has_event?(date.day) %>
@@ -37,7 +37,7 @@
             </center>
           <% end %>   
         
-        <h2>FRIEND</h2>
+        <h2><%= image_tag('friends.png', :size => "32x32") %> FRIEND <%= image_tag('friends.png', :size => "32x32") %></h2>
         <br>
         <%= render '/users/friend_list' %>
         <%= form_tag("/users/search",:method => 'get', class: "search_form") do %>

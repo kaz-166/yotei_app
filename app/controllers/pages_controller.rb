@@ -9,10 +9,11 @@ class PagesController < ApplicationController
   end
 
   def show
-    # 今月のイベントで自分が主催者であるものを取得するクエリ カレンダー表示用
-    # !! 自分が参加者となっているが主催者でないものは取得できないので要修正
-    @monthly_events = Event.where("start_time LIKE ?",  "#{Date.today.year}-#{prefix(Date.today.month)}%")
-                           .where("user_id = ?", "#{current_user.id}")
+    # 今月のイベントで自分が主催者であるもの
+    # および自分が参加者であるものを取得するクエリ
+    @monthly_events = Event.eager_load(:participants) #user_idをキーとして左外部結合
+                           .where("events.start_time LIKE ?",  "#{Date.today.year}-#{prefix(Date.today.month)}%")
+                           .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
   end
 
   def show_old
