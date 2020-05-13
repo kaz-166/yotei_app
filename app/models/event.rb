@@ -2,6 +2,7 @@ class Event < ApplicationRecord
 #イベント参加者のデータベース関連
 has_many :participants
 has_many :users, through: :participants
+has_many :posts, dependent: :destroy
 
 validate :date_cannot_be_in_past, :start_date_cannot_be_bigger_than_end_date
 
