@@ -35,7 +35,6 @@ class EventsController < ApplicationController
   end
 
   def show
-   
     @event = Event.find_by(id: params[:id])
     @post = Post.where(event_id: params[:id])
     #位置情報をJavaScriptに渡す
@@ -56,9 +55,9 @@ class EventsController < ApplicationController
       params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :location, :add_ids => [])
     end
 
-    #イベントの参加者を登録
+    #イベントの参加者を登録するメソッド
+    #[In] event_id: イベントID(Integer)
     def add_participants_to_event(event_id)
-
       #[TODO]追加削除の処理に無駄があるので要最適化
       #まずすべて削除してから
       user = User.friend(current_user.id)
