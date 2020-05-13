@@ -31,7 +31,11 @@
             <center>
             <% if has_event?(date.day) %>
                 <div class="tooltip1">
-                <div class="description1">予定があります </div>
+                <div class="description1">
+                    <% for daily_event in events_at_day(date.day) do %>
+                        <%= daily_event[:name] + "(" + daily_event[:time] + "~)" %><br>
+                    <% end %>
+                </div>
                     <b><font color="red"><%= date.day %></color></b>
                 </div>
             <% else %>
