@@ -74,10 +74,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
       user_name: ENV['SENDGRID_USERNAME'],
       password: ENV['SENDGRID_PASSWORD'],
-      domain: '独自ドメイン',
+      domain: 'yoteiapp',
       address: 'smtp.sendgrid.net',
       port: 587,
-      authentication: :plain,
+      authentication: 'login',
       enable_starttls_auto: true
   }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
