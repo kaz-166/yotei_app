@@ -9,10 +9,15 @@ class PagesController < ApplicationController
   end
 
   def show
-    # (今月中のイベント) AND ((自分が主催者であるもの) OR (自分が参加者であるもの))
+    if params[:start_date] == nil
+      date = Date.today
+    else
+      date = Date.parse(params[:start_date])
+    end
+    # (指定された月のイベント) AND ((自分が主催者であるもの) OR (自分が参加者であるもの))
     # を取得するクエリ
     @monthly_events = Event.eager_load(:participants) #user_idをキーとして左外部結合
-                           .where("events.start_time LIKE ?",  "#{Date.today.year}-#{prefix(Date.today.month)}%")
+                           .where("events.start_time LIKE ?",  "#{date.year}-#{prefix(date.month)}%")
                            .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
   end
 
@@ -30,4 +35,5 @@ class PagesController < ApplicationController
         num.to_s
       end
     end
+
 end
