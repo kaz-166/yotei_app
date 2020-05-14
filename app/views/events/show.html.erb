@@ -1,56 +1,29 @@
 <div class="event-info">
-    <center>
-        <h2>EVENT INFORMATION</h2>
-        <% event = @event %>
-        <% admin_user = User.find_by(id: event.user_id) %>
-        <h1><strong><%= event.name %></strong></h1>
-        <p>開始：<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %> 
-        <br>
-        終了：<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
-        </p>
-        作成者：<%= admin_user.username %>
-        <hr>
-        <h2><strong>場所</strong></h2>
-        <p><%= event.location %></p>
-
-        <%= render '/events/map' %>
-
-        <hr>
-        <h2><strong>参加者</strong></h2>
-        <br>
-        
-        <%= render partial: 'users/user_mini_image', locals: {usr: admin_user} %>
-        <%= admin_user.username %>
-
-        <% event.participants.each do |participants| %>
-          <% user = User.find_by(id: participants.user_id) %>
-          <%= render partial: 'users/user_mini_image', locals: {usr: user} %>
-          <%= user.username %>
-        <% end %>
-        <hr>
-        <h2><strong>イベント概要</strong></h2>
-        <p><%= event.abstract %></p>
-        <h2>コメント</h2>
-        <% @post.each do |p| %>
-          <% user = User.find_by(id: p.user_id) %>
-          <%= render partial: 'users/user_mini_image', locals: {usr: user} %>
-          <%= p.content %>(posted by
-          <%= user.username %>)
-          <% if current_user.id == p.user_id %>
-            <%= link_to("削除", p, :method => :delete, 
-            data: { confirm: 'このコメントを削除しますか?',
-            commit: 'Destroy',
-            cancel: 'Cancel' 
-                  } ) %>
-          <% end %>
-          <br>
-        <% end %>
-        <br>
-        <hr>
-        <%= form_for(Post.new) do |f| %>
-          <%= f.hidden_field :event_id, :value => event.id %>
-          <%= f.text_field :content %>
-          <%= f.submit "コメントを投稿" %>
-        <% end %>
-    </center>
+  <center>
+    <h2>EVENT INFORMATION</h2>
+      <% event = @event %>
+      <% admin_user = User.find_by(id: event.user_id) %>
+      <h1><strong><%= event.name %></strong></h1>
+      <p>開始：<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %> 
+      <br>
+      終了：<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
+      </p>
+      作成者：<%= admin_user.username %>
+    <hr>
+    <h2><strong>場所</strong></h2>
+      <p><%= event.location %></p>
+      <%= render '/events/map' %>
+    <hr>
+      <h2><strong>参加者</strong></h2>
+      <br>
+      <%= render partial: 'users/user_mini_image', locals: {usr: admin_user} %>
+      <%= admin_user.username %>
+      <% event.participants.each do |participants| %>
+        <% user = User.find_by(id: participants.user_id) %>
+        <%= render partial: 'users/user_mini_image', locals: {usr: user} %>
+        <%= user.username %>
+      <% end %>
+    <hr>
+    <%= render partial: 'comment', locals: {event: event} %>
+  </center>
 </div>
