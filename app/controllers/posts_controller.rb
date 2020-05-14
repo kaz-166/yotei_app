@@ -5,12 +5,15 @@ class PostsController < ApplicationController
       redirect_to event_path(post_params[:event_id])
     end
 
-    def delete
+    def destroy
+      Post.find(params[:id]).destroy
+      # 削除あとは元のイベントページにリダイレクト
+      redirect_back(fallback_location: root_path)
     end
 
     private
       #strong parameters
       def post_params
-        params.require(:post).permit(:content, :event_id)
+        params.require(:post).permit(:id, :content, :event_id)
       end
 end
