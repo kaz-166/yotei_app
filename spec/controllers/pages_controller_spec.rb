@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
-
+    
+    
     describe "プライベートメソッドprefixのテスト" do
         context "引数が一桁" do
             it "should be prefixed" do
