@@ -1,56 +1,58 @@
-<div class="event-list">
-    <center>
-        <div id="event_top">
-            <h2>RECENT EVENTS</h2>
-        </div>
-        <!-- すべてのイベントの中から現在のユーザが作成したものを表示する -->
-            <% Event.all.order(start_time: "ASC").each do |event| %>
-                <% if ((current_user.id == event.user_id) || (event_participants?(event.id, current_user.id) ) ) && (!event_finished?(event)) %>
-                    <%= render partial: 'event_list', locals: {event: event} %>
-                <% end %>
-            <% end %>
-        <hr>
-        <%= link_to "過去の予定を見る", '/pages/show_old' %>
-        <br>
-        <%= link_to "新しい予定を作成する", '/events/new' %>
-    </center>
-</div>
-
-<div class="friend-list">
-    <center>
-        <h2><%= image_tag('profile.png', :size => "32x32") %> YOUR IMAGE <%= image_tag('profile.png', :size => "32x32") %> </h2>
-            <%= render partial: 'users/user_image', locals: {usr: current_user} %>
-        <br>
-        <% if current_user.try(:admin?) %>
-                管理者
-        <% else %>
-                一般ユーザー
-        <% end %>
-        <h2><%= image_tag('calendar.png', :size => "32x32") %> CALENDAR <%= image_tag('calendar.png', :size => "28x28") %> </h2> 
-        <%= month_calendar do |date| %>
-            <center>
-            <% if has_event?(date) %>
-                <div class="tooltip1">
-                <div class="description1">
-                    <% for daily_event in events_at_day(date) do %>
-                        <%= daily_event[:name] + "(" + daily_event[:time] + "~)" %><br>
+<div class="page-container">
+    <div class="event-list">
+        <center>
+            <div id="event_top">
+                <h2>RECENT EVENTS</h2>
+            </div>
+            <!-- すべてのイベントの中から現在のユーザが作成したものを表示する -->
+                <% Event.all.order(start_time: "ASC").each do |event| %>
+                    <% if ((current_user.id == event.user_id) || (event_participants?(event.id, current_user.id) ) ) && (!event_finished?(event)) %>
+                        <%= render partial: 'event_list', locals: {event: event} %>
                     <% end %>
-                </div>
-                    <b><font color="red"><%= date.day %></color></b>
-                </div>
+                <% end %>
+            <hr>
+            <%= link_to "過去の予定を見る", '/pages/show_old' %>
+            <br>
+            <%= link_to "新しい予定を作成する", '/events/new' %>
+        </center>
+    </div>
+
+    <div class="friend-list">
+        <center>
+            <h2><%= image_tag('profile.png', :size => "32x32") %> YOUR IMAGE <%= image_tag('profile.png', :size => "32x32") %> </h2>
+                <%= render partial: 'users/user_image', locals: {usr: current_user} %>
+            <br>
+            <% if current_user.try(:admin?) %>
+                    管理者
             <% else %>
-                <%= date.day %>
+                    一般ユーザー
             <% end %>
-            </center>
-        <% end %>   
-        <h2><%= image_tag('friends.png', :size => "32x32") %> FRIEND <%= image_tag('friends.png', :size => "32x32") %></h2>
-        <br>
-        <%= render '/users/friend_list' %>
-        <%= form_tag("/users/search",:method => 'get', class: "search_form") do %>
-            <%= text_field_tag :search %>
-            <%= submit_tag 'Search', :name => nil %>
-        <% end %>
-    </center>
+            <h2><%= image_tag('calendar.png', :size => "32x32") %> CALENDAR <%= image_tag('calendar.png', :size => "28x28") %> </h2> 
+            <%= month_calendar do |date| %>
+                <center>
+                <% if has_event?(date) %>
+                    <div class="tooltip1">
+                    <div class="description1">
+                        <% for daily_event in events_at_day(date) do %>
+                            <%= daily_event[:name] + "(" + daily_event[:time] + "~)" %><br>
+                        <% end %>
+                    </div>
+                        <b><font color="red"><%= date.day %></color></b>
+                    </div>
+                <% else %>
+                    <%= date.day %>
+                <% end %>
+                </center>
+            <% end %>   
+            <h2><%= image_tag('friends.png', :size => "32x32") %> FRIEND <%= image_tag('friends.png', :size => "32x32") %></h2>
+            <br>
+            <%= render '/users/friend_list' %>
+            <%= form_tag("/users/search",:method => 'get', class: "search_form") do %>
+                <%= text_field_tag :search %>
+                <%= submit_tag 'Search', :name => nil %>
+            <% end %>
+        </center>
+    </div>
 </div>
 
 

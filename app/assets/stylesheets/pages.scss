@@ -1,7 +1,7 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import "variables";
 
 .log-form{
     @extend .common-form;
@@ -30,6 +30,9 @@
 .event-list{
     @extend .event-common;
     width: 60%;
+    a{
+      margin-right: 0px;
+    }
 }
 
 .event-list-old{
@@ -54,16 +57,6 @@
     top: 80px;
     min-width: 320px;
     max-width: 1000px;
-}
-@media screen and (max-width: 480px) {
-    .event-common{
-        position: absolute;
-        left: 0%;
-        top: 120px;
-        width: 100%;
-        min-width: 320px;
-        max-width: 1000px;
-    }
 }
 
 .friend-list{
@@ -177,6 +170,77 @@ $blue:#1fb5bf;
   height: 30px;
   margin-bottom: 2em;
   padding: .5em 0;
+  
+}
+
+@media screen and (max-width: $media_max_width) {
+
+  .log-form{
+    position: relative;
+    top: 0px;
+    width: $media_max_width - 80px;
+    min-width: $media_max_width - 160px;
+    max-width: $media_max_width - 160px;
+  }
+
+  .event-list{
+    position: relative;
+    left: 0%;
+    top: 120px;
+    min-width: 320px;
+    max-width: 1000px;
+    width: 100vw;
+    height: auto;
+  }
+
+  .friend-list{
+    position: relative;
+    left: 0%;
+    top: auto;
+    width: 100vw;
+    height: auto;
+  }
+  .event-list-old{
+    left: 0%;
+    top: auto;
+    width: 100vw;
+    height: auto;
+}
+
+  .page-container {
+    display: grid;
+    gap: 160px;
+  }
+
+  .event-info{
+    left: 0%;
+    width: 100vw;
+    height: auto;
+  }
+
+  .user-edit{
+    left: 0%;
+    width: 100vw;
+    height: auto;
+    }
+    
+  .user-search{
+    left: 0%;
+    width: 100vw;
+    height: auto;
+  }
+  
+  .event-new {
+    left: 0%;
+    width: 100vw;
+    height: auto;
+  }
+  
+  .event-edit{
+    left: 0%;
+    width: 100vw;
+    height: auto;
+  }
   
 }
 

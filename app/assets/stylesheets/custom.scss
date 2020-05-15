@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,300,600);
+@import "variables";
 
 *{box-sizing:border-box;}
 /* universal */
@@ -50,7 +51,12 @@ body {
     margin-bottom: 10px;
     word-spacing: 5pt;
     font-family:'open sans condensed';
-    color: #464646;/*文字色*/
+    color: #686868;/*文字色*/
+  }
+
+  ul.nav img{
+    width: 32px;
+    height: 32px;
   }
 
   /* 上部バー関連 */
@@ -70,12 +76,18 @@ body {
     font-weight: bold;
     font-family:'open sans condensed';
     letter-spacing: 0.5mm;
+    a{
+      margin-right: 0px;
+    }
   }
   #event_title{
     font-size:25px;
     font-weight: bold;
     font-family:'open sans condensed';
     letter-spacing: 0.5mm;
+    a{
+      margin-right: 0px;
+    }
   }
   #event_time{
     font-size:15px;
@@ -86,6 +98,9 @@ body {
     font-size:15px;
     font-family:'open sans condensed';
     letter-spacing: 0.5mm;
+    a{
+      margin-right: 0px;
+    }
   }
 
   .roundbox {
@@ -105,18 +120,57 @@ body {
     padding: 0;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: $media_max_width) {
+
   .roundbox {
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
-    color: #464646;/*文字色*/
+    color: #0c0c0c;/*文字色*/
     background: #FFF;
-    border: solid 3px #818181;/*線*/
-    border-radius: 10px;/*角の丸み*/
-    width: 300px;
-    //background: linear-gradient(to top, rgb(228, 244, 255), #FFF);
+    border: solid 1px #141414;/*線*/
+    border-right: 0px;/*角の丸み*/
+    border-left: 0px;/*角の丸み*/
+    border-radius: 0px;/*角の丸み*/
+    width: 95vw;
 }
+
+  #event_top{
+    color: #0c0c0c;/*文字色*/
+    font-size:28px;
+    font-weight: bold;
+    font-family:'open sans condensed';
+    letter-spacing: 0.5mm;
+  }
+  #event_title{
+    color: #0c0c0c;/*文字色*/
+    font-size:25px;
+    font-weight: bold;
+    font-family:'open sans condensed';
+    letter-spacing: 0.5mm;
+  }
+
+  div.container{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    word-spacing: 0pt;
+    font-family:'open sans condensed';
+  }
+
+  ul.nav{
+    margin-left: 10px;
+    img{
+      width: 20px;
+      height: 20px;
+    }
+
+    a{
+      word-spacing: 5px;
+      margin-right: 25px;
+    }
+  }
+
 }
 
 /* GoogleMaps */
