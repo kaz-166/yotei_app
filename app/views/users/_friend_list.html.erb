@@ -1,5 +1,7 @@
-<% User.friend(current_user.id).each do |u| %>
-    <%= render partial: 'users/user_mini_image', locals: {usr: u} %>
-    <%= u.username %>
-    <hr>
-<% end %>
+<div class="friend-list">
+    <% User.friend(current_user.id).each do |u| %>
+        <%= render partial: 'users/user_mini_image', locals: {usr: u} %>
+        <span><%= u.username %></span>
+        <hr>
+    <% end %>
+</div>
