@@ -89,6 +89,7 @@ body {
   }
 
   .roundbox {
+    position:relative;
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
@@ -96,7 +97,7 @@ body {
     background: #FFF;
     border: solid 3px #818181;/*線*/
     border-radius: 10px;/*角の丸み*/
-    width: 600px;
+    width: 80%;
     //background: linear-gradient(to top, rgb(228, 244, 255), #FFF);
 }
 .roundbox p {
