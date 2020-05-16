@@ -1,7 +1,13 @@
 <div class="friend-list">
-    <% User.friend(current_user.id).each do |u| %>
+    <% User.potential_friend(current_user.id).each do |u| %>
         <%= render partial: 'users/user_mini_image', locals: {usr: u} %>
         <span><%= u.username %></span>
+        <% if User.is_approved?(u.id, current_user.id) %>
+        <%= link_to("フレンド削除" ,{controller: "users", action: "unfollow", friend_id: u.id},  :method => :post) %>
+       
+        <% else %>
+        <%= link_to("フレンド承認" ,{controller: "users", action: "approve", friend_id: u.id},  :method => :post) %>
+        <% end %>
         <hr>
     <% end %>
 </div>
