@@ -45,11 +45,15 @@ class User < ApplicationRecord
   def self.unfollow
   end
 
+  # 承認済みのフレンドを返すメソッド
   def self.friend(id)
-    User.find(id).following
+    User.find(id).following.where("friends.IsApproved = ?", true)
   end
 
-
+  # 指定されたユーザのフレンド関係が承認されているかを返すメソッド
+  def self.is_approved?(self_id, friend_id)
+    User.find(self_id).friends.find_by(followed_id: friend_id).IsApproved
+  end
 
      
   private 
