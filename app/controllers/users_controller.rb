@@ -15,7 +15,11 @@ class UsersController < ApplicationController
     def unfollow
         Friend.find_by(follower_id: current_user.id, followed_id: params[:friend_id]).destroy
         Friend.find_by(follower_id: params[:friend_id], followed_id: current_user.id).destroy
-        redirect_to root_path
+        # 解除したフレンドは自分の主催のイベントの参加者から削除する
+        Participant.joins("LEFT OUTER JOIN events ON participants.event_id = events.id")
+                   .where("events.user_id = ? AND participants.user_id = ?","#{current_user.id}", "#{params[:friend_id]}")
+                   .delete_all
+       redirect_to root_path
     end
 
     # フレンドを承認する
