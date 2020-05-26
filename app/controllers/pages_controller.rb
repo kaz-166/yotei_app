@@ -17,9 +17,16 @@ class PagesController < ApplicationController
     # (指定された月のイベント) AND ((自分が主催者であるもの) OR (自分が参加者であるもの))
     # を取得するクエリ
     # @monthly_events: カレンダー表示時に使用するインスタンス変数
-    @monthly_events = Event.eager_load(:participants) #user_idをキーとして左外部結合
-                           .where("events.start_time::text LIKE ?",  "#{date.year}-#{prefix(date.month)}%")
-                           .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+    if Rails.env.production?
+      # 本番環境歯Postgresqlを使用する。この時にDatetime型のキャストが必要なための場合分け
+      @monthly_events = Event.eager_load(:participants) #user_idをキーとして左外部結合
+                             .where("events.start_time::text LIKE ?",  "#{date.year}-#{prefix(date.month)}%")
+                             .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+    else
+      @monthly_events = Event.eager_load(:participants) #user_idをキーとして左外部結合
+      .where("events.start_time LIKE ?",  "#{date.year}-#{prefix(date.month)}%")
+      .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+    end
   end
 
   def show_old

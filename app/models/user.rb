@@ -57,13 +57,13 @@ class User < ApplicationRecord
 
   # 指定されたユーザのフレンド関係が承認されているかを返すメソッド
   def self.is_approved?(self_id, friend_id)
-    User.find(self_id).friends.find_by(followed_id: friend_id).IsApproved
+    User.find(self_id).friends.find_by(followed_id: friend_id).isapproved
   end
 
   # 指定されたフレンドを承認する
   def self.approve(self_id, friend_id)
-    User.find(self_id).friends.find_by(followed_id: friend_id).update(IsApproved: true)
-    User.find(friend_id).friends.find_by(followed_id: self_id).update(IsApproved: true)
+    User.find(self_id).friends.find_by(followed_id: friend_id).update(isapproved: true)
+    User.find(friend_id).friends.find_by(followed_id: self_id).update(isapproved: true)
   end
 
      
