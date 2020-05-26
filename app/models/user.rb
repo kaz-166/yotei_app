@@ -34,7 +34,7 @@ class User < ApplicationRecord
   end
 
   def self.follow(follower_id, followed_id)
-    #すでにデータベースに登録されていなければ新規登録する
+    # すでにデータベースに登録されていなければ新規登録する
     if (Friend.where(follower_id: follower_id, followed_id: followed_id).empty?)&&
        (Friend.where(follower_id: followed_id, followed_id: follower_id).empty?)
       Friend.create(follower_id: follower_id, followed_id: followed_id)

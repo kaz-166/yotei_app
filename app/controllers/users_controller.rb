@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     def show
     end
   
+    # フレンド承認のリクエストを行う
     def follow
         User.follow(current_user.id, params[:id])
         redirect_to root_path
@@ -35,9 +36,8 @@ class UsersController < ApplicationController
     end
 
     private
+        # ストロングパラメータの設定
         def user_params
             params.require(:user).permit(:id, :username, :email, :friend_id)
         end
-
-
 end

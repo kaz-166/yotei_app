@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_05_16_114133) do
     t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "IsApproved"
+    t.boolean "IsApproved", default: false
   end
 
   create_table "participants", force: :cascade do |t|
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_05_16_114133) do
   create_table "posts", force: :cascade do |t|
     t.text "content"
     t.integer "event_id"
-    t.integer "user_id"
+    t.string "user_id"
     t.string "integer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

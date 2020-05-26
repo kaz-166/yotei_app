@@ -16,8 +16,9 @@ class PagesController < ApplicationController
     end
     # (指定された月のイベント) AND ((自分が主催者であるもの) OR (自分が参加者であるもの))
     # を取得するクエリ
+    # @monthly_events: カレンダー表示時に使用するインスタンス変数
     @monthly_events = Event.eager_load(:participants) #user_idをキーとして左外部結合
-                           .where("events.start_time LIKE ?",  "#{date.year}-#{prefix(date.month)}%")
+                           .where("events.start_time::text LIKE ?",  "#{date.year}-#{prefix(date.month)}%")
                            .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
   end
 
@@ -25,7 +26,7 @@ class PagesController < ApplicationController
   end
 
   private
-    # 0～9ならば先頭に文字0を付加するメソッド
+    # 0～9ならば先頭に文字0を付加するメソッド(Integer -> Str)
     # [In] 0～12の数字(Integer)
     # [Out] プレフィクスが付加された文字列(Str)
     def prefix(num)

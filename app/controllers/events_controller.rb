@@ -50,7 +50,7 @@ class EventsController < ApplicationController
   end
 
   private
-    #Strong Parameters
+    # ストロングパラメータの設定
     def event_params
       params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :location, :add_ids => [])
     end
