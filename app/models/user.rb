@@ -47,7 +47,7 @@ class User < ApplicationRecord
 
   # 承認済みのフレンドを返すメソッド
   def self.friend(id)
-    User.find(id).following.where("friends.IsApproved = ?", true)
+    User.find(id).following.where("friends.isapproved = ?", true)
   end
 
   # 未承認を含めたフレンドを返すメソッド
