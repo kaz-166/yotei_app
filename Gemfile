@@ -80,7 +80,6 @@ gem 'nokogiri'
 
 #本番環境の設定
 group :production do
-  gem 'pg'
   gem 'fog-aws'
 end
 
@@ -92,3 +91,4 @@ gem 'simple_calendar'
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 gem 'config'
+gem 'pg'
