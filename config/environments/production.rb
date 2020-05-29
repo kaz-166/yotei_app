@@ -75,7 +75,7 @@ Rails.application.configure do
     :enable_starttls_auto => true,
     :address => "smtp.gmail.com",
     :port => 587,
-    :domain => 'gmail.com',
+    :domain => 'heroku.com',
     :user_name => ENV["GMAIL_USERNAME"], #gmailアドレス
     :password => ENV["GMAIL_PASSWORD"], #gmailパスワード
     :authentication => 'login',
