@@ -91,4 +91,6 @@ gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 gem 'config'
 gem 'pg'
-gem 'kaminari'
+gem "kaminari", ">= 1.2.1"
+
+
