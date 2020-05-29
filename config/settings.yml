@@ -4,6 +4,6 @@ post:
     max_length: 200
   pagenation:   5
 
-  pg:
-    user_name: 'postgres'
-    password: 'Arex9663_'
+pg:
+  user_name: 'postgres'
+  password: 'Arex9663_'
