@@ -76,8 +76,8 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'smtp.gmail.com',
-    :user_name => ENV['GMAIL_USERNAME'], #gmailアドレス
-    :password => ENV['GMAIL_PASSWORD'], #gmailパスワード
+    :user_name => <%= ENV['GMAIL_USERNAME'] %>, #gmailアドレス
+    :password => <%= ENV['GMAIL_PASSWORD']%>, #gmailパスワード
     :authentication => 'login',
   }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
