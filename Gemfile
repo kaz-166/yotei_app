@@ -66,7 +66,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'twitter'
 
-gem "bootstrap-sass", ">= 3.4.1"
+gem 'bootstrap-sass', '3.3.7'
 
 gem 'gmaps4rails'
 gem 'gon'
@@ -91,6 +91,4 @@ gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 gem 'config'
 gem 'pg'
-gem "kaminari", ">= 1.2.1"
-
-
+gem 'kaminari'
