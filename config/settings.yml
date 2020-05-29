@@ -2,3 +2,4 @@ post:
   content:
     min_length: 1
     max_length: 200
+  pagenation:   5

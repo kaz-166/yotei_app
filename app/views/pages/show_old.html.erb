@@ -4,11 +4,12 @@
             <h2>OLD EVENTS</h2>
         </div>
         <!-- すべてのイベントの中から現在のユーザが作成したものを表示する -->
-            <% Event.all.order(start_time: "DESC").each do |event| %>
+            <% @events.each do |event| %>
                 <% if (current_user.id == event.user_id) && (event_finished?(event)) %>
                     <%= render partial: 'event_list', locals: {event: event} %>
                 <% end %>
             <% end %>
+            <%= paginate(@events) %>
         <hr>
         <%= link_to "最近の予定を見る", '/pages/show' %>
         <br>

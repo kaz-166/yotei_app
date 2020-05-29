@@ -2,6 +2,16 @@ require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
     
+    describe "" do
+        context "404エラーのテスト" do
+            before do
+                get "/sdfdsf"
+            end
+            expect(response.status).to eq(404)
+        end
+
+    end
+    
     
     describe "プライベートメソッドprefixのテスト" do
         context "引数が一桁" do

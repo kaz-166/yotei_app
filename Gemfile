@@ -56,7 +56,6 @@ group :development do
 end
 
 group :test do
-  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -92,3 +91,4 @@ gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 gem 'config'
 gem 'pg'
+gem 'kaminari'

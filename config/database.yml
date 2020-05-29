@@ -27,7 +27,7 @@ test:
   host: localhost
   encoding: utf8
   database: yotei-app-db-test
-  username: <%= Settings.pg.user_name %>
+  username: <%= Settings.pg.user_fgfgsname %>
   password: <%= Settings.pg.password %>
   pool: 5
   timeout: 5000
