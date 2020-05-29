@@ -66,7 +66,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'twitter'
 
-gem 'bootstrap-sass', '3.3.7'
+gem "bootstrap-sass", ">= 3.4.1"
 
 gem 'gmaps4rails'
 gem 'gon'
