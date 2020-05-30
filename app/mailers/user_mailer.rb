@@ -1,4 +1,3 @@
-include EventsHelper
 class UserMailer < ApplicationMailer
 
     def remind(user)
@@ -18,8 +17,18 @@ class UserMailer < ApplicationMailer
         date = Date.today
         @events = Event.eager_load(:participants)
              .where("events.user_id = ? OR participants.user_id = ?", user_id, user_id)
-             #.where("events.start_time::text LIKE ?",  "#{date.year}-#{EventsHelper.prefix(date.month)}-#{EventsHelper.prefix(date.day)}%")
+             .where("events.start_time::text LIKE ?",  "#{date.year}-#{prefix(date.month)}-#{prefix(date.day)}%")
       end
-
+      private
+      # 0～9ならば先頭に文字0を付加するメソッド(Integer -> Str)
+      # [In] 0～12の数字(Integer)
+      # [Out] プレフィクスが付加された文字列(Str)
+      def prefix(num)
+        if (num >= 0) && (num <= 9)
+          "0" + num.to_s
+        else
+          num.to_s
+        end
+      end
 end
 
