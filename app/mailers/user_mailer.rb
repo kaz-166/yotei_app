@@ -18,7 +18,7 @@ class UserMailer < ApplicationMailer
         date = Date.today
         @events = Event.eager_load(:participants)
              .where("events.user_id = ? OR participants.user_id = ?", user_id, user_id)
-             .where("events.start_time::text LIKE ?",  "#{date.year}-#{EventsHelper.prefix(date.month)}-#{EventsHelper.prefix(date.day)}%")
+             #.where("events.start_time::text LIKE ?",  "#{date.year}-#{EventsHelper.prefix(date.month)}-#{EventsHelper.prefix(date.day)}%")
       end
 
 end
