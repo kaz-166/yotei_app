@@ -1,3 +1,4 @@
+include EventsHelper
 class PagesController < ApplicationController
   before_action :sign_in_required, only: [:show, :show_old]
   def index
@@ -21,7 +22,7 @@ class PagesController < ApplicationController
     # @monthly_events: カレンダー表示時に使用するインスタンス変数
     # Postgresqlを使用する。この時にDatetime型のキャストが必要なための場合分け
     @monthly_events = Event.eager_load(:participants) #user_idをキーとして左外部結合
-                             .where("events.start_time::text LIKE ?",  "#{date.year}-#{prefix(date.month)}%")
+                             .where("events.start_time::text LIKE ?",  "#{date.year}-#{EventsHelper.prefix(date.month)}%")
                              .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
   end
 
