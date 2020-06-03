@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
     
-    describe "" do
+    describe "sss" do
         context "404エラーのテスト" do
-            before do
-                get "/sdfdsf"
+            it "error" do
+                get "/pages/show"
+                expect(response.status).to eq(404)
             end
-            expect(response.status).to eq(404)
         end
 
     end
