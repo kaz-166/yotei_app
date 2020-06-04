@@ -28,23 +28,7 @@
             <% else %>
                     一般ユーザー
             <% end %>
-            <h2><%= image_tag('calendar.png', :size => "32x32") %> CALENDAR <%= image_tag('calendar.png', :size => "28x28") %> </h2> 
-            <%= month_calendar do |date| %>
-                <center>
-                <% if has_event?(date) %>
-                    <div class="tooltip1">
-                    <div class="description1">
-                        <% for daily_event in events_at_day(date) do %>
-                            <%= daily_event[:name] + "(" + daily_event[:time] + "~)" %><br>
-                        <% end %>
-                    </div>
-                        <b><font color="red"><%= date.day %></color></b>
-                    </div>
-                <% else %>
-                    <%= date.day %>
-                <% end %>
-                </center>
-            <% end %>   
+            <%= render 'calendar' %>
             <h2><%= image_tag('friends.png', :size => "32x32") %> FRIEND <%= image_tag('friends.png', :size => "32x32") %></h2>
             <br>
             <%= render '/users/friend_list' %>

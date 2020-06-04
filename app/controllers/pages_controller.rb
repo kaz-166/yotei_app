@@ -20,8 +20,9 @@ class PagesController < ApplicationController
     # を取得するクエリ
     # @monthly_events: カレンダー表示時に使用するインスタンス変数
     # Postgresqlを使用する。この時にDatetime型のキャストが必要なための場合分け
-    @monthly_events = Event.eager_load(:participants) #user_idをキーとして左外部結合
-                             .where("events.start_time::text LIKE ?",  "#{date.year}-#{prefix(date.month)}%")
+    @monthly_events = Event.eager_load(:participants) # user_idをキーとして左外部結合
+                             .where("events.start_time <= ?",  "#{date}%")
+                             .where("events.end_time >= ?",  "#{date}%")
                              .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
   end
 
