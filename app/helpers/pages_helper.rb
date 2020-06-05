@@ -6,8 +6,7 @@ module PagesHelper
     # !!ヘルパメソッドは同じ入力に対して同じ出力を返すべき観点からこのロジックは要検討
     def has_event?(date)
         for event in @monthly_events do
-            if (event.start_time.to_date <= date.to_date) &&
-               (event.end_time.to_date >= date.to_date) 
+            if event_exists?(event, date) 
                 return true
             end
         end
@@ -21,13 +20,24 @@ module PagesHelper
     def events_at_day(date)
         event_titles = []
         for event in @monthly_events do
-            if (event.start_time.to_date <= date.to_date) &&
-                (event.end_time.to_date >= date.to_date) 
+            if event_exists?(event, date)
                 event_titles.push({:name => event.name, :time => event.start_time.strftime("%H:%M")})
             end
         end
         event_titles
     end
+
+    private 
+        def event_exists?(event, date)
+            # dateの時間が空なので比較時はDatetime型からDate型にキャストする
+            if (event.start_time.to_date <= date.to_date) &&
+               (event.end_time.to_date >= date.to_date)
+               true
+            else 
+               false
+            end 
+        end
+
 end
 
 
