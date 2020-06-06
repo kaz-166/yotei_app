@@ -1,3 +1,10 @@
+# "Event" is the model of an event. 
+# This model has these columns
+#   abstract:   text
+#   start_time: datetime
+#   end_time:   datetime
+#   name:       string
+#   location:   string 
 class Event < ApplicationRecord
 #イベント参加者のデータベース関連
 has_many :participants
