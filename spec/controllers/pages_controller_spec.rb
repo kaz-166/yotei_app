@@ -29,9 +29,8 @@ RSpec.describe PagesController, type: :controller do
             it "should return http 200 status" do
                 expect(response.status).to eq 200
             end
-
             #it: アウトプット -> インスタンス変数eventが存在する
-            it "should " do
+            it "should be exist" do
                 expect(assigns(:events).nil?).to eq false  
             end
         end   
