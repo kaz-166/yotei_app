@@ -34,5 +34,13 @@ RSpec.feature 'Pages', type: :system do
         click_button 'commit'
         expect(page).to have_content('新規予定')
     end
+
+    scenario "新しい友達を表示する" do
+        log_in
+        @friend = create(:friend)
+        fill_in 'search', with: "friend"
+        click_button 'Search'
+        expect(page).to have_content('friend')
+    end
     
 end
