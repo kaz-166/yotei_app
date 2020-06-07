@@ -1,0 +1,2338 @@
+Inspecting 95 files
+CCCCWWCCCCCCCCCCCCCCWCCCCCCWCCCCCCCCCCCCCCCCCCCCCCCCCCCCCWCCCCCCCCCCCCCCCCCCCCCC.CCCCCCCCCCCCCC
+
+Offenses:
+
+Gemfile:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+source 'https://rubygems.org'
+^
+Gemfile:19:1: C: Layout/LeadingCommentSpace: Missing space after #.
+#gem 'turbolinks', '~> 5'
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:38:28: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:45:3: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem spring-commands-rspec should appear before webdrivers.
+  gem 'spring-commands-rspec'
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:46:3: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem rspec-rails should appear before spring-commands-rspec.
+  gem 'rspec-rails'
+  ^^^^^^^^^^^^^^^^^
+Gemfile:47:3: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem factory_bot_rails should appear before rspec-rails.
+  gem 'factory_bot_rails'
+  ^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:62:31: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:64:1: C: Layout/LeadingCommentSpace: Missing space after #.
+#twitter連携を行うgem
+^^^^^^^^^^^^^^^^
+Gemfile:75:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem data-confirm-modal should appear before jquery-rails.
+gem 'data-confirm-modal'
+^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:80:1: C: Layout/LeadingCommentSpace: Missing space after #.
+#本番環境の設定
+^^^^^^^^
+Gemfile:85:1: C: Layout/LeadingCommentSpace: Missing space after #.
+#ER図を出力するためのGEM
+^^^^^^^^^^^^^^^
+Gemfile:86:1: C: Bundler/DuplicatedGem: Gem rails-erd requirements already given on line 39 of the Gemfile.
+gem 'rails-erd'
+^^^^^^^^^^^^^^^
+Gemfile:90:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem rails_admin should appear before simple_calendar.
+gem 'rails_admin', '~> 2.0'
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:91:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem cancancan should appear before rails_admin.
+gem 'cancancan'
+^^^^^^^^^^^^^^^
+Gemfile:94:1: C: Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem kaminari should appear before pg.
+gem 'kaminari'
+^^^^^^^^^^^^^^
+Rakefile:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Add your own tasks in files placed in lib/tasks ending in .rake, ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rakefile:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+^
+app/channels/application_cable/channel.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+module ApplicationCable ...
+^^^^^^^^^^^^^^^^^^^^^^^
+app/channels/application_cable/channel.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationCable
+^
+app/channels/application_cable/connection.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+module ApplicationCable ...
+^^^^^^^^^^^^^^^^^^^^^^^
+app/channels/application_cable/connection.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationCable
+^
+app/controllers/application_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class ApplicationController < ActionController::Base
+^^^^^
+app/controllers/application_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationController < ActionController::Base
+^
+app/controllers/application_controller.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    before_action :configure_permitted_parameters, if: :devise_controller?
+^^^^
+app/controllers/application_controller.rb:3:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    add_flash_types :success, :info, :warning, :danger
+^^^^
+app/controllers/application_controller.rb:5:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def after_sign_in_path_for(resource)
+^^^^
+app/controllers/application_controller.rb:5:32: W: Lint/UnusedMethodArgument: Unused method argument - resource. If it's necessary, use _ or _resource as an argument name to indicate that it won't be used. You can also write as after_sign_in_path_for(*) if you want the method to accept any arguments but don't care about them.
+    def after_sign_in_path_for(resource)
+                               ^^^^^^^^
+app/controllers/application_controller.rb:6:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        pages_show_path
+    ^^^^
+app/controllers/application_controller.rb:9:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    class Forbidden < ActionController::ActionControllerError
+^^^^
+app/controllers/application_controller.rb:11:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    rescue_from Forbidden, with: :rescue403
+^^^^
+app/controllers/application_controller.rb:13:5: C: Layout/AccessModifierIndentation: Indent access modifiers like private.
+    private
+    ^^^^^^^
+app/controllers/application_controller.rb:13:5: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+    private
+    ^^^^^^^
+app/controllers/application_controller.rb:14:1: C: Layout/IndentationWidth: Use 2 (not 8) spaces for indentation.
+        def rescue403(e)
+^^^^^^^^
+app/controllers/application_controller.rb:14:9: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+        def rescue403(e) ...
+        ^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:14:23: C: Naming/MethodParameterName: Method parameter must be at least 3 characters long.
+        def rescue403(e)
+                      ^
+app/controllers/application_controller.rb:15:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            @exception = e
+        ^^^^
+app/controllers/application_controller.rb:16:58: C: Rails/HttpStatus: Prefer :forbidden over 403 to define HTTP status code.
+            render template: 'errors/forbidden', status: 403
+                                                         ^^^
+app/controllers/application_controller.rb:18:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/application_controller.rb:19:1: C: Layout/IndentationWidth: Use 2 (not 8) spaces for indentation.
+        def sign_in_required
+^^^^^^^^
+app/controllers/application_controller.rb:19:9: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+        def sign_in_required ...
+        ^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:20:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            redirect_to new_user_session_url unless user_signed_in?
+        ^^^^
+app/controllers/application_controller.rb:23:1: C: Layout/IndentationWidth: Use 2 (not 8) spaces for indentation.
+        def configure_permitted_parameters
+^^^^^^^^
+app/controllers/application_controller.rb:23:9: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+        def configure_permitted_parameters ...
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:24:13: C: Layout/LeadingCommentSpace: Missing space after #.
+            #devise用のStrong Parameters設定
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:25:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :img])
+        ^^^^
+app/controllers/application_controller.rb:25:63: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+            devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :img])
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:26:63: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+            devise_parameter_sanitizer.permit(:sign_in, keys: [:login, :email, :username])
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:27:70: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+            devise_parameter_sanitizer.permit(:account_update, keys: [:username, :img])
+                                                                     ^^^^^^^^^^^^^^^^^
+app/controllers/confirmations_controller.rb:1:1: C: Layout/LeadingCommentSpace: Missing space after #.
+#deviseのConfirmationsControllerをオーバーライド
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/confirmations_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#deviseのConfirmationsControllerをオーバーライド
+^
+app/controllers/confirmations_controller.rb:3:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def show
+^^^^
+app/controllers/confirmations_controller.rb:3:5: C: Metrics/AbcSize: Assignment Branch Condition size for show is too high. [<1, 18, 4> 18.47/15]
+    def show ...
+    ^^^^^^^^
+app/controllers/confirmations_controller.rb:6:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/confirmations_controller.rb:12:20: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+        render :new 
+                   ^
+app/controllers/confirmations_controller.rb:15:1: C: Layout/EndOfLine: Carriage return character missing.
+  end
+^^^^^
+app/controllers/confirmations_controller.rb:15:3: W: Layout/EndAlignment: end at 15, 2 is not aligned with class at 2, 0.
+  end
+  ^^^
+app/controllers/confirmations_controller.rb:15:6: C: Layout/TrailingEmptyLines: Final newline missing.
+  end
+     
+app/controllers/events_controller.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class EventsController < ApplicationController ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class EventsController < ApplicationController
+^^^^^
+app/controllers/events_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class EventsController < ApplicationController
+^
+app/controllers/events_controller.rb:3:42: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+  before_action :sign_in_required, only: [:edit, :update, :show, :destroy]
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:21:11: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+  def edit 
+          ^
+app/controllers/events_controller.rb:23:5: C: Layout/LeadingCommentSpace: Missing space after #.
+    #予定の管理者の場合のみ編集を許可
+    ^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:31:19: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      redirect_to "/pages/show"
+                  ^^^^^^^^^^^^^
+app/controllers/events_controller.rb:37:3: C: Metrics/AbcSize: Assignment Branch Condition size for show is too high. [<3, 16, 3> 16.55/15]
+  def show ...
+  ^^^^^^^^
+app/controllers/events_controller.rb:40:5: C: Layout/LeadingCommentSpace: Missing space after #.
+    #位置情報をJavaScriptに渡す
+    ^^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:42:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/events_controller.rb:43:28: C: Style/ParenthesesAroundCondition: Don't use parentheses around the condition of an unless.
+    raise Forbidden unless ((current_user.id == @event.user_id) || (event_participants?(@event.id, current_user.id)))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:43:68: C: Style/RedundantParentheses: Don't use parentheses around a method call.
+    raise Forbidden unless ((current_user.id == @event.user_id) || (event_participants?(@event.id, current_user.id)))
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:49:17: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    redirect_to "/pages/show"
+                ^^^^^^^^^^^^^
+app/controllers/events_controller.rb:52:3: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/events_controller.rb:54:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def event_params
+^^^^
+app/controllers/events_controller.rb:54:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    def event_params ...
+    ^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:55:100: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+      params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :location, :add_ids => [])
+                                                                                                   ^^^^^^^^^^^
+app/controllers/events_controller.rb:58:5: C: Layout/LeadingCommentSpace: Missing space after #.
+    #イベントの参加者を登録するメソッド
+    ^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:59:5: C: Layout/LeadingCommentSpace: Missing space after #.
+    #[In] event_id: イベントID(Integer)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:60:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def add_participants_to_event(event_id)
+^^^^
+app/controllers/events_controller.rb:60:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    def add_participants_to_event(event_id) ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:60:5: C: Metrics/MethodLength: Method has too many lines. [11/10]
+    def add_participants_to_event(event_id) ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:61:7: C: Layout/LeadingCommentSpace: Missing space after #.
+      #[TODO]追加削除の処理に無駄があるので要最適化
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:62:7: C: Layout/LeadingCommentSpace: Missing space after #.
+      #まずすべて削除してから
+      ^^^^^^^^^^^^
+app/controllers/events_controller.rb:69:7: C: Layout/LeadingCommentSpace: Missing space after #.
+      #CheckBoxがオンのものを追加
+      ^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:70:7: C: Style/GuardClause: Use a guard clause (return if params[:add_ids] == nil) instead of wrapping the code inside a conditional expression.
+      unless params[:add_ids] == nil
+      ^^^^^^
+app/controllers/events_controller.rb:70:31: C: Style/NilComparison: Prefer the use of the nil? predicate.
+      unless params[:add_ids] == nil
+                              ^^
+app/controllers/omniauth_callbacks_controller.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class OmniauthCallbacksController < Devise::OmniauthCallbacksController ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/omniauth_callbacks_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+^^^^^
+app/controllers/omniauth_callbacks_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+^
+app/controllers/omniauth_callbacks_controller.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def twitter
+^^^^
+app/controllers/omniauth_callbacks_controller.rb:3:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        callback_from :twitter
+    ^^^^
+app/controllers/omniauth_callbacks_controller.rb:6:5: C: Layout/AccessModifierIndentation: Indent access modifiers like private.
+    private
+    ^^^^^^^
+app/controllers/omniauth_callbacks_controller.rb:6:5: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+    private
+    ^^^^^^^
+app/controllers/omniauth_callbacks_controller.rb:7:1: C: Layout/IndentationWidth: Use 2 (not 8) spaces for indentation.
+        def callback_from(provider)
+^^^^^^^^
+app/controllers/omniauth_callbacks_controller.rb:7:9: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+        def callback_from(provider) ...
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/omniauth_callbacks_controller.rb:7:9: C: Metrics/AbcSize: Assignment Branch Condition size for callback_from is too high. [<4, 16, 2> 16.61/15]
+        def callback_from(provider) ...
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/omniauth_callbacks_controller.rb:8:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            provider = provider.to_s
+        ^^^^
+app/controllers/omniauth_callbacks_controller.rb:11:13: C: Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+            flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
+            
+app/controllers/omniauth_callbacks_controller.rb:12:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/omniauth_callbacks_controller.rb:15:13: C: Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+            session["devise.#{provider}_data"] = request.env['omniauth.auth']
+            
+app/controllers/pages_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class PagesController < ApplicationController
+^^^^^
+app/controllers/pages_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class PagesController < ApplicationController
+^
+app/controllers/pages_controller.rb:2:42: C: Style/SymbolArray: Use %i or %I for an array of symbols.
+  before_action :sign_in_required, only: [:show, :show_old]
+                                         ^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:11:3: C: Metrics/AbcSize: Assignment Branch Condition size for show is too high. [<5, 29, 3> 29.58/15]
+  def show ...
+  ^^^^^^^^
+app/controllers/pages_controller.rb:11:3: C: Metrics/MethodLength: Method has too many lines. [13/10]
+  def show ...
+  ^^^^^^^^
+app/controllers/pages_controller.rb:12:5: C: Style/ConditionalAssignment: Use the return of the conditional for variable assignment and comparison.
+    if params[:start_date] == nil ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:12:28: C: Style/NilComparison: Prefer the use of the nil? predicate.
+    if params[:start_date] == nil
+                           ^^
+app/controllers/pages_controller.rb:13:19: C: Rails/Date: Do not use Date.today without zone. Use Time.zone.today instead.
+      date = Date.today
+                  ^^^^^
+app/controllers/pages_controller.rb:18:27: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                   .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:18:77: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+                   .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+                                                                            ^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:18:99: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+                   .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+                                                                                                  ^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:19:27: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                   .where("events.end_time >= ?", "#{Date.today}")
+                          ^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:19:51: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+                   .where("events.end_time >= ?", "#{Date.today}")
+                                                  ^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:19:59: C: Rails/Date: Do not use Date.today without zone. Use Time.zone.today instead.
+                   .where("events.end_time >= ?", "#{Date.today}")
+                                                          ^^^^^
+app/controllers/pages_controller.rb:20:39: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                   .order(start_time: "ASC")
+                                      ^^^^^
+app/controllers/pages_controller.rb:26:30: C: Layout/MultilineMethodCallIndentation: Align .where with .eager_load on line 25.
+                             .where("events.start_time <= ? OR events.end_time >= ?",  "#{date}", "#{date}")
+                             ^^^^^^
+app/controllers/pages_controller.rb:26:37: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                             .where("events.start_time <= ? OR events.end_time >= ?",  "#{date}", "#{date}")
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:26:86: C: Layout/ExtraSpacing: Unnecessary spacing detected.
+                             .where("events.start_time <= ? OR events.end_time >= ?",  "#{date}", "#{date}")
+                                                                                     ^
+app/controllers/pages_controller.rb:26:88: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+                             .where("events.start_time <= ? OR events.end_time >= ?",  "#{date}", "#{date}")
+                                                                                       ^^^^^^^^^
+app/controllers/pages_controller.rb:26:99: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+                             .where("events.start_time <= ? OR events.end_time >= ?",  "#{date}", "#{date}")
+                                                                                                  ^^^^^^^^^
+app/controllers/pages_controller.rb:27:30: C: Layout/MultilineMethodCallIndentation: Align .where with .eager_load on line 25.
+                             .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+                             ^^^^^^
+app/controllers/pages_controller.rb:27:37: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                             .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:27:87: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+                             .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+                                                                                      ^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:27:109: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+                             .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+                                                                                                            ^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:27:121: C: Layout/LineLength: Line is too long. [129/120]
+                             .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+                                                                                                                        ^^^^^^^^^
+app/controllers/pages_controller.rb:30:3: C: Metrics/AbcSize: Assignment Branch Condition size for show_old is too high. [<2, 16, 0> 16.12/15]
+  def show_old ...
+  ^^^^^^^^^^^^
+app/controllers/pages_controller.rb:32:5: C: Layout/MultilineMethodCallIndentation: Align .where with .eager_load on line 31.
+    .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+    ^^^^^^
+app/controllers/pages_controller.rb:32:12: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:32:62: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+    .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+                                                             ^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:32:84: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+    .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+                                                                                   ^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:33:5: C: Layout/MultilineMethodCallIndentation: Align .where with .eager_load on line 31.
+    .where("events.end_time < ?", "#{Date.today}")
+    ^^^^^^
+app/controllers/pages_controller.rb:33:12: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    .where("events.end_time < ?", "#{Date.today}")
+           ^^^^^^^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:33:35: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+    .where("events.end_time < ?", "#{Date.today}")
+                                  ^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:33:43: C: Rails/Date: Do not use Date.today without zone. Use Time.zone.today instead.
+    .where("events.end_time < ?", "#{Date.today}")
+                                          ^^^^^
+app/controllers/pages_controller.rb:34:5: C: Layout/MultilineMethodCallIndentation: Align .order with .eager_load on line 31.
+    .order(start_time: "DESC")
+    ^^^^^^
+app/controllers/pages_controller.rb:34:24: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    .order(start_time: "DESC")
+                       ^^^^^^
+app/controllers/pages_controller.rb:38:3: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/pages_controller.rb:42:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def prefix(num)
+^^^^
+app/controllers/pages_controller.rb:42:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    def prefix(num) ...
+    ^^^^^^^^^^^^^^^
+app/controllers/pages_controller.rb:44:9: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        "0" + num.to_s
+        ^^^
+app/controllers/posts_controller.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class PostsController < ApplicationController ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/posts_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class PostsController < ApplicationController
+^^^^^
+app/controllers/posts_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class PostsController < ApplicationController
+^
+app/controllers/posts_controller.rb:2:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/posts_controller.rb:3:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def create
+^^^^
+app/controllers/posts_controller.rb:3:5: C: Metrics/AbcSize: Assignment Branch Condition size for create is too high. [<3, 19, 2> 19.34/15]
+    def create ...
+    ^^^^^^^^^^
+app/controllers/posts_controller.rb:14:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def destroy
+^^^^
+app/controllers/posts_controller.rb:20:5: C: Layout/AccessModifierIndentation: Indent access modifiers like private.
+    private
+    ^^^^^^^
+app/controllers/posts_controller.rb:20:5: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+    private
+    ^^^^^^^
+app/controllers/posts_controller.rb:21:7: C: Layout/LeadingCommentSpace: Missing space after #.
+      #strong parameters
+      ^^^^^^^^^^^^^^^^^^
+app/controllers/posts_controller.rb:22:1: C: Layout/IndentationWidth: Use 2 (not 6) spaces for indentation.
+      def post_params
+^^^^^^
+app/controllers/posts_controller.rb:22:7: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+      def post_params ...
+      ^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class UsersController < ApplicationController ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class UsersController < ApplicationController
+^^^^^
+app/controllers/users_controller.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class UsersController < ApplicationController
+^
+app/controllers/users_controller.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    before_action :sign_in_required, only: [:search]
+^^^^
+app/controllers/users_controller.rb:3:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def index
+^^^^
+app/controllers/users_controller.rb:3:5: C: Style/EmptyMethod: Put empty method definitions on a single line.
+    def index ...
+    ^^^^^^^^^
+app/controllers/users_controller.rb:5:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/users_controller.rb:6:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def show
+^^^^
+app/controllers/users_controller.rb:6:5: C: Style/EmptyMethod: Put empty method definitions on a single line.
+    def show ...
+    ^^^^^^^^
+app/controllers/users_controller.rb:8:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/controllers/users_controller.rb:10:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def follow
+^^^^
+app/controllers/users_controller.rb:11:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        User.follow(current_user.id, params[:id])
+    ^^^^
+app/controllers/users_controller.rb:16:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def unfollow
+^^^^
+app/controllers/users_controller.rb:16:5: C: Metrics/AbcSize: Assignment Branch Condition size for unfollow is too high. [<0, 21, 0> 21/15]
+    def unfollow ...
+    ^^^^^^^^^^^^
+app/controllers/users_controller.rb:17:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        Friend.find_by(follower_id: current_user.id, followed_id: params[:friend_id]).destroy
+    ^^^^
+app/controllers/users_controller.rb:20:27: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        Participant.joins("LEFT OUTER JOIN events ON participants.event_id = events.id")
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:21:27: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                   .where("events.user_id = ? AND participants.user_id = ?","#{current_user.id}", "#{params[:friend_id]}")
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:21:76: C: Layout/SpaceAfterComma: Space missing after comma.
+                   .where("events.user_id = ? AND participants.user_id = ?","#{current_user.id}", "#{params[:friend_id]}")
+                                                                           ^
+app/controllers/users_controller.rb:21:77: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+                   .where("events.user_id = ? AND participants.user_id = ?","#{current_user.id}", "#{params[:friend_id]}")
+                                                                            ^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:21:99: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+                   .where("events.user_id = ? AND participants.user_id = ?","#{current_user.id}", "#{params[:friend_id]}")
+                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:21:121: C: Layout/LineLength: Line is too long. [122/120]
+                   .where("events.user_id = ? AND participants.user_id = ?","#{current_user.id}", "#{params[:friend_id]}")
+                                                                                                                        ^^
+app/controllers/users_controller.rb:23:8: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+       redirect_to root_path
+       ^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:27:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def approve
+^^^^
+app/controllers/users_controller.rb:28:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        Friend.find_by(follower_id: current_user.id, followed_id: params[:friend_id]).update(IsApproved: true)
+    ^^^^
+app/controllers/users_controller.rb:33:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def search
+^^^^
+app/controllers/users_controller.rb:34:9: C: Layout/LeadingCommentSpace: Missing space after #.
+        #検索結果のレコードを返す(検索結果に自分自身が含まれていた場合はそれを除く)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:35:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        @user = User.where(username: params[:search]).where.not(id: current_user.id)
+    ^^^^
+app/controllers/users_controller.rb:38:5: C: Layout/AccessModifierIndentation: Indent access modifiers like private.
+    private
+    ^^^^^^^
+app/controllers/users_controller.rb:38:5: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+    private
+    ^^^^^^^
+app/controllers/users_controller.rb:40:1: C: Layout/IndentationWidth: Use 2 (not 8) spaces for indentation.
+        def user_params
+^^^^^^^^
+app/controllers/users_controller.rb:40:9: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+        def user_params ...
+        ^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:41:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            params.require(:user).permit(:id, :username, :email, :friend_id)
+        ^^^^
+app/helpers/application_helper.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+module ApplicationHelper ...
+^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/application_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module ApplicationHelper
+^^^^^^
+app/helpers/application_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationHelper
+^
+app/helpers/events_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'active_support/time' 
+^
+app/helpers/events_helper.rb:1:30: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+require 'active_support/time' 
+                             ^
+app/helpers/events_helper.rb:3:1: C: Style/Documentation: Missing top-level module documentation comment.
+module EventsHelper
+^^^^^^
+app/helpers/events_helper.rb:5:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def event_finished?(event)
+^^^^
+app/helpers/events_helper.rb:6:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        Time.current > event.end_time
+    ^^^^
+app/helpers/events_helper.rb:10:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def event_participants?(event_id, user_id)
+^^^^
+app/helpers/events_helper.rb:11:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        if (event_id != nil) && (user_id != nil)
+    ^^^^
+app/helpers/events_helper.rb:11:22: C: Style/NonNilCheck: Prefer !expression.nil? over expression != nil.
+        if (event_id != nil) && (user_id != nil)
+                     ^^
+app/helpers/events_helper.rb:11:42: C: Style/NonNilCheck: Prefer !expression.nil? over expression != nil.
+        if (event_id != nil) && (user_id != nil)
+                                         ^^
+app/helpers/events_helper.rb:12:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            Participant.where(event_id: event_id, user_id: user_id).exists?
+        ^^^^
+app/helpers/events_helper.rb:14:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            false
+        ^^^^
+app/helpers/omniauth_callbacks_helper.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+module OmniauthCallbacksHelper ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/omniauth_callbacks_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module OmniauthCallbacksHelper
+^^^^^^
+app/helpers/omniauth_callbacks_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module OmniauthCallbacksHelper
+^
+app/helpers/pages_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module PagesHelper
+^^^^^^
+app/helpers/pages_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module PagesHelper
+^
+app/helpers/pages_helper.rb:2:1: C: Layout/EmptyLinesAroundModuleBody: Extra empty line detected at module body beginning.
+app/helpers/pages_helper.rb:7:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def has_event?(date)
+^^^^
+app/helpers/pages_helper.rb:7:9: C: Naming/PredicateName: Rename has_event? to event?.
+    def has_event?(date)
+        ^^^^^^^^^^
+app/helpers/pages_helper.rb:8:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        for event in @monthly_events do
+    ^^^^
+app/helpers/pages_helper.rb:8:9: C: Style/For: Prefer each over for.
+        for event in @monthly_events do ...
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/pages_helper.rb:8:22: C: Rails/HelperInstanceVariable: Do not use instance variables in helpers.
+        for event in @monthly_events do
+                     ^^^^^^^^^^^^^^^
+app/helpers/pages_helper.rb:9:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            if event_exists?(event, date) 
+        ^^^^
+app/helpers/pages_helper.rb:9:13: C: Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+            if event_exists?(event, date) 
+            ^^
+app/helpers/pages_helper.rb:9:42: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+            if event_exists?(event, date) 
+                                         ^
+app/helpers/pages_helper.rb:10:13: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                return true
+            ^^^^
+app/helpers/pages_helper.rb:13:9: C: Style/RedundantReturn: Redundant return detected.
+        return false
+        ^^^^^^
+app/helpers/pages_helper.rb:20:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def events_at_day(date)
+^^^^
+app/helpers/pages_helper.rb:21:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        event_titles = []
+    ^^^^
+app/helpers/pages_helper.rb:22:9: C: Style/For: Prefer each over for.
+        for event in @monthly_events do ...
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/pages_helper.rb:22:22: C: Rails/HelperInstanceVariable: Do not use instance variables in helpers.
+        for event in @monthly_events do
+                     ^^^^^^^^^^^^^^^
+app/helpers/pages_helper.rb:23:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            if event_exists?(event, date)
+        ^^^^
+app/helpers/pages_helper.rb:24:13: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                event_titles.push({:name => event.name, :time => event.start_time.strftime("%H:%M")})
+            ^^^^
+app/helpers/pages_helper.rb:24:35: C: Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+                event_titles.push({:name => event.name, :time => event.start_time.strftime("%H:%M")})
+                                  ^
+app/helpers/pages_helper.rb:24:36: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+                event_titles.push({:name => event.name, :time => event.start_time.strftime("%H:%M")})
+                                   ^^^^^^^^
+app/helpers/pages_helper.rb:24:57: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+                event_titles.push({:name => event.name, :time => event.start_time.strftime("%H:%M")})
+                                                        ^^^^^^^^
+app/helpers/pages_helper.rb:24:92: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                event_titles.push({:name => event.name, :time => event.start_time.strftime("%H:%M")})
+                                                                                           ^^^^^^^
+app/helpers/pages_helper.rb:24:100: C: Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+                event_titles.push({:name => event.name, :time => event.start_time.strftime("%H:%M")})
+                                                                                                   ^
+app/helpers/pages_helper.rb:30:5: C: Layout/AccessModifierIndentation: Indent access modifiers like private.
+    private 
+    ^^^^^^^
+app/helpers/pages_helper.rb:30:5: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+    private 
+    ^^^^^^^
+app/helpers/pages_helper.rb:30:12: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+    private 
+           ^
+app/helpers/pages_helper.rb:31:1: C: Layout/IndentationWidth: Use 2 (not 8) spaces for indentation.
+        def event_exists?(event, date)
+^^^^^^^^
+app/helpers/pages_helper.rb:31:9: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+        def event_exists?(event, date) ...
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/pages_helper.rb:33:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            if (event.start_time.to_date <= date.to_date) &&
+        ^^^^
+app/helpers/pages_helper.rb:35:13: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
+               true
+            ^^^
+app/helpers/pages_helper.rb:36:17: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+            else 
+                ^
+app/helpers/pages_helper.rb:37:13: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
+               false
+            ^^^
+app/helpers/pages_helper.rb:38:16: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+            end 
+               ^
+app/helpers/pages_helper.rb:40:1: C: Layout/EmptyLinesAroundModuleBody: Extra empty line detected at module body end.
+app/helpers/pages_helper.rb:42:1: C: Layout/TrailingEmptyLines: 2 trailing blank lines detected.
+app/helpers/posts_helper.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+module PostsHelper ...
+^^^^^^^^^^^^^^^^^^
+app/helpers/posts_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module PostsHelper
+^^^^^^
+app/helpers/posts_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module PostsHelper
+^
+app/helpers/twitter_followers_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module TwitterFollowersHelper
+^^^^^^
+app/helpers/twitter_followers_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module TwitterFollowersHelper
+^
+app/helpers/twitter_followers_helper.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def followers(max)
+^^^^
+app/helpers/twitter_followers_helper.rb:3:7: C: Layout/LeadingCommentSpace: Missing space after #.
+      #twitter.friends(current_user).take(max)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/twitter_followers_helper.rb:6:5: C: Layout/AccessModifierIndentation: Indent access modifiers like private.
+    private
+    ^^^^^^^
+app/helpers/twitter_followers_helper.rb:6:5: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+    private
+    ^^^^^^^
+app/helpers/twitter_followers_helper.rb:7:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def twitter
+^^^^
+app/helpers/twitter_followers_helper.rb:9:31: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        config.consumer_key = "Quk3tKWVBQO9WpFYzkKapByk7"
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/twitter_followers_helper.rb:10:34: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        config.consumer_secret = "UmihME0PcC4xMy9nfobjOMOZzLlsyemYubJoy5v5scXcVEPdRw"
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/twitter_followers_helper.rb:11:31: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        config.access_token = "731809789659877376-cC4GZHbgbRv3cMyXCghNyVG6GfuzD5k"
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/twitter_followers_helper.rb:12:36: C: Layout/SpaceAroundOperators: Surrounding space missing for operator =.
+        config.access_token_secret ="iZllloyKwDU3morSt670oCJ2LZ4vp5NiRlOBgFSrvOLuu"
+                                   ^
+app/helpers/twitter_followers_helper.rb:12:37: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        config.access_token_secret ="iZllloyKwDU3morSt670oCJ2LZ4vp5NiRlOBgFSrvOLuu"
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/users_helper.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+module UsersHelper ...
+^^^^^^^^^^^^^^^^^^
+app/helpers/users_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module UsersHelper
+^^^^^^
+app/helpers/users_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module UsersHelper
+^
+app/jobs/application_job.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class ApplicationJob < ActiveJob::Base ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/jobs/application_job.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationJob < ActiveJob::Base
+^
+app/mailers/application_mailer.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class ApplicationMailer < ActionMailer::Base ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/application_mailer.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class ApplicationMailer < ActionMailer::Base
+^^^^^
+app/mailers/application_mailer.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationMailer < ActionMailer::Base
+^
+app/mailers/user_mailer.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class UserMailer < ApplicationMailer
+^^^^^
+app/mailers/user_mailer.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class UserMailer < ApplicationMailer
+^
+app/mailers/user_mailer.rb:2:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body beginning.
+app/mailers/user_mailer.rb:3:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def remind(user)
+^^^^
+app/mailers/user_mailer.rb:3:5: C: Metrics/AbcSize: Assignment Branch Condition size for remind is too high. [<4, 16, 2> 16.61/15]
+    def remind(user) ...
+    ^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:7:22: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        @text_html = "おはようございます。"+ @user.username + "さん。本日は以下の予定があります。<br>"
+                     ^^^^^^^^^^^^
+app/mailers/user_mailer.rb:7:34: C: Layout/SpaceAroundOperators: Surrounding space missing for operator +.
+        @text_html = "おはようございます。"+ @user.username + "さん。本日は以下の予定があります。<br>"
+                                 ^
+app/mailers/user_mailer.rb:7:53: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        @text_html = "おはようございます。"+ @user.username + "さん。本日は以下の予定があります。<br>"
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:9:25: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+          @text_html += "予定名：" + e.name + "     開始時間：" + e.start_time.to_s + "<br>"
+                        ^^^^^^
+app/mailers/user_mailer.rb:9:43: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+          @text_html += "予定名：" + e.name + "     開始時間：" + e.start_time.to_s + "<br>"
+                                          ^^^^^^^^^^^^
+app/mailers/user_mailer.rb:9:78: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+          @text_html += "予定名：" + e.name + "     開始時間：" + e.start_time.to_s + "<br>"
+                                                                             ^^^^^^
+app/mailers/user_mailer.rb:11:18: C: Style/RedundantInterpolation: Prefer to_s over string interpolation.
+        mail to: "#{@user.email}", subject: "[Yotei-App] 本日の予定"
+                 ^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:11:45: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        mail to: "#{@user.email}", subject: "[Yotei-App] 本日の予定"
+                                            ^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:13:8: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+    end 
+       ^
+app/mailers/user_mailer.rb:15:5: C: Layout/AccessModifierIndentation: Indent access modifiers like private.
+    private
+    ^^^^^^^
+app/mailers/user_mailer.rb:15:5: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+    private
+    ^^^^^^^
+app/mailers/user_mailer.rb:16:1: C: Layout/IndentationWidth: Use 2 (not 6) spaces for indentation.
+      def has_recent_events?(user_id)
+^^^^^^
+app/mailers/user_mailer.rb:16:7: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+      def has_recent_events?(user_id) ...
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:16:11: C: Naming/PredicateName: Rename has_recent_events? to recent_events?.
+      def has_recent_events?(user_id)
+          ^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:17:21: C: Rails/Date: Do not use Date.today without zone. Use Time.zone.today instead.
+        date = Date.today
+                    ^^^^^
+app/mailers/user_mailer.rb:19:14: C: Layout/MultilineMethodCallIndentation: Align .where with .eager_load on line 18.
+             .where("events.user_id = ? OR participants.user_id = ?", user_id, user_id)
+             ^^^^^^
+app/mailers/user_mailer.rb:19:21: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+             .where("events.user_id = ? OR participants.user_id = ?", user_id, user_id)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:20:14: C: Layout/MultilineMethodCallIndentation: Align .where with .eager_load on line 18.
+             .where("events.start_time::text LIKE ?",  "#{date.year}-#{prefix(date.month)}-#{prefix(date.day)}%")
+             ^^^^^^
+app/mailers/user_mailer.rb:20:21: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+             .where("events.start_time::text LIKE ?",  "#{date.year}-#{prefix(date.month)}-#{prefix(date.day)}%")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:20:54: C: Layout/ExtraSpacing: Unnecessary spacing detected.
+             .where("events.start_time::text LIKE ?",  "#{date.year}-#{prefix(date.month)}-#{prefix(date.day)}%")
+                                                     ^
+app/mailers/user_mailer.rb:22:7: C: Layout/AccessModifierIndentation: Indent access modifiers like private.
+      private
+      ^^^^^^^
+app/mailers/user_mailer.rb:22:7: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+      private
+      ^^^^^^^
+app/mailers/user_mailer.rb:22:7: W: Lint/UselessAccessModifier: Useless private access modifier.
+      private
+      ^^^^^^^
+app/mailers/user_mailer.rb:26:1: C: Layout/IndentationWidth: Use 2 (not 6) spaces for indentation.
+      def prefix(num)
+^^^^^^
+app/mailers/user_mailer.rb:26:7: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+      def prefix(num) ...
+      ^^^^^^^^^^^^^^^
+app/mailers/user_mailer.rb:28:11: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+          "0" + num.to_s
+          ^^^
+app/mailers/user_mailer.rb:34:1: C: Layout/TrailingEmptyLines: 1 trailing blank lines detected.
+app/models/ability.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+class Ability
+^^^^^
+app/models/ability.rb:7:5: C: Style/GuardClause: Use a guard clause (return unless user.try(:admin?)) instead of wrapping the code inside a conditional expression.
+    if user.try(:admin?)
+    ^^
+app/models/application_record.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class ApplicationRecord < ActiveRecord::Base ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/application_record.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class ApplicationRecord < ActiveRecord::Base
+^^^^^
+app/models/application_record.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationRecord < ActiveRecord::Base
+^
+app/models/event.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# "Event" is the model of an event. 
+^
+app/models/event.rb:1:36: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+# "Event" is the model of an event. 
+                                   ^
+app/models/event.rb:7:23: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+#   location:   string 
+                      ^
+app/models/event.rb:9:1: C: Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+has_many :participants
+
+app/models/event.rb:9:1: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
+has_many :participants
+^^^^^^^^
+app/models/event.rb:10:1: C: Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+has_many :users, through: :participants
+
+app/models/event.rb:11:1: C: Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+has_many :posts, dependent: :destroy
+
+app/models/event.rb:13:1: C: Layout/IndentationWidth: Use 2 (not 0) spaces for indentation.
+validate :date_cannot_be_in_past, :start_date_cannot_be_bigger_than_end_date
+
+app/models/event.rb:15:51: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+  # This is a method that approve the participant. 
+                                                  ^
+app/models/event.rb:16:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+  def self.add_user(id, user_id) ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/event.rb:17:5: C: Style/GuardClause: Use a guard clause (return unless Participant.where(event_id: id, user_id: user_id).empty?) instead of wrapping the code inside a conditional expression.
+    if Participant.where(event_id: id, user_id: user_id).empty?
+    ^^
+app/models/event.rb:17:5: C: Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if Participant.where(event_id: id, user_id: user_id).empty?
+    ^^
+app/models/event.rb:22:50: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+  # This is a method that delete the participant. 
+                                                 ^
+app/models/event.rb:23:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+  def self.delete_user(id, user_id) ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/event.rb:25:5: C: Style/GuardClause: Use a guard clause (return unless p != nil) instead of wrapping the code inside a conditional expression.
+    if p != nil
+    ^^
+app/models/event.rb:25:5: C: Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if p != nil
+    ^^
+app/models/event.rb:25:10: C: Style/NonNilCheck: Prefer !expression.nil? over expression != nil.
+    if p != nil
+         ^^
+app/models/event.rb:26:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        Participant.destroy(p.id)
+    ^^^^
+app/models/event.rb:30:3: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private 
+  ^^^^^^^
+app/models/event.rb:30:10: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+  private 
+         ^
+app/models/event.rb:32:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def date_cannot_be_in_past
+^^^^
+app/models/event.rb:32:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    def date_cannot_be_in_past ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/event.rb:33:7: C: Style/GuardClause: Use a guard clause (return unless self.start_time < Date.today || self.end_time < Date.today) instead of wrapping the code inside a conditional expression.
+      if self.start_time < Date.today || self.end_time < Date.today
+      ^^
+app/models/event.rb:33:7: C: Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+      if self.start_time < Date.today || self.end_time < Date.today
+      ^^
+app/models/event.rb:33:10: C: Style/RedundantSelf: Redundant self detected.
+      if self.start_time < Date.today || self.end_time < Date.today
+         ^^^^^^^^^^^^^^^
+app/models/event.rb:33:33: C: Rails/Date: Do not use Date.today without zone. Use Time.zone.today instead.
+      if self.start_time < Date.today || self.end_time < Date.today
+                                ^^^^^
+app/models/event.rb:33:42: C: Style/RedundantSelf: Redundant self detected.
+      if self.start_time < Date.today || self.end_time < Date.today
+                                         ^^^^^^^^^^^^^
+app/models/event.rb:33:63: C: Rails/Date: Do not use Date.today without zone. Use Time.zone.today instead.
+      if self.start_time < Date.today || self.end_time < Date.today
+                                                              ^^^^^
+app/models/event.rb:34:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        errors.add(:past_date, "過去の日付は指定できません")
+                               ^^^^^^^^^^^^^^^
+app/models/event.rb:39:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def start_date_cannot_be_bigger_than_end_date
+^^^^
+app/models/event.rb:39:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    def start_date_cannot_be_bigger_than_end_date ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/event.rb:40:7: C: Style/GuardClause: Use a guard clause (return unless self.start_time > self.end_time) instead of wrapping the code inside a conditional expression.
+      if self.start_time > self.end_time
+      ^^
+app/models/event.rb:40:7: C: Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+      if self.start_time > self.end_time
+      ^^
+app/models/event.rb:40:10: C: Style/RedundantSelf: Redundant self detected.
+      if self.start_time > self.end_time
+         ^^^^^^^^^^^^^^^
+app/models/event.rb:40:28: C: Style/RedundantSelf: Redundant self detected.
+      if self.start_time > self.end_time
+                           ^^^^^^^^^^^^^
+app/models/event.rb:41:38: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        errors.add(:date_validation, "開始日時は終了日時より前に設定する必要があります")
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/event.rb:45:1: C: Layout/EmptyLines: Extra blank line detected.
+app/models/event.rb:46:1: C: Layout/EmptyLines: Extra blank line detected.
+app/models/event.rb:46:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+app/models/friend.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# "Friend" is the intermidiate model between the model one "user" and another "user". 
+^
+app/models/friend.rb:1:86: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+# "Friend" is the intermidiate model between the model one "user" and another "user". 
+                                                                                     ^
+app/models/friend.rb:4:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    belongs_to :follower, class_name: 'User'
+^^^^
+app/models/friend.rb:5:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    belongs_to :followed, class_name: 'User'
+^^^^
+app/models/participant.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# "Participant" is the intermidiate model between the model "event" and "user". 
+^
+app/models/participant.rb:1:80: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+# "Participant" is the intermidiate model between the model "event" and "user". 
+                                                                               ^
+app/models/participant.rb:4:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    belongs_to :event, optional: true
+^^^^
+app/models/participant.rb:5:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    belongs_to :user, optional: true
+^^^^
+app/models/post.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# "Post" is the model of comment of an event.  ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/post.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# "Post" is the model of comment of an event. 
+^
+app/models/post.rb:1:46: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+# "Post" is the model of comment of an event. 
+                                             ^
+app/models/post.rb:7:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    belongs_to :event
+^^^^
+app/models/post.rb:9:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    validates :content, presence: true
+^^^^
+app/models/post.rb:10:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    validates :content, length: {minimum: Settings.post.content.min_length}
+^^^^
+app/models/post.rb:10:33: C: Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+    validates :content, length: {minimum: Settings.post.content.min_length}
+                                ^
+app/models/post.rb:10:75: C: Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+    validates :content, length: {minimum: Settings.post.content.min_length}
+                                                                          ^
+app/models/post.rb:11:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    validates :content, length: {maximum: Settings.post.content.max_length}
+^^^^
+app/models/post.rb:11:33: C: Layout/SpaceInsideHashLiteralBraces: Space inside { missing.
+    validates :content, length: {maximum: Settings.post.content.max_length}
+                                ^
+app/models/post.rb:11:75: C: Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+    validates :content, length: {maximum: Settings.post.content.max_length}
+                                                                          ^
+app/models/user.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class User < ApplicationRecord
+^^^^^
+app/models/user.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class User < ApplicationRecord
+^
+app/models/user.rb:2:3: C: Rails/InverseOf: Specify an :inverse_of option.
+  has_many :friends, class_name:  "Friend",
+  ^^^^^^^^
+app/models/user.rb:2:22: C: Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+  has_many :friends, class_name:  "Friend",
+                     ^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:2:35: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  has_many :friends, class_name:  "Friend",
+                                  ^^^^^^^^
+app/models/user.rb:3:35: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                     foreign_key: "follower_id",
+                                  ^^^^^^^^^^^^^
+app/models/user.rb:4:22: C: Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+                     dependent:   :destroy
+                     ^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:7:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/models/user.rb:9:3: C: Rails/HasManyOrHasOneDependent: Specify a :dependent option.
+  has_many :participants
+  ^^^^^^^^
+app/models/user.rb:11:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/models/user.rb:16:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/models/user.rb:21:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
+  def self.find_for_oauth(auth) ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:22:17: C: Rails/FindBy: Use find_by instead of where.first.
+    user = User.where(uid: auth.uid, provider: auth.provider).first
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:23:5: C: Style/OrAssignment: Use the double pipe equals operator ||= instead.
+    unless user ...
+    ^^^^^^^^^^^
+app/models/user.rb:24:5: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
+       user = User.create(
+    ^^^
+app/models/user.rb:25:9: C: Layout/FirstArgumentIndentation: Indent the first argument one step more than the start of the previous line.
+        uid: auth.uid, ...
+        ^^^^^^^^^^^^^^
+app/models/user.rb:28:9: C: Layout/HashAlignment: Align the keys of a hash literal if they span more than one line.
+        email:    User.dummy_email(auth),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:29:47: C: Style/TrailingCommaInArguments: Avoid comma after the last parameter of a method call.
+        password: Devise.friendly_token[0, 20],
+                                              ^
+app/models/user.rb:37:8: C: Style/RedundantParentheses: Don't use parentheses around a method call.
+    if (Friend.where(follower_id: follower_id, followed_id: followed_id).empty?)&&
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:37:81: C: Layout/SpaceAroundOperators: Surrounding space missing for operator &&.
+    if (Friend.where(follower_id: follower_id, followed_id: followed_id).empty?)&&
+                                                                                ^^
+app/models/user.rb:38:8: C: Style/RedundantParentheses: Don't use parentheses around a method call.
+       (Friend.where(follower_id: followed_id, followed_id: follower_id).empty?)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:44:3: C: Style/EmptyMethod: Put empty method definitions on a single line.
+  def self.unfollow ...
+  ^^^^^^^^^^^^^^^^^
+app/models/user.rb:49:35: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    User.find(id).following.where("friends.\"IsApproved\" = ?", true)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:58:12: C: Naming/PredicateName: Rename is_approved? to approved?.
+  def self.is_approved?(self_id, friend_id)
+           ^^^^^^^^^^^^
+app/models/user.rb:68:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+app/models/user.rb:69:3: C: Layout/EmptyLinesAroundAccessModifier: Keep a blank line before and after private.
+  private 
+  ^^^^^^^
+app/models/user.rb:69:3: W: Lint/UselessAccessModifier: Useless private access modifier.
+  private 
+  ^^^^^^^
+app/models/user.rb:69:10: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+  private 
+         ^
+app/models/user.rb:70:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def self.dummy_email(auth)
+^^^^
+app/models/user.rb:70:5: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+    def self.dummy_email(auth) ...
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:70:5: W: Lint/IneffectiveAccessModifier: private (on line 69) does not make singleton methods private. Use private_class_method or private inside a class << self block instead.
+    def self.dummy_email(auth)
+    ^^^
+app/models/user.rb:73:1: C: Layout/EndOfLine: Carriage return character missing.
+end
+^^^
+app/models/user.rb:73:4: C: Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+app/uploaders/img_uploader.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class ImgUploader < CarrierWave::Uploader::Base ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/uploaders/img_uploader.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class ImgUploader < CarrierWave::Uploader::Base
+^^^^^
+app/uploaders/img_uploader.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ImgUploader < CarrierWave::Uploader::Base
+^
+bin/bundle:1:1: C: Layout/EndOfLine: Carriage return character missing.
+#!/usr/bin/env ruby.exe ...
+^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby.exe
+^
+bin/rails:1:1: C: Layout/EndOfLine: Carriage return character missing.
+#!/usr/bin/env ruby.exe ...
+^^^^^^^^^^^^^^^^^^^^^^^
+bin/rails:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby.exe
+^
+bin/rake:1:1: C: Layout/EndOfLine: Carriage return character missing.
+#!/usr/bin/env ruby.exe ...
+^^^^^^^^^^^^^^^^^^^^^^^
+bin/rake:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby.exe
+^
+bin/rspec:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/rspec:3:13: C: Style/ExpandPathArguments: Use expand_path('spring', __dir__) instead of expand_path('../spring', __FILE__).
+  load File.expand_path('../spring', __FILE__)
+            ^^^^^^^^^^^
+bin/setup:1:1: C: Layout/EndOfLine: Carriage return character missing.
+#!/usr/bin/env ruby.exe ...
+^^^^^^^^^^^^^^^^^^^^^^^
+bin/setup:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby.exe
+^
+bin/setup:3:1: C: Style/MixinUsage: include is used at the top level. Use inside class or module.
+include FileUtils
+^^^^^^^^^^^^^^^^^
+bin/spring:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/update:1:1: C: Layout/EndOfLine: Carriage return character missing.
+#!/usr/bin/env ruby.exe ...
+^^^^^^^^^^^^^^^^^^^^^^^
+bin/update:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby.exe
+^
+bin/update:3:1: C: Style/MixinUsage: include is used at the top level. Use inside class or module.
+include FileUtils
+^^^^^^^^^^^^^^^^^
+bin/yarn:1:1: C: Layout/EndOfLine: Carriage return character missing.
+#!/usr/bin/env ruby.exe ...
+^^^^^^^^^^^^^^^^^^^^^^^
+bin/yarn:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby.exe
+^
+bin/yarn:4:3: C: Style/RedundantBegin: Redundant begin block detected.
+  begin
+  ^^^^^
+bin/yarn:5:10: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    exec "yarnpkg", *ARGV
+         ^^^^^^^^^
+bin/yarn:7:5: C: Style/StderrPuts: Use warn instead of $stderr.puts to allow such output to be disabled.
+    $stderr.puts "Yarn executable was not detected in the system."
+    ^^^^^^^^^^^^
+bin/yarn:7:18: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    $stderr.puts "Yarn executable was not detected in the system."
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/yarn:8:5: C: Style/StderrPuts: Use warn instead of $stderr.puts to allow such output to be disabled.
+    $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
+    ^^^^^^^^^^^^
+bin/yarn:8:18: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config.ru:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# This file is used by Rack-based servers to start the application. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config.ru:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file is used by Rack-based servers to start the application.
+^
+config/application.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+require_relative 'boot' ...
+^^^^^^^^^^^^^^^^^^^^^^^
+config/application.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require_relative 'boot'
+^
+config/application.rb:12:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Application < Rails::Application
+  ^^^^^
+config/boot.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__) ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/boot.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
+^
+config/environment.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Load the Rails application. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environment.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Load the Rails application.
+^
+config/environments/development.rb:1:1: C: Metrics/BlockLength: Block has too many lines. [32/25]
+Rails.application.configure do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/development.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+Rails.application.configure do
+^
+config/environments/development.rb:17:6: C: Rails/FilePath: Please use Rails.root.join('path/to') instead.
+  if Rails.root.join('tmp', 'caching-dev.txt').exist?
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/development.rb:40:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :enable_starttls_auto => true,
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/development.rb:41:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :address => "smtp.gmail.com",
+    ^^^^^^^^^^^
+config/environments/development.rb:41:17: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    :address => "smtp.gmail.com",
+                ^^^^^^^^^^^^^^^^
+config/environments/development.rb:42:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :port => 587,
+    ^^^^^^^^
+config/environments/development.rb:43:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :domain => 'smtp.gmail.com',
+    ^^^^^^^^^^
+config/environments/development.rb:44:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :user_name => Settings.gmail[:user_name], #gmailアドレス
+    ^^^^^^^^^^^^^
+config/environments/development.rb:44:47: C: Layout/LeadingCommentSpace: Missing space after #.
+    :user_name => Settings.gmail[:user_name], #gmailアドレス
+                                              ^^^^^^^^^^
+config/environments/development.rb:45:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :password => Settings.gmail[:password], #gmailパスワード
+    ^^^^^^^^^^^^
+config/environments/development.rb:45:45: C: Layout/LeadingCommentSpace: Missing space after #.
+    :password => Settings.gmail[:password], #gmailパスワード
+                                            ^^^^^^^^^^^
+config/environments/development.rb:46:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :authentication => 'login',
+    ^^^^^^^^^^^^^^^^^^
+config/environments/development.rb:46:31: C: Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.
+    :authentication => 'login',
+                              ^
+config/environments/development.rb:71:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+config/environments/production.rb:1:1: C: Metrics/BlockLength: Block has too many lines. [34/25]
+Rails.application.configure do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+Rails.application.configure do
+^
+config/environments/production.rb:57:22: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+  config.log_tags = [ :request_id ]
+                     ^
+config/environments/production.rb:57:34: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+  config.log_tags = [ :request_id ]
+                                 ^
+config/environments/production.rb:72:106: C: Layout/SpaceInsideHashLiteralBraces: Space inside } missing.
+  config.action_mailer.default_url_options = { host: 'yotei-app-1241210.herokuapp.com', protocol: 'https'}
+                                                                                                         ^
+config/environments/production.rb:75:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :enable_starttls_auto => true,
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:76:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :address => "smtp.gmail.com",
+    ^^^^^^^^^^^
+config/environments/production.rb:76:17: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    :address => "smtp.gmail.com",
+                ^^^^^^^^^^^^^^^^
+config/environments/production.rb:77:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :port => 587,
+    ^^^^^^^^
+config/environments/production.rb:78:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :domain => 'gmail.com',
+    ^^^^^^^^^^
+config/environments/production.rb:79:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :user_name => ENV['GMAIL_USERNAME'], #gmailアドレス
+    ^^^^^^^^^^^^^
+config/environments/production.rb:79:42: C: Layout/LeadingCommentSpace: Missing space after #.
+    :user_name => ENV['GMAIL_USERNAME'], #gmailアドレス
+                                         ^^^^^^^^^^
+config/environments/production.rb:80:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :password => ENV['GMAIL_PASSWORD'], #gmailパスワード
+    ^^^^^^^^^^^^
+config/environments/production.rb:80:41: C: Layout/LeadingCommentSpace: Missing space after #.
+    :password => ENV['GMAIL_PASSWORD'], #gmailパスワード
+                                        ^^^^^^^^^^^
+config/environments/production.rb:81:5: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    :authentication => 'login',
+    ^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:81:31: C: Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.
+    :authentication => 'login',
+                              ^
+config/environments/production.rb:97:10: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+         ^^^^^^^^^^^^^^^^^^^^^
+config/environments/test.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+Rails.application.configure do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+Rails.application.configure do
+^
+config/environments/test.rb:42:1: C: Layout/EmptyLines: Extra blank line detected.
+config/initializers/application_controller_renderer.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Be sure to restart your server when you modify this file. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/application_controller_renderer.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/assets.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Be sure to restart your server when you modify this file. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/assets.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/backtrace_silencers.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Be sure to restart your server when you modify this file. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/backtrace_silencers.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/carrierwave.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'carrierwave/storage/abstract'
+^
+config/initializers/carrierwave.rb:13:55: C: Style/TrailingCommaInHashLiteral: Avoid comma after the last item of a hash.
+      aws_secret_access_key: ENV['AWS_IAM_ACCESS_KEY'],
+                                                      ^
+config/initializers/carrierwave.rb:15:25: C: Layout/ExtraSpacing: Unnecessary spacing detected.
+    config.fog_directory     =  ENV['AWS_S3_BUCKET']
+                        ^^^^
+config/initializers/carrierwave.rb:15:30: C: Layout/SpaceAroundOperators: Operator = should be surrounded by a single space.
+    config.fog_directory     =  ENV['AWS_S3_BUCKET']
+                             ^
+config/initializers/carrierwave.rb:15:31: C: Layout/ExtraSpacing: Unnecessary spacing detected.
+    config.fog_directory     =  ENV['AWS_S3_BUCKET']
+                              ^
+config/initializers/carrierwave.rb:21:1: C: Layout/EndOfLine: Carriage return character missing.
+end
+^^^
+config/initializers/carrierwave.rb:21:4: C: Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+config/initializers/config.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+Config.setup do |config|
+^
+config/initializers/config.rb:54:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+config/initializers/content_security_policy.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Be sure to restart your server when you modify this file. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/content_security_policy.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/cookies_serializer.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Be sure to restart your server when you modify this file. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/cookies_serializer.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/devise.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:11:121: C: Layout/LineLength: Line is too long. [154/120]
+  # config.secret_key = '47a4244d57c78f576d618f59905cfabcc12ccf22275ffe444db2dcd9f61262aeeaf6fef73811c7cde944d75bb6d8cf62ab507a29b03ff29be70ad299b30e33a3'
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:117:121: C: Layout/LineLength: Line is too long. [150/120]
+  # config.pepper = 'fa583a9c5980f70783ab5d456af289e774ed66ec35f9f65553158142fc478f157e64d9e2e1c05366aec48749eda4ba278999a391ad397465c4e2049f2c1ae0e4'
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:300:29: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  config.omniauth :twitter, "Quk3tKWVBQO9WpFYzkKapByk7", "UmihME0PcC4xMy9nfobjOMOZzLlsyemYubJoy5v5scXcVEPdRw", scope: 'email', callback_url: 'http://localhost:3000/users/auth/twitter/callback'
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:300:58: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  config.omniauth :twitter, "Quk3tKWVBQO9WpFYzkKapByk7", "UmihME0PcC4xMy9nfobjOMOZzLlsyemYubJoy5v5scXcVEPdRw", scope: 'email', callback_url: 'http://localhost:3000/users/auth/twitter/callback'
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:300:121: C: Layout/LineLength: Line is too long. [192/120]
+  config.omniauth :twitter, "Quk3tKWVBQO9WpFYzkKapByk7", "UmihME0PcC4xMy9nfobjOMOZzLlsyemYubJoy5v5scXcVEPdRw", scope: 'email', callback_url: 'http://localhost:3000/users/auth/twitter/callback'
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:301:26: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  config.mailer_sender = "kikuchi.k.0112@gmail.com"
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/filter_parameter_logging.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Be sure to restart your server when you modify this file. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/filter_parameter_logging.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/inflections.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Be sure to restart your server when you modify this file. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/inflections.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/kaminari.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+Kaminari.configure do |config|
+^
+config/initializers/kaminari.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    config.page_method_name = :per_page_kaminari
+^^^^
+config/initializers/kaminari.rb:3:1: C: Layout/EndOfLine: Carriage return character missing.
+end 
+^^^^
+config/initializers/kaminari.rb:3:4: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+end 
+   ^
+config/initializers/kaminari.rb:3:5: C: Layout/TrailingEmptyLines: Final newline missing.
+end 
+    
+config/initializers/mime_types.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Be sure to restart your server when you modify this file. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/mime_types.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/rails_admin.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+RailsAdmin.config do |config|
+^
+config/initializers/rails_admin.rb:2:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+config/initializers/rails_admin.rb:5:3: C: Layout/CommentIndentation: Incorrect indentation detected (column 2 instead of 3).
+  ## == Devise ==
+  ^^^^^^^^^^^^^^^
+config/initializers/rails_admin.rb:6:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
+   config.authenticate_with do
+^^^
+config/initializers/rails_admin.rb:11:3: C: Layout/CommentIndentation: Incorrect indentation detected (column 2 instead of 3).
+  ## == CancanCan ==
+  ^^^^^^^^^^^^^^^^^^
+config/initializers/rails_admin.rb:26:3: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+  config.actions do ...
+  ^^^^^^^^^^^^^^^^^
+config/initializers/will_pagenatel.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+if defined?(WillPaginate)
+^
+config/initializers/will_pagenatel.rb:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    module WillPaginate
+^^^^
+config/initializers/will_pagenatel.rb:4:9: C: Style/Documentation: Missing top-level module documentation comment.
+        module RelationMethods
+        ^^^^^^
+config/initializers/will_pagenatel.rb:5:11: C: Style/SingleLineMethods: Avoid single-line method definitions.
+          def per(value = nil) per_page(value) end
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/will_pagenatel.rb:6:11: C: Layout/EmptyLineBetweenDefs: Use empty lines between method definitions.
+          def total_count() count end
+          ^^^^^^^^^^^^^^^
+config/initializers/will_pagenatel.rb:6:11: C: Style/SingleLineMethods: Avoid single-line method definitions.
+          def total_count() count end
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/will_pagenatel.rb:9:7: C: Style/Documentation: Missing top-level module documentation comment.
+      module CollectionMethods
+      ^^^^^^
+config/initializers/will_pagenatel.rb:10:9: C: Style/Alias: Use alias instead of alias_method in a module body.
+        alias_method :num_pages, :total_pages
+        ^^^^^^^^^^^^
+config/initializers/will_pagenatel.rb:13:1: C: Layout/EndOfLine: Carriage return character missing.
+  end 
+^^^^^^
+config/initializers/will_pagenatel.rb:13:3: W: Layout/EndAlignment: end at 13, 2 is not aligned with if at 1, 0.
+  end 
+  ^^^
+config/initializers/will_pagenatel.rb:13:6: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+  end 
+     ^
+config/initializers/will_pagenatel.rb:13:7: C: Layout/TrailingEmptyLines: Final newline missing.
+  end 
+      
+config/initializers/wrap_parameters.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Be sure to restart your server when you modify this file. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/wrap_parameters.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/puma.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# Puma can serve each request in a thread from an internal thread pool. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/puma.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Puma can serve each request in a thread from an internal thread pool.
+^
+config/puma.rb:7:27: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
+                          ^^^^^^^^^^^^^^^^^^^
+config/puma.rb:12:23: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+port        ENV.fetch("PORT") { 3000 }
+                      ^^^^^^
+config/puma.rb:16:23: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+environment ENV.fetch("RAILS_ENV") { "development" }
+                      ^^^^^^^^^^^
+config/puma.rb:16:38: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+environment ENV.fetch("RAILS_ENV") { "development" }
+                                     ^^^^^^^^^^^^^
+config/puma.rb:19:19: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
+                  ^^^^^^^^^
+config/puma.rb:19:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
+                               ^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+Rails.application.routes.draw do
+^
+config/routes.rb:5:37: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+  devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks", confirmations: 'confirmations' }
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:5:60: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks", confirmations: 'confirmations' }
+                                                           ^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:11:27: C: Layout/SpaceAfterColon: Space missing after colon.
+  post '/users/follow', to:'users#follow'
+                          ^
+db/migrate/20200318064927_devise_create_users.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# frozen_string_literal: true ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20200318064927_devise_create_users.rb:3:1: C: Style/Documentation: Missing top-level class documentation comment.
+class DeviseCreateUsers < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20200318064927_devise_create_users.rb:4:3: C: Metrics/AbcSize: Assignment Branch Condition size for change is too high. [<0, 23, 0> 23/15]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20200318064927_devise_create_users.rb:4:3: C: Metrics/MethodLength: Method has too many lines. [24/10]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20200318064927_devise_create_users.rb:7:59: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.string :email,              null: false, default: ""
+                                                          ^^
+db/migrate/20200318064927_devise_create_users.rb:8:59: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      t.string :encrypted_password, null: false, default: ""
+                                                          ^^
+db/migrate/20200318064927_devise_create_users.rb:35:1: C: Layout/EmptyLines: Extra blank line detected.
+db/migrate/20200318100832_add_columns_to_users.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class AddColumnsToUsers < ActiveRecord::Migration[5.2] ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20200318100832_add_columns_to_users.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddColumnsToUsers < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20200318100832_add_columns_to_users.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddColumnsToUsers < ActiveRecord::Migration[5.2]
+^
+db/migrate/20200318100832_add_columns_to_users.rb:3:5: C: Rails/BulkChangeTable: You can use change_table :users, bulk: true to combine alter queries.
+    add_column :users, :provider, :string
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20200318152147_create_events.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class CreateEvents < ActiveRecord::Migration[5.2] ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20200318152147_create_events.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CreateEvents < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20200318152147_create_events.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateEvents < ActiveRecord::Migration[5.2]
+^
+db/migrate/20200318163019_add_abstract_to_event.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class AddAbstractToEvent < ActiveRecord::Migration[5.2] ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20200318163019_add_abstract_to_event.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddAbstractToEvent < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20200318163019_add_abstract_to_event.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddAbstractToEvent < ActiveRecord::Migration[5.2]
+^
+db/migrate/20200328062429_create_friends.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CreateFriends < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20200328062429_create_friends.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateFriends < ActiveRecord::Migration[5.2]
+^
+db/migrate/20200328215824_create_participants.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class CreateParticipants < ActiveRecord::Migration[5.2] ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20200328215824_create_participants.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CreateParticipants < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20200328215824_create_participants.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreateParticipants < ActiveRecord::Migration[5.2]
+^
+db/migrate/20200330062118_create_posts.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class CreatePosts < ActiveRecord::Migration[5.2] ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20200330062118_create_posts.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class CreatePosts < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20200330062118_create_posts.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class CreatePosts < ActiveRecord::Migration[5.2]
+^
+db/migrate/20200501093112_add_img_to_users.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+class AddImgToUsers < ActiveRecord::Migration[5.2] ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20200501093112_add_img_to_users.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddImgToUsers < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20200501093112_add_img_to_users.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddImgToUsers < ActiveRecord::Migration[5.2]
+^
+db/migrate/20200502051340_add_admin_to_users.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class AddAdminToUsers < ActiveRecord::Migration[5.2]
+^^^^^
+db/migrate/20200502051340_add_admin_to_users.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class AddAdminToUsers < ActiveRecord::Migration[5.2]
+^
+db/seeds.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+# This file should contain all the record creation needed to seed the database with its default values. ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file should contain all the record creation needed to seed the database with its default values.
+^
+lib/tasks/remind.rake:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+namespace :remind do
+^
+lib/tasks/remind.rake:2:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    desc '挨拶するメールを発行する。'
+^^^^
+lib/tasks/remind.rake:3:10: C: Style/HashSyntax: Use the new Ruby 1.9 hash syntax.
+    task :remind => :environment do
+         ^^^^^^^^^^
+lib/tasks/remind.rake:4:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        User.all.each do |user|
+    ^^^^
+lib/tasks/remind.rake:5:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            UserMailer.remind(user).deliver
+        ^^^^
+spec/controllers/pages_controller_spec.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+require 'rails_helper' ...
+^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/controllers/pages_controller_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [49/25]
+RSpec.describe PagesController, type: :controller do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:5:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    describe "GET show" do
+^^^^
+spec/controllers/pages_controller_spec.rb:5:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    describe "GET show" do
+             ^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:7:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        context "When a user dosen't log in" do
+    ^^^^
+spec/controllers/pages_controller_spec.rb:8:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            before do
+        ^^^^
+spec/controllers/pages_controller_spec.rb:9:13: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                get :show
+            ^^^^
+spec/controllers/pages_controller_spec.rb:12:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+            it "should return http 302 status" do
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:13:13: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                expect(response.status).to eq 302
+            ^^^^
+spec/controllers/pages_controller_spec.rb:16:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+            it "should resirect to signup page" do
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:17:13: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                expect(response).to redirect_to new_user_session_path
+            ^^^^
+spec/controllers/pages_controller_spec.rb:21:17: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        context "When a user has logged in" do
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:22:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            let(:user) { create(:user) }
+        ^^^^
+spec/controllers/pages_controller_spec.rb:25:13: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                allow_any_instance_of(ApplicationController).to receive(:current_user) { user }
+            ^^^^
+spec/controllers/pages_controller_spec.rb:29:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+            it "should return http 200 status" do
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:30:13: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                expect(response.status).to eq 200
+            ^^^^
+spec/controllers/pages_controller_spec.rb:32:13: C: Layout/LeadingCommentSpace: Missing space after #.
+            #it: アウトプット -> インスタンス変数eventが存在する
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:33:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+            it "should be exist" do
+               ^^^^^^^^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:34:13: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                expect(assigns(:events).nil?).to eq false  
+            ^^^^
+spec/controllers/pages_controller_spec.rb:34:58: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+                expect(assigns(:events).nil?).to eq false  
+                                                         ^^
+spec/controllers/pages_controller_spec.rb:36:12: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+        end   
+           ^^^
+spec/controllers/pages_controller_spec.rb:37:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+spec/controllers/pages_controller_spec.rb:39:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/controllers/pages_controller_spec.rb:41:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    describe "prefix" do
+             ^^^^^^^^
+spec/controllers/pages_controller_spec.rb:43:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        context "When 0~9" do
+    ^^^^
+spec/controllers/pages_controller_spec.rb:43:17: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        context "When 0~9" do
+                ^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:45:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            it "should be prefixed" do
+        ^^^^
+spec/controllers/pages_controller_spec.rb:45:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+            it "should be prefixed" do
+               ^^^^^^^^^^^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:46:13: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                expect(PagesController.new.send(:prefix, 1)).to eq "01"
+            ^^^^
+spec/controllers/pages_controller_spec.rb:46:68: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 1)).to eq "01"
+                                                                   ^^^^
+spec/controllers/pages_controller_spec.rb:47:68: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 2)).to eq "02"
+                                                                   ^^^^
+spec/controllers/pages_controller_spec.rb:48:68: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 3)).to eq "03"
+                                                                   ^^^^
+spec/controllers/pages_controller_spec.rb:49:68: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 4)).to eq "04"
+                                                                   ^^^^
+spec/controllers/pages_controller_spec.rb:50:68: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 5)).to eq "05"
+                                                                   ^^^^
+spec/controllers/pages_controller_spec.rb:51:68: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 6)).to eq "06"
+                                                                   ^^^^
+spec/controllers/pages_controller_spec.rb:52:68: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 7)).to eq "07"
+                                                                   ^^^^
+spec/controllers/pages_controller_spec.rb:53:68: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 8)).to eq "08"
+                                                                   ^^^^
+spec/controllers/pages_controller_spec.rb:54:68: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 9)).to eq "09"
+                                                                   ^^^^
+spec/controllers/pages_controller_spec.rb:58:17: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        context "when 10~" do
+                ^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:60:9: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+            it "should NOT be prefixed" do
+        ^^^^
+spec/controllers/pages_controller_spec.rb:60:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+            it "should NOT be prefixed" do
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/pages_controller_spec.rb:61:13: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+                expect(PagesController.new.send(:prefix, 10)).to eq "10"
+            ^^^^
+spec/controllers/pages_controller_spec.rb:61:69: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 10)).to eq "10"
+                                                                    ^^^^
+spec/controllers/pages_controller_spec.rb:62:69: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 11)).to eq "11"
+                                                                    ^^^^
+spec/controllers/pages_controller_spec.rb:63:69: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+                expect(PagesController.new.send(:prefix, 12)).to eq "12"
+                                                                    ^^^^
+spec/controllers/pages_controller_spec.rb:67:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+spec/controllers/users_controller_spec.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/controllers/users_controller_spec.rb:4:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+spec/controllers/users_controller_spec.rb:5:1: C: Layout/EmptyLines: Extra blank line detected.
+spec/controllers/users_controller_spec.rb:5:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+spec/factories/event.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+FactoryBot.define do
+^
+spec/factories/event.rb:2:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+spec/factories/event.rb:4:14: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    user_id {1}
+             ^
+spec/factories/event.rb:4:15: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    user_id {1}
+              ^
+spec/factories/event.rb:5:11: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    name {"sample event"}
+          ^
+spec/factories/event.rb:5:11: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    name {"sample event"}
+          ^^^^^^^^^^^^^^
+spec/factories/event.rb:5:25: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    name {"sample event"}
+                        ^
+spec/factories/event.rb:6:17: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    start_time {"2030-1-12"}
+                ^
+spec/factories/event.rb:6:17: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    start_time {"2030-1-12"}
+                ^^^^^^^^^^^
+spec/factories/event.rb:6:28: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    start_time {"2030-1-12"}
+                           ^
+spec/factories/event.rb:7:15: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    end_time {"2030-1-17"}
+              ^
+spec/factories/event.rb:7:15: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    end_time {"2030-1-17"}
+              ^^^^^^^^^^^
+spec/factories/event.rb:7:26: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    end_time {"2030-1-17"}
+                         ^
+spec/factories/event.rb:8:15: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    location {"東京"}
+              ^
+spec/factories/event.rb:8:15: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    location {"東京"}
+              ^^^^
+spec/factories/event.rb:8:19: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    location {"東京"}
+                  ^
+spec/factories/event.rb:9:15: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    abstract {"東京"}
+              ^
+spec/factories/event.rb:9:15: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    abstract {"東京"}
+              ^^^^
+spec/factories/event.rb:9:19: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    abstract {"東京"}
+                  ^
+spec/factories/event.rb:13:14: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    user_id {1}
+             ^
+spec/factories/event.rb:13:15: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    user_id {1}
+              ^
+spec/factories/event.rb:14:11: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    name {"event"}
+          ^
+spec/factories/event.rb:14:11: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    name {"event"}
+          ^^^^^^^
+spec/factories/event.rb:14:18: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    name {"event"}
+                 ^
+spec/factories/event.rb:15:17: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    start_time {"1992-2-12"}
+                ^
+spec/factories/event.rb:15:17: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    start_time {"1992-2-12"}
+                ^^^^^^^^^^^
+spec/factories/event.rb:15:28: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    start_time {"1992-2-12"}
+                           ^
+spec/factories/event.rb:16:15: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    end_time {"1992-2-15"}
+              ^
+spec/factories/event.rb:16:15: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    end_time {"1992-2-15"}
+              ^^^^^^^^^^^
+spec/factories/event.rb:16:26: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    end_time {"1992-2-15"}
+                         ^
+spec/factories/event.rb:17:15: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    location {"東京"}
+              ^
+spec/factories/event.rb:17:15: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    location {"東京"}
+              ^^^^
+spec/factories/event.rb:17:19: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    location {"東京"}
+                  ^
+spec/factories/event.rb:18:15: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+    abstract {"東京"}
+              ^
+spec/factories/event.rb:18:15: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    abstract {"東京"}
+              ^^^^
+spec/factories/event.rb:18:19: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+    abstract {"東京"}
+                  ^
+spec/factories/event.rb:20:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+spec/factories/event.rb:21:1: C: Layout/EndOfLine: Carriage return character missing.
+end
+^^^
+spec/factories/event.rb:21:4: C: Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+spec/factories/user.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+FactoryBot.define do
+^
+spec/factories/user.rb:3:17: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+      username {"test"}
+                ^
+spec/factories/user.rb:3:17: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      username {"test"}
+                ^^^^^^
+spec/factories/user.rb:3:23: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+      username {"test"}
+                      ^
+spec/factories/user.rb:4:14: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+      email {"sample@example.com"}
+             ^
+spec/factories/user.rb:4:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      email {"sample@example.com"}
+             ^^^^^^^^^^^^^^^^^^^^
+spec/factories/user.rb:4:34: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+      email {"sample@example.com"}
+                                 ^
+spec/factories/user.rb:5:17: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+      password {"foobar"}
+                ^
+spec/factories/user.rb:5:17: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      password {"foobar"}
+                ^^^^^^^^
+spec/factories/user.rb:5:25: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+      password {"foobar"}
+                        ^
+spec/factories/user.rb:6:28: C: Layout/SpaceBeforeBlockBraces: Space missing to the left of {.
+      password_confirmation{"foobar"}
+                           ^
+spec/factories/user.rb:6:29: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+      password_confirmation{"foobar"}
+                            ^
+spec/factories/user.rb:6:29: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      password_confirmation{"foobar"}
+                            ^^^^^^^^
+spec/factories/user.rb:6:37: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+      password_confirmation{"foobar"}
+                                    ^
+spec/factories/user.rb:7:21: C: Layout/SpaceInsideBlockBraces: Space missing inside {.
+      confirmed_at {"2020-2-12"}
+                    ^
+spec/factories/user.rb:7:21: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      confirmed_at {"2020-2-12"}
+                    ^^^^^^^^^^^
+spec/factories/user.rb:7:32: C: Layout/SpaceInsideBlockBraces: Space missing inside }.
+      confirmed_at {"2020-2-12"}
+                               ^
+spec/factories/user.rb:9:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body end.
+spec/factories/user.rb:10:1: C: Layout/EndOfLine: Carriage return character missing.
+  end
+^^^^^
+spec/factories/user.rb:10:3: C: Layout/BlockAlignment: end at 10, 2 is not aligned with FactoryBot.define do at 1, 0.
+  end
+  ^^^
+spec/factories/user.rb:10:6: C: Layout/TrailingEmptyLines: Final newline missing.
+  end
+     
+spec/mailers/previews/user_mailer_preview.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Preview all emails at http://localhost:3000/rails/mailers/user_mailer
+^
+spec/mailers/previews/user_mailer_preview.rb:3:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body beginning.
+spec/mailers/user_mailer_spec.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "rails_helper"
+^
+spec/mailers/user_mailer_spec.rb:1:9: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "rails_helper"
+        ^^^^^^^^^^^^^^
+spec/models/user_spec.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/models/user_spec.rb:4:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+spec/rails_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file is copied to spec/ when you run 'rails generate rspec:install'
+^
+spec/rails_helper.rb:8:7: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+abort("The Rails environment is running in production mode!") if Rails.env.production?
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/rails_helper.rb:36:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+spec/rails_helper.rb:43:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/spec_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file was generated by the `rails generate rspec:install` command. Conventionally, all
+^
+spec/spec_helper.rb:18:14: C: Style/ExpandPathArguments: Use expand_path('../config/environment', __dir__) instead of expand_path('../../config/environment', __FILE__).
+require File.expand_path('../../config/environment', __FILE__)
+             ^^^^^^^^^^^
+spec/spec_helper.rb:22:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+spec/spec_helper.rb:56:1: C: Style/BlockComments: Do not use block comments.
+=begin ...
+^^^^^^
+spec/system/pages_spec.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'rails_helper'
+^
+spec/system/pages_spec.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [30/25]
+RSpec.feature 'Pages', type: :system do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/system/pages_spec.rb:4:1: C: Layout/EmptyLinesAroundBlockBody: Extra empty line detected at block body beginning.
+spec/system/pages_spec.rb:5:1: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+    def log_in
+^^^^
+spec/system/pages_spec.rb:6:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        @user = create(:user)
+    ^^^^
+spec/system/pages_spec.rb:13:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    scenario "ログインしてユーザページに遷移する" do
+             ^^^^^^^^^^^^^^^^^^^
+spec/system/pages_spec.rb:14:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        log_in
+    ^^^^
+spec/system/pages_spec.rb:18:14: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    scenario "新規予定を作成する" do
+             ^^^^^^^^^^^
+spec/system/pages_spec.rb:19:5: C: Layout/IndentationWidth: Use 2 (not 4) spaces for indentation.
+        log_in
+    ^^^^
+spec/system/pages_spec.rb:21:37: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        fill_in 'event_name', with: "新規予定"
+                                    ^^^^^^
+spec/system/pages_spec.rb:22:41: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        fill_in 'event_abstract', with: "概要説明"
+                                        ^^^^^^
+spec/system/pages_spec.rb:23:41: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        fill_in 'event_location', with: "場所"
+                                        ^^^^
+spec/system/pages_spec.rb:24:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        select "2021", from: 'event_start_time_1i'
+               ^^^^^^
+spec/system/pages_spec.rb:25:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        select "March", from:  'event_start_time_2i'
+               ^^^^^^^
+spec/system/pages_spec.rb:25:30: C: Layout/ExtraSpacing: Unnecessary spacing detected.
+        select "March", from:  'event_start_time_2i'
+                             ^
+spec/system/pages_spec.rb:26:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        select "7", from:  'event_start_time_3i'
+               ^^^
+spec/system/pages_spec.rb:27:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        select "12", from: 'event_start_time_4i'
+               ^^^^
+spec/system/pages_spec.rb:28:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        select "20", from: 'event_start_time_5i'
+               ^^^^
+spec/system/pages_spec.rb:29:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        select "2021", from: 'event_end_time_1i'
+               ^^^^^^
+spec/system/pages_spec.rb:30:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        select "March", from:  'event_end_time_2i'
+               ^^^^^^^
+spec/system/pages_spec.rb:30:30: C: Layout/ExtraSpacing: Unnecessary spacing detected.
+        select "March", from:  'event_end_time_2i'
+                             ^
+spec/system/pages_spec.rb:31:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        select "7", from:  'event_end_time_3i'
+               ^^^
+spec/system/pages_spec.rb:32:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        select "12", from: 'event_end_time_4i'
+               ^^^^
+spec/system/pages_spec.rb:33:16: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        select "40", from: 'event_end_time_5i'
+               ^^^^
+spec/system/pages_spec.rb:37:1: C: Layout/TrailingWhitespace: Trailing whitespace detected.
+spec/system/pages_spec.rb:38:1: C: Layout/EndOfLine: Carriage return character missing.
+end
+^^^
+spec/system/pages_spec.rb:38:4: C: Layout/TrailingEmptyLines: Final newline missing.
+end
+   
+test/application_system_test_case.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+require "test_helper" ...
+^^^^^^^^^^^^^^^^^^^^^
+test/application_system_test_case.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/application_system_test_case.rb:1:9: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/events_controller_test.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+require 'test_helper' ...
+^^^^^^^^^^^^^^^^^^^^^
+test/controllers/events_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/controllers/events_controller_test.rb:4:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get new" do
+       ^^^^^^^^^^^^^^^^
+test/controllers/events_controller_test.rb:9:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get show" do
+       ^^^^^^^^^^^^^^^^^
+test/controllers/events_controller_test.rb:13:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+test/controllers/omniauth_callbacks_controller_test.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+require 'test_helper' ...
+^^^^^^^^^^^^^^^^^^^^^
+test/controllers/omniauth_callbacks_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/controllers/pages_controller_test.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+require 'test_helper' ...
+^^^^^^^^^^^^^^^^^^^^^
+test/controllers/pages_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/controllers/pages_controller_test.rb:4:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get index" do
+       ^^^^^^^^^^^^^^^^^^
+test/controllers/pages_controller_test.rb:9:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get show" do
+       ^^^^^^^^^^^^^^^^^
+test/controllers/pages_controller_test.rb:13:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+test/controllers/posts_controller_test.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+require 'test_helper' ...
+^^^^^^^^^^^^^^^^^^^^^
+test/controllers/posts_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/controllers/users_controller_test.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+require 'test_helper' ...
+^^^^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/models/event_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/models/event_test.rb:8:3: C: Layout/CommentIndentation: Incorrect indentation detected (column 2 instead of 3).
+  # t.integer :user_id
+  ^^^^^^^^^^^^^^^^^^^^
+test/models/event_test.rb:14:4: C: Layout/CommentIndentation: Incorrect indentation detected (column 3 instead of 2).
+   #正しいデータ
+   ^^^^^^^
+test/models/event_test.rb:14:4: C: Layout/LeadingCommentSpace: Missing space after #.
+   #正しいデータ
+   ^^^^^^^
+test/models/event_test.rb:15:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should be valid" do
+       ^^^^^^^^^^^^^^^^^
+test/models/event_test.rb:16:41: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    event = Event.new(user_id: 3, name: "Event", start_time: DateTime.now, end_time: DateTime.now, location: "sss")
+                                        ^^^^^^^
+test/models/event_test.rb:16:110: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    event = Event.new(user_id: 3, name: "Event", start_time: DateTime.now, end_time: DateTime.now, location: "sss")
+                                                                                                             ^^^^^
+test/models/event_test.rb:20:3: C: Layout/LeadingCommentSpace: Missing space after #.
+  #イベント名は空ではいけない
+  ^^^^^^^^^^^^^^
+test/models/event_test.rb:21:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "Name of the event should be exist" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/event_test.rb:22:41: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    event = Event.new(user_id: 3, name: "", start_time: DateTime.now, end_time: DateTime.now, location: "sss")
+                                        ^^
+test/models/event_test.rb:22:105: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    event = Event.new(user_id: 3, name: "", start_time: DateTime.now, end_time: DateTime.now, location: "sss")
+                                                                                                        ^^^^^
+test/models/event_test.rb:26:4: C: Layout/LeadingCommentSpace: Missing space after #.
+   #場所名は空ではいけない
+   ^^^^^^^^^^^^
+test/models/event_test.rb:27:1: C: Layout/IndentationWidth: Use 2 (not 3) spaces for indentation.
+   test "Name of the location should be exist" do
+^^^
+test/models/event_test.rb:27:4: C: Layout/IndentationConsistency: Inconsistent indentation detected.
+   test "Name of the location should be exist" do ...
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/event_test.rb:27:9: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+   test "Name of the location should be exist" do
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/event_test.rb:28:41: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    event = Event.new(user_id: 3, name: "Event", start_time: DateTime.now, end_time: DateTime.now, location: "")
+                                        ^^^^^^^
+test/models/event_test.rb:28:110: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    event = Event.new(user_id: 3, name: "Event", start_time: DateTime.now, end_time: DateTime.now, location: "")
+                                                                                                             ^^
+test/models/event_test.rb:30:3: C: Layout/BlockAlignment: end at 30, 2 is not aligned with test "Name of the location should be exist" do at 27, 3.
+  end
+  ^^^
+test/models/event_test.rb:32:3: C: Layout/LeadingCommentSpace: Missing space after #.
+  #イベント名は255文字以内ではいけない
+  ^^^^^^^^^^^^^^^^^^^^
+test/models/event_test.rb:33:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "Name of the event should be samller than 256" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/event_test.rb:34:41: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    event = Event.new(user_id: 3, name: "e"*256, start_time: DateTime.now, end_time: DateTime.now, location: "sss")
+                                        ^^^
+test/models/event_test.rb:34:44: C: Layout/SpaceAroundOperators: Surrounding space missing for operator *.
+    event = Event.new(user_id: 3, name: "e"*256, start_time: DateTime.now, end_time: DateTime.now, location: "sss")
+                                           ^
+test/models/event_test.rb:34:110: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    event = Event.new(user_id: 3, name: "e"*256, start_time: DateTime.now, end_time: DateTime.now, location: "sss")
+                                                                                                             ^^^^^
+test/models/event_test.rb:38:3: C: Layout/LeadingCommentSpace: Missing space after #.
+  #場所名は255文字以内ではいけない
+  ^^^^^^^^^^^^^^^^^^
+test/models/event_test.rb:39:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "Name of the location should be samller than 256" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/event_test.rb:40:41: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    event = Event.new(user_id: 3, name: "EVENT", start_time: DateTime.now, end_time: DateTime.now, location: "s"*256)
+                                        ^^^^^^^
+test/models/event_test.rb:40:110: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    event = Event.new(user_id: 3, name: "EVENT", start_time: DateTime.now, end_time: DateTime.now, location: "s"*256)
+                                                                                                             ^^^
+test/models/event_test.rb:40:113: C: Layout/SpaceAroundOperators: Surrounding space missing for operator *.
+    event = Event.new(user_id: 3, name: "EVENT", start_time: DateTime.now, end_time: DateTime.now, location: "s"*256)
+                                                                                                                ^
+test/models/event_test.rb:43:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+test/models/friend_test.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+require 'test_helper' ...
+^^^^^^^^^^^^^^^^^^^^^
+test/models/friend_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/models/participant_test.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+require 'test_helper' ...
+^^^^^^^^^^^^^^^^^^^^^
+test/models/participant_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/models/post_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/models/post_test.rb:12:1: C: Layout/EmptyLines: Extra blank line detected.
+test/models/post_test.rb:13:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should be valid" do
+       ^^^^^^^^^^^^^^^^^
+test/models/post_test.rb:14:30: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    post = Post.new(content: "test", event_id: 4, user_id: "2")
+                             ^^^^^^
+test/models/post_test.rb:14:60: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    post = Post.new(content: "test", event_id: 4, user_id: "2")
+                                                           ^^^
+test/models/post_test.rb:18:3: C: Layout/LeadingCommentSpace: Missing space after #.
+  #内容のないポストはNG
+  ^^^^^^^^^^^^
+test/models/post_test.rb:19:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "content should be present" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/post_test.rb:20:30: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    post = Post.new(content: "", event_id: 4, user_id: "2")
+                             ^^
+test/models/post_test.rb:20:56: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    post = Post.new(content: "", event_id: 4, user_id: "2")
+                                                       ^^^
+test/models/post_test.rb:24:3: C: Layout/LeadingCommentSpace: Missing space after #.
+  #ポストは255文字以内
+  ^^^^^^^^^^^^
+test/models/post_test.rb:25:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "length of the content should be smaller than 256" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/post_test.rb:26:30: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    post = Post.new(content: "s"*256, event_id: 4, user_id: "2")
+                             ^^^
+test/models/post_test.rb:26:33: C: Layout/SpaceAroundOperators: Surrounding space missing for operator *.
+    post = Post.new(content: "s"*256, event_id: 4, user_id: "2")
+                                ^
+test/models/post_test.rb:26:61: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    post = Post.new(content: "s"*256, event_id: 4, user_id: "2")
+                                                            ^^^
+test/models/user_test.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require 'test_helper'
+^
+test/models/user_test.rb:8:32: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @user = User.new(username: "Example", email: "user@example.com", password: "aaa", password_confirmation: "aaa")
+                               ^^^^^^^^^
+test/models/user_test.rb:8:50: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @user = User.new(username: "Example", email: "user@example.com", password: "aaa", password_confirmation: "aaa")
+                                                 ^^^^^^^^^^^^^^^^^^
+test/models/user_test.rb:8:80: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @user = User.new(username: "Example", email: "user@example.com", password: "aaa", password_confirmation: "aaa")
+                                                                               ^^^^^
+test/models/user_test.rb:8:110: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @user = User.new(username: "Example", email: "user@example.com", password: "aaa", password_confirmation: "aaa")
+                                                                                                             ^^^^^
+test/models/user_test.rb:11:3: C: Layout/LeadingCommentSpace: Missing space after #.
+  #正しいデータ
+  ^^^^^^^
+test/models/user_test.rb:12:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should be valid" do
+       ^^^^^^^^^^^^^^^^^
+test/models/user_test.rb:13:31: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "Example", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+                              ^^^^^^^^^
+test/models/user_test.rb:13:49: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "Example", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+                                                ^^^^^^^^^^^^^^^^^^
+test/models/user_test.rb:13:79: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "Example", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+                                                                              ^^^^^^^^
+test/models/user_test.rb:13:112: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "Example", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+                                                                                                               ^^^^^^^^
+test/models/user_test.rb:16:3: C: Layout/LeadingCommentSpace: Missing space after #.
+  #パスワードが短い場合はNG
+  ^^^^^^^^^^^^^^
+test/models/user_test.rb:17:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should be invalid with too short password" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/user_test.rb:18:31: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "Example", email: "user@example.com", password: "foo", password_confirmation: "foo")
+                              ^^^^^^^^^
+test/models/user_test.rb:18:49: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "Example", email: "user@example.com", password: "foo", password_confirmation: "foo")
+                                                ^^^^^^^^^^^^^^^^^^
+test/models/user_test.rb:18:79: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "Example", email: "user@example.com", password: "foo", password_confirmation: "foo")
+                                                                              ^^^^^
+test/models/user_test.rb:18:109: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "Example", email: "user@example.com", password: "foo", password_confirmation: "foo")
+                                                                                                            ^^^^^
+test/models/user_test.rb:22:3: C: Layout/LeadingCommentSpace: Missing space after #.
+  #名前がない場合はNG
+  ^^^^^^^^^^^
+test/models/user_test.rb:23:8: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should be invalid with no name" do
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/models/user_test.rb:24:31: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "", email: "user@example.com", password: "foo", password_confirmation: "foo")
+                              ^^
+test/models/user_test.rb:24:42: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "", email: "user@example.com", password: "foo", password_confirmation: "foo")
+                                         ^^^^^^^^^^^^^^^^^^
+test/models/user_test.rb:24:72: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "", email: "user@example.com", password: "foo", password_confirmation: "foo")
+                                                                       ^^^^^
+test/models/user_test.rb:24:102: C: Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    user = User.new(username: "", email: "user@example.com", password: "foo", password_confirmation: "foo")
+                                                                                                     ^^^^^
+test/models/user_test.rb:27:1: C: Layout/EmptyLinesAroundClassBody: Extra empty line detected at class body end.
+test/test_helper.rb:1:1: C: Layout/EndOfLine: Carriage return character missing.
+ENV['RAILS_ENV'] ||= 'test' ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/test_helper.rb:1:1: C: Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+ENV['RAILS_ENV'] ||= 'test'
+^
+test/test_helper.rb:5:7: C: Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+class ActiveSupport::TestCase
+      ^^^^^^^^^^^^^^^^^^^^^^^
+
+95 files inspected, 807 offenses detected
