@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     @events = Event.eager_load(:participants)
                    .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
                    .where("events.end_time >= ?", "#{Date.today}")
-                   .order(start_time: "ASC")
+                   .order(start_time: 'ASC')
     @events = Kaminari.paginate_array(@events).page(params[:page]).per(Settings.post.pagenation)
     # (指定された月のイベント) AND ((自分が主催者であるもの) OR (自分が参加者であるもの))
     # を取得するクエリ
@@ -31,7 +31,7 @@ class PagesController < ApplicationController
     @events = Event.eager_load(:participants)
     .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
     .where("events.end_time < ?", "#{Date.today}")
-    .order(start_time: "DESC")
+    .order(start_time: 'DESC')
     @events = Kaminari.paginate_array(@events).page(params[:page]).per(Settings.post.pagenation)
   end
 
@@ -41,7 +41,7 @@ class PagesController < ApplicationController
     # [Out] プレフィクスが付加された文字列(Str)
     def prefix(num)
       if (num >= 0) && (num <= 9)
-        "0" + num.to_s
+        '0' + num.to_s
       else
         num.to_s
       end

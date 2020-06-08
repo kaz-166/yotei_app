@@ -33,6 +33,7 @@ RSpec.feature 'Pages', type: :system do
         select "40", from: 'event_end_time_5i'
         click_button 'commit'
         expect(page).to have_content('新規予定')
+        
     end
 
     scenario "新しい友達を表示する" do

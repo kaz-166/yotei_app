@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     end
 
     private
-      #strong parameters
+      # strong parameters
       def post_params
         params.require(:post).permit(:id, :content, :event_id)
       end

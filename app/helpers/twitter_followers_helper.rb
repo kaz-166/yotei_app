@@ -1,6 +1,6 @@
 module TwitterFollowersHelper
     def followers(max)
-      #twitter.friends(current_user).take(max)
+      # twitter.friends(current_user).take(max)
     end
 
     private

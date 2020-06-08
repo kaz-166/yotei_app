@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     end
 
     def search
-        #検索結果のレコードを返す(検索結果に自分自身が含まれていた場合はそれを除く)
+        # 検索結果のレコードを返す(検索結果に自分自身が含まれていた場合はそれを除く)
         @user = User.where(username: params[:search]).where.not(id: current_user.id)
     end
 
