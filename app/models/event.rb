@@ -12,6 +12,8 @@ has_many :posts, dependent: :destroy
 
 validate :date_cannot_be_in_past, :start_date_cannot_be_bigger_than_end_date
 
+enum open_range: { private_range: 0, public_range: 1 }
+
   # This is a method that approve the participant. 
   def self.add_user(id, user_id)
     if Participant.where(event_id: id, user_id: user_id).empty?

@@ -15,7 +15,7 @@ class PagesController < ApplicationController
       date = Date.parse(params[:start_date])
     end
     @events = Event.eager_load(:participants)
-                   .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+                   .where("events.user_id = ? OR participants.user_id = ? OR events.open_range = 1", "#{current_user.id}", "#{current_user.id}")
                    .where("events.end_time >= ?", "#{Date.today}")
                    .order(start_time: 'ASC')
     @events = Kaminari.paginate_array(@events).page(params[:page]).per(Settings.post.pagenation)
@@ -29,7 +29,7 @@ class PagesController < ApplicationController
 
   def show_old
     @events = Event.eager_load(:participants)
-    .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+    .where("events.user_id = ? OR participants.user_id = ? OR events.open_range = 1", "#{current_user.id}", "#{current_user.id}")
     .where("events.end_time < ?", "#{Date.today}")
     .order(start_time: 'DESC')
     @events = Kaminari.paginate_array(@events).page(params[:page]).per(Settings.post.pagenation)

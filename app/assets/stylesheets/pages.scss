@@ -170,6 +170,16 @@ $blue:#1fb5bf;
   
 }
 
+#event_open_range_private_range{
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+#event_open_range_public_range{
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
 @media screen and (max-width: $media_max_width) {
 
   .log-form{

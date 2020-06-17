@@ -31,5 +31,13 @@
     <% end %>
 
     <hr>
+    <div class="open_range">
+        <%= f.label :公開範囲 %>
+        <%= f.radio_button :open_range, :private_range %>
+        <%= f.label :open_range, "参加者のみ", {value: :private_range, style: "display: inline-block;"} %>
+        <%= f.radio_button :open_range, :public_range %>
+        <%= f.label :open_range, "フレンド全員", {value: :public_range, style: "display: inline-block;"} %>
+    </div>
+    <hr>
     <%= f.submit "作成" %>
 <% end %>

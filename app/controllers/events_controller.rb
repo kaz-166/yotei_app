@@ -52,7 +52,7 @@ class EventsController < ApplicationController
   private
     # ストロングパラメータの設定
     def event_params
-      params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :location, :add_ids => [])
+      params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :open_range, :location, :add_ids => [])
     end
 
     # イベントの参加者を登録するメソッド
