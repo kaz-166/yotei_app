@@ -40,7 +40,7 @@ class EventsController < ApplicationController
     # 位置情報をJavaScriptに渡す
     gon.location = @event.location
     
-    raise Forbidden unless ((current_user.id == @event.user_id) || (event_participants?(@event.id, current_user.id)))
+    raise Forbidden unless ((current_user.id == @event.user_id) || (event_participants?(@event.id, current_user.id)) || (@event.open_range == "public_range"))
   end
 
   def destroy

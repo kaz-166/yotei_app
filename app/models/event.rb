@@ -26,6 +26,7 @@ enum open_range: { private_range: 0, public_range: 1 }
     p = Participant.find_by(event_id: id, user_id: user_id)
     if p != nil
         Participant.destroy(p.id)
+        
     end
   end
 

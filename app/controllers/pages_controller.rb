@@ -14,6 +14,7 @@ class PagesController < ApplicationController
     else
       date = Date.parse(params[:start_date])
     end
+    # 自分が主催者である or 自分が参加者である or イベントが公開設定になっている
     @events = Event.eager_load(:participants)
                    .where("events.user_id = ? OR participants.user_id = ? OR events.open_range = 1", "#{current_user.id}", "#{current_user.id}")
                    .where("events.end_time >= ?", "#{Date.today}")

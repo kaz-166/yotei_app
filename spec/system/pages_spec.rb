@@ -31,6 +31,7 @@ RSpec.feature 'Pages', type: :system do
         select "7", from:  'event_end_time_3i'
         select "12", from: 'event_end_time_4i'
         select "40", from: 'event_end_time_5i'
+        choose '参加者のみ'
         click_button 'commit'
         expect(page).to have_content('新規予定')
         
