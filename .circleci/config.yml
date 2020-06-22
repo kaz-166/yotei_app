@@ -36,7 +36,7 @@ jobs:
       - image: circleci/postgres:9.5-alpine 
         environment: # add POSTGRES environment variables.
           POSTGRES_USER: root
-          POSTGRES_DB: yotei-app-db-test
+          POSTGRES_DB: yotei_app_db_test
     # environment variables specific to Ruby/Rails, applied to the primary container.
     environment:
       BUNDLE_JOBS: "3"
