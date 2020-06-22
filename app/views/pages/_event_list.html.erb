@@ -6,6 +6,14 @@
         開始時刻:<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %><br>
         終了時刻:<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
     </div>
+    <div>
+    <% admin_user = User.find_by(id: event.user_id) %>
+    <%= render partial: 'users/user_mini_image', locals: {usr: admin_user} %>
+    <% event.participants.each do |participants| %>
+          <% user = User.find_by(id: participants.user_id) %>
+          <%= render partial: 'users/user_mini_image', locals: {usr: user} %>
+    <% end %>
+    </div>
     <div id="event_edit">
         <% if event.user_id == current_user.id %>
             <%= link_to("編集", edit_event_path(event.id)) %>
@@ -18,12 +26,5 @@
         } ) %>
         <% end %>
     </div>
-    <div>
-    <% admin_user = User.find_by(id: event.user_id) %>
-    <%= render partial: 'users/user_mini_image', locals: {usr: admin_user} %>
-    <% event.participants.each do |participants| %>
-          <% user = User.find_by(id: participants.user_id) %>
-          <%= render partial: 'users/user_mini_image', locals: {usr: user} %>
-    <% end %>
-    </div>
+
 </div>
