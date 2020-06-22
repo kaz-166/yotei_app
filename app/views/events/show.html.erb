@@ -10,6 +10,8 @@
       </p>
       作成者：<%= admin_user.username %>
     <hr>
+    <h2><strong>イベント概要</strong></h2>
+      <p><%= safe_join(event.abstract.split("\n"), tag(:br)) %></p>
     <h2><strong>場所</strong></h2>
       <p><%= event.location %></p>
       <%= render '/events/map' %>

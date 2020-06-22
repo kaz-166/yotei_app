@@ -1,5 +1,3 @@
-<h2><strong>イベント概要</strong></h2>
-<p><%= safe_join(event.abstract.split("\n"), tag(:br)) %></p>
 <h2><strong>コメント</strong></h2>
 <% @post.each do |p| %>
   <% user = User.find_by(id: p.user_id) %>
