@@ -14,8 +14,8 @@ development:
   host: localhost
   encoding: utf8
   database: yotei-app-db
-  username: <%= Settings.pg.user_name %>
-  password: <%= Settings.pg.password %>
+  username: <%= ENV['PSQL_USERNAME'] %>
+  password: <%= ENV['PSQL_PASSWORD'] %>
   pool: 5
   timeout: 5000
 
@@ -27,8 +27,8 @@ test:
   host: localhost
   encoding: utf8
   database: yotei-app-db-test
-  username: <%= Settings.pg.user_name %>
-  password: <%= Settings.pg.password %>
+  username: <%= ENV['PSQL_USERNAME'] %>
+  password: <%= ENV['PSQL_PASSWORD'] %>
   pool: 5
   timeout: 5000
 
