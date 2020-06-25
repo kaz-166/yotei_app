@@ -35,9 +35,15 @@ class UsersController < ApplicationController
         @user = User.where(username: params[:search]).where.not(id: current_user.id)
     end
 
+    def lang
+        @user = User.find(current_user.id)
+        User.set_locale(current_user.id, params[:lang])
+        redirect_to root_path
+    end
+
     private
         # ストロングパラメータの設定
         def user_params
-            params.require(:user).permit(:id, :username, :email, :friend_id)
+            params.require(:user).permit(:id, :username, :email, :friend_id, :lang)
         end
 end

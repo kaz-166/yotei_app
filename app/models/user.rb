@@ -18,6 +18,29 @@ class User < ApplicationRecord
   mount_uploader :img, ImgUploader
   attr_accessor :login
 
+
+  def self.get_locale(id)
+    if User.find(id).lang == 0
+      :en
+    elsif User.find(id).lang == 1
+      :ja
+    else
+      :en
+      require 'byebug'; byebug
+    end
+  end
+
+  def self.set_locale(id, lang) 
+    if lang == 'english'
+      User.find(id).update(lang: 0)
+    elsif lang == 'japanise'
+      User.find(id).update(lang: 1)
+    else
+      User.find(id).update(lang: 0)
+      require 'byebug'; byebug
+    end
+  end
+
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
     unless user

@@ -1,6 +1,19 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action :set_locale
     add_flash_types :success, :info, :warning, :danger
+
+    def set_locale
+        I18n.locale = locale
+    end
+
+    def locale
+        @locale ||= User.get_locale(current_user.id) || I18n.default_locale
+    end
+
+    def default_url_options(options={})
+        options.merge(locale: locale)
+    end
 
     def after_sign_in_path_for(resource)
         pages_show_path
@@ -9,6 +22,7 @@ class ApplicationController < ActionController::Base
     class Forbidden < ActionController::ActionControllerError
     end
     rescue_from Forbidden, with: :rescue403
+
 
     private
         def rescue403(e)

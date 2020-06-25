@@ -4,10 +4,20 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-              <%= render partial: 'layouts/navi', locals: {image_name: 'home.png', link_name: 'HOME', link_path_name: pages_show_path, method: :get} %>
-              <%= render partial: 'layouts/navi', locals: {image_name: 'new.png', link_name: 'NEW', link_path_name: events_new_path, method: :get} %>
-              <%= render partial: 'layouts/navi', locals: {image_name: 'edit.png', link_name: 'EDIT', link_path_name: edit_user_registration_path, method: :get} %>
-              <%= render partial: 'layouts/navi', locals: {image_name: 'logout.png', link_name: 'LOGOUT', link_path_name: destroy_user_session_path, method: :delete} %>
+            <div class="nav_menu">
+              <div class="nav_element">
+                <%= render partial: 'layouts/navi', locals: {image_name: 'home.png', link_name: 'HOME', link_path_name: pages_show_path, method: :get} %>
+              </div>
+              <div class="nav_element">
+                <%= render partial: 'layouts/navi', locals: {image_name: 'new.png', link_name: 'NEW', link_path_name: events_new_path, method: :get} %>
+              </div>
+              <div class="nav_element">
+                <%= render partial: 'layouts/droplist' %>
+              </div>
+              <div class="nav_element">
+                <%= render partial: 'layouts/navi', locals: {image_name: 'logout.png', link_name: 'LOGOUT', link_path_name: destroy_user_session_path, method: :delete} %>
+              </div>
+            </div>
             <% else %>
               <%= render partial: 'layouts/navi', locals: {image_name: 'signup.png', link_name: 'SIGNUP', link_path_name: new_user_registration_path, method: :get} %>
               <%= render partial: 'layouts/navi', locals: {image_name: 'login.png', link_name: 'LOGIN', link_path_name: new_user_session_path, method: :get} %>
