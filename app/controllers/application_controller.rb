@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
     end
 
     def locale
-        @locale ||= User.get_locale(current_user.id) || I18n.default_locale
+        if user_signed_in?
+            @locale ||= User.get_locale(current_user.id) || I18n.default_locale
+        else
+            @locale ||= I18n.default_locale
+        end
     end
 
     def default_url_options(options={})
