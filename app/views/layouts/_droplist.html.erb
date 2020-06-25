@@ -4,8 +4,10 @@
     <ul class="dropdown-menu">
         <li><a href=<%= edit_user_registration_path %>>EDIT PROFILE</a></li>
         <li role="separator" class="divider"></li>
-        <%= link_to('LANGUAGE(EN)', users_lang_path(lang: 'english')) %>
-        <br>
-        <%= link_to('言語設定(日本語)', users_lang_path(lang: 'japanise')) %>
+        <% if locale == :en %>
+        <%= link_to('言語設定を日本語に変更', users_lang_path(lang: 'japanise')) %>
+        <% else %>
+        <%= link_to('Change To English', users_lang_path(lang: 'english')) %>
+        <% end %>
     </ul>
 </li>
