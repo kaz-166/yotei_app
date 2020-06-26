@@ -10,9 +10,9 @@
                 <% end %>
                 <%= paginate(@events) %>
             <hr>
-            <%= link_to I18n.t(:old), pages_show_old_path %>
+            <%= link_to I18n.t("pages.old"), pages_show_old_path %>
             <br>
-            <%= link_to I18n.t(:new), new_event_path %>
+            <%= link_to I18n.t("pages.new"), new_event_path %>
         </center>
     </div>
 
@@ -22,9 +22,9 @@
                 <%= render partial: 'users/user_image', locals: {usr: current_user} %>
             <br>
             <% if current_user.try(:admin?) %>
-                <%= I18n.t(:admin_user) %>
+                <%= I18n.t("pages.admin_user") %>
             <% else %>
-                <%= I18n.t(:normal_user) %>
+                <%= I18n.t("pages.normal_user") %>
             <% end %>
             <%= render 'calendar' %>
             <h2><%= image_tag('friends.png', :size => "32x32") %> FRIENDS <%= image_tag('friends.png', :size => "32x32") %></h2>
@@ -32,7 +32,7 @@
             <%= render '/users/friend_list' %>
             <%= form_tag("/users/search",:method => 'get', class: "search_form") do %>
                 <%= text_field_tag :search %>
-                <%= submit_tag I18n.t(:search), :name => nil %>
+                <%= submit_tag I18n.t("common.search"), :name => nil %>
             <% end %>
         </center>
     </div>

@@ -1,14 +1,14 @@
 
 <%= form_for(@event) do |f| %>
 
-    <%= f.label :イベント名 %>
+    <%= f.label :"#{I18n.t("events.name")}" %>
     <%= f.text_field :name %>
     <br>
-    <%= f.label :イベント概要 %>
+    <%= f.label :"#{I18n.t("events.content")}" %>
     <br>
     <%= f.text_area :abstract %>
     <br>
-    <%= f.label :場所 %>
+    <%= f.label :"#{I18n.t("events.location")}" %>
     <%= f.text_field :location %>
     <br>
     <% if flash[:danger] %>
@@ -16,13 +16,13 @@
             <%= flash[:danger] %>
         </div>
     <% end %>
-    <%= f.label :開始時刻 %>
-    <%= f.datetime_select :start_time %>
+    <%= f.label :"#{I18n.t("events.start")}" %>
+    <%= f.datetime_select :start_time, {use_month_numbers: true} %>
     <br>
-    <%= f.label :終了時刻 %>
-    <%= f.datetime_select :end_time %>
+    <%= f.label :"#{I18n.t("events.end")}" %>
+    <%= f.datetime_select :end_time, {use_month_numbers: true} %>
     <hr>
-    <%= f.label :参加者の追加 %>
+    <%= f.label :"#{I18n.t("events.participants.add")}" %>
     <br>
     <% User.friend(current_user.id).each do |u| %>
         <%= check_box_tag('add_ids[]', value = u.id, checked = event_participants?(@event.id, u.id), options = {}) %>
@@ -33,12 +33,12 @@
 
     <hr>
     <div class="open_range">
-        <%= f.label :公開範囲 %>
+        <%= f.label :"#{I18n.t("events.open_range.title")}" %>
         <%= f.radio_button :open_range, :private_range %>
-        <%= f.label :open_range, "参加者のみ", {value: :private_range, style: "display: inline-block;"} %>
+        <%= f.label :open_range, I18n.t("events.open_range.private"), {value: :private_range, style: "display: inline-block;"} %>
         <%= f.radio_button :open_range, :public_range %>
-        <%= f.label :open_range, "フレンド全員", {value: :public_range, style: "display: inline-block;"} %>
+        <%= f.label :open_range, I18n.t("events.open_range.public"), {value: :public_range, style: "display: inline-block;"} %>
     </div>
     <hr>
-    <%= f.submit "作成" %>
+    <%= f.submit I18n.t("events.create") %>
 <% end %>

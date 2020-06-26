@@ -5,10 +5,10 @@
   <%= p.content %>(posted by
   <%= user.username %>)
   <% if current_user.id == p.user_id %>
-    <%= link_to("削除", p, :method => :delete, 
-    data: { confirm: 'このコメントを削除しますか?',
-    commit: 'Destroy',
-    cancel: 'Cancel' 
+    <%= link_to(I18n.t("common.delete"), p, :method => :delete, 
+    data: { confirm: I18n.t("events.comment.confirm"),
+    commit: I18n.t("common.delete"),
+    cancel: I18n.t("common.cancel")
           } ) %>
   <% end %>
   <br>
@@ -18,5 +18,5 @@
   <%= render 'layouts/error_messages', model: f.object %>
   <%= f.hidden_field :event_id, :value => event.id %>
   <%= f.text_field :content %>
-  <%= f.submit "コメントを投稿" %>
+  <%= f.submit I18n.t("events.comment.submit") %>
 <% end %>

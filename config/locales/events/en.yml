@@ -1,0 +1,22 @@
+en:
+  events:
+    form_title:
+      create: Create New Event
+      update: Update an Event
+    name: Event Name
+    content: Event Summary
+    location: Location
+    start: Start Time
+    end: End Time
+    create: Create 
+    update: Submit
+    participants:
+      add: Add participants
+      show:
+    open_range:
+      title: Open Range 
+      private: Only Participants
+      public: Only Friends
+    comments:
+      confirm: Do you really want to delete this comment?
+      submit: Submit your comment

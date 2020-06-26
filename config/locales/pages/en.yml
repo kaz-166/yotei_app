@@ -1,16 +1,13 @@
 en:
-  edit: Edit
-  delete: Delete
-  search: Search
-  old: Show old events
-  new: Make a new event
-  recent: Show recent events
-  start_time: Start Time
-  end_time: End Time
-  login: Log In
-  logout: Log Out
-  admin_user: Administrator
-  normal_user: Normal User
-  confirm: Do you really want to delete this event?
-  commit: Delete
-  cancel: Cancel
+  pages:
+    old: Show old events
+    new: Make a new event
+    recent: Show recent events
+    start_time: Start Time
+    end_time: End Time
+    login: Log In
+    logout: Log Out
+    admin_user: Administrator
+    normal_user: Normal User
+    confirm: Do you really want to delete this event?
+    commit: Delete

@@ -1,0 +1,22 @@
+ja:
+  events:
+    form_title:
+      create: 新しいイベントを作成する
+      update: イベントを編集する
+    name: イベント名
+    content: イベント概要
+    location: 場所
+    start: 開始時刻
+    end: 終了時刻
+    create: 作成 
+    update: 更新
+    participants:
+      add: 参加者の追加
+      show:
+    open_range:
+      title: 公開範囲 
+      private: 参加者のみ
+      public: フレンド全員
+    comments:
+      confirm: このコメントを削除しますか?
+      submit: コメントを投稿
