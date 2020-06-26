@@ -11,10 +11,10 @@ class EventsController < ApplicationController
     @event.user_id = current_user.id
     if @event.save
       add_participants_to_event(@event.id)
-      redirect_to '/pages/show'
+      redirect_to(pages_show_path)
     else
       flash[:danger] = '入力情報が不正です!'
-      redirect_to '/events/new'
+      redirect_to(new_event_path)
     end
   end
 
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
     @event = Event.find_by(id: params[:id])
     if @event.update(event_params)
       add_participants_to_event(params[:id])
-      redirect_to '/pages/show'
+      redirect_to(pages_show_path)
     else
       flash.now[:danger] = '入力情報が不正です'
     end
@@ -46,7 +46,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find_by(id: params[:id])
     @event.destroy
-    redirect_to '/pages/show'
+    redirect_to(pages_show_path)
   end
 
   private

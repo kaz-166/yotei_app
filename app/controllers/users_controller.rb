@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     # フレンド承認のリクエストを行う
     def follow
         User.follow(current_user.id, params[:id])
-        redirect_to root_path
+        redirect_to(root_path)
     end
 
     # フレンド関係を解除する
@@ -20,14 +20,14 @@ class UsersController < ApplicationController
         Participant.joins("LEFT OUTER JOIN events ON participants.event_id = events.id")
                    .where("events.user_id = ? AND participants.user_id = ?","#{current_user.id}", "#{params[:friend_id]}")
                    .delete_all
-       redirect_to root_path
+       redirect_to(root_path)
     end
 
     # フレンドを承認する
     def approve
         Friend.find_by(follower_id: current_user.id, followed_id: params[:friend_id]).update(IsApproved: true)
         Friend.find_by(follower_id: params[:friend_id], followed_id: current_user.id).update(IsApproved: true)
-        redirect_to root_path
+        redirect_to(root_path)
     end
 
     def search
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     def lang
         @user = User.find(current_user.id)
         User.set_locale(current_user.id, params[:lang])
-        redirect_to root_path
+        redirect_to(root_path)
     end
 
     private
