@@ -1,0 +1,16 @@
+ja:
+  edit: 編集
+  delete: 削除
+  search: 検索
+  old: 過去の予定を見る
+  new: 新しい予定を作成する
+  recent: 最近の予定を見る
+  start_time: 開始時刻
+  end_time: 終了時刻
+  login: ログイン
+  logout: ログアウト
+  admin_user: 管理者
+  normal_user: 一般ユーザ
+  confirm: このイベントを削除しますか?
+  commit: 削除
+  cancel: キャンセル

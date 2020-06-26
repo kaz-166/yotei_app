@@ -9,8 +9,8 @@
             <% end %>
             <%= paginate(@events) %>
         <hr>
-        <%= link_to "最近の予定を見る", '/pages/show' %>
+        <%= link_to I18n.t(:recent), pages_show_path %>
         <br>
-        <%= link_to "新しい予定を作成する", '/events/new' %>
+        <%= link_to I18n.t(:new), pages_show_old_path %>
     </center>
 </div>

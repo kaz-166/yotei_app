@@ -3,8 +3,8 @@
         <%= link_to(event.name, event_path(event.id)) %>
     </div>
     <div id="event_time">
-        開始時刻:<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %><br>
-        終了時刻:<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
+        <%= I18n.t(:start_time) %>:<%= event.start_time.strftime("%Y/%m/%d %H:%M").to_s %><br>
+        <%= I18n.t(:end_time) %>:<%= event.end_time.strftime("%Y/%m/%d %H:%M").to_s %>
     </div>
     <div>
     <% admin_user = User.find_by(id: event.user_id) %>
@@ -16,13 +16,13 @@
     </div>
     <div id="event_edit">
         <% if event.user_id == current_user.id %>
-            <%= link_to("編集", edit_event_path(event.id)) %>
+            <%= link_to(I18n.t(:edit), edit_event_path(event.id)) %>
             　　
-            <%= link_to("削除", event, :method => :delete, 
+            <%= link_to(I18n.t(:delete), event, :method => :delete, 
             title: event.name, 
-            data: { confirm: 'このイベントを削除しますか?',
-            commit: 'Destroy',
-            cancel: 'Cancel' 
+            data: { confirm: I18n.t(:confirm),
+            commit: I18n.t(:commit),
+            cancel: I18n.t(:cancel) 
         } ) %>
         <% end %>
     </div>
