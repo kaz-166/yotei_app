@@ -26,6 +26,8 @@ class PagesController < ApplicationController
     @monthly_events = Event.eager_load(:participants) # user_idをキーとして左外部結合
                              .where("events.start_time <= ? OR events.end_time >= ?",  "#{date}", "#{date}")
                              .where("events.user_id = ? OR participants.user_id = ?", "#{current_user.id}", "#{current_user.id}")
+
+    @info = Info.last(3)
   end
 
   def show_old

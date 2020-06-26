@@ -1,5 +1,17 @@
 <div class="page-container">
     <div class="event-list">
+    <center>
+        <div class="admin_info">
+        <h1>INFOMATION</h1>
+        <hr>
+        <% @info.each do |info| %>
+            [<%= info.updated_at.year %>/<%= info.updated_at.month %>/<%= info.updated_at.day %>更新] 
+            <%= info.title %>
+            <br>
+        <% end %>
+        </div>
+    </center>
+
         <center>
             <div id="event_top">
                 <h2>RECENT EVENTS</h2>

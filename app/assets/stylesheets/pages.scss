@@ -17,6 +17,13 @@
   width: 100%;
 }
 
+.admin_info{
+  h1{
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
 .event-list{
     @extend .event-common;
     width: 60%;
