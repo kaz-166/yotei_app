@@ -22,16 +22,15 @@ RSpec.feature 'Pages', type: :system do
         fill_in 'event_abstract', with: "概要説明"
         fill_in 'event_location', with: "場所"
         select "2021", from: 'event_start_time_1i'
-        select "March", from:  'event_start_time_2i'
+        select "3", from:  'event_start_time_2i'
         select "7", from:  'event_start_time_3i'
         select "12", from: 'event_start_time_4i'
         select "20", from: 'event_start_time_5i'
         select "2021", from: 'event_end_time_1i'
-        select "March", from:  'event_end_time_2i'
+        select "3", from:  'event_end_time_2i'
         select "7", from:  'event_end_time_3i'
         select "12", from: 'event_end_time_4i'
         select "40", from: 'event_end_time_5i'
-        choose '参加者のみ'
         click_button 'commit'
         expect(page).to have_content('新規予定')
         
