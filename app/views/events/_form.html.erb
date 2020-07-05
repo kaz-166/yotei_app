@@ -16,11 +16,9 @@
             <%= flash[:danger] %>
         </div>
     <% end %>
-    <%= f.label :"#{I18n.t("events.start")}" %>
-    <%= f.datetime_select :start_time, {use_month_numbers: true} %>
+    <%= render partial: '/events/form_calendar', locals: {form: f, title: "#{I18n.t("events.start")}", attr_name: "start_time"} %>
     <br>
-    <%= f.label :"#{I18n.t("events.end")}" %>
-    <%= f.datetime_select :end_time, {use_month_numbers: true} %>
+    <%= render partial: '/events/form_calendar', locals: {form: f, title: "#{I18n.t("events.end")}", attr_name: "end_time"} %>
     <hr>
     <%= f.label :"#{I18n.t("events.participants.add")}" %>
     <br>

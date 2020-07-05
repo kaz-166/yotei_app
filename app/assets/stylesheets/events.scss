@@ -11,6 +11,42 @@
     width: 200px;
 }
 
+.form-calendar{
+    width: 40%;
+    display: grid;
+    grid-template-columns: 1fr 0.3fr 0.1fr 0.3fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.form-calendar-title{
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
 #event_abstract{
     width: 400px;
+}
+
+#event_start_time_date{
+    width: 120px;
+}
+
+#event_start_time_hour{
+    width: 60px;
+}
+
+#event_start_time_minute{
+    width: 60px;
+}
+
+#event_end_time_date{
+    width: 120px;
+}
+
+#event_end_time_hour{
+    width: 60px;
+}
+
+#event_end_time_minute{
+    width: 60px;
 }

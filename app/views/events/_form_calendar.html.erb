@@ -1,0 +1,17 @@
+<div class="form-calendar">
+    <div class="form-calendar-title">
+        <%= form.label ("#{title}").to_sym %>
+    </div>
+    <div class="form-calendar-elements">
+        <%= form.date_field ("#{attr_name}" + "_date").to_sym, class: 'form-control date-picker' %>
+    </div>
+    <div class="form-calendar-elements">
+        <%= form.select ("#{attr_name}" + "_hour").to_sym, (0..23).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %>
+    </div>
+    <div class="form-calendar-elements">
+    :
+    </div>
+    <div class="form-calendar-elements">
+        <%= form.select ("#{attr_name}" + "_minute").to_sym, (0..59).to_a.map { |v| "%02d" % v }, {}, class: 'form-control' %>
+    </div>
+</div>

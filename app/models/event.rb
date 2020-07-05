@@ -6,14 +6,18 @@
 #   name:       string
 #   location:   string 
 class Event < ApplicationRecord
-has_many :participants
-has_many :users, through: :participants
-has_many :posts, dependent: :destroy
 
-validate :date_cannot_be_in_past, :start_date_cannot_be_bigger_than_end_date
+  has_many :participants
+  has_many :users, through: :participants
+  has_many :posts, dependent: :destroy
 
-enum open_range: { private_range: 0, public_range: 1 }
+  enum open_range: { private_range: 0, public_range: 1 }
 
+  validate :date_cannot_be_in_past, :start_date_cannot_be_bigger_than_end_date
+
+  attr_accessor :start_time_date, :start_time_hour, :start_time_minute
+  attr_accessor :end_time_date,   :end_time_hour,   :end_time_minute
+  
   # This is a method that approve the participant. 
   def self.add_user(id, user_id)
     if Participant.where(event_id: id, user_id: user_id).empty?
@@ -26,7 +30,6 @@ enum open_range: { private_range: 0, public_range: 1 }
     p = Participant.find_by(event_id: id, user_id: user_id)
     if p != nil
         Participant.destroy(p.id)
-        
     end
   end
 

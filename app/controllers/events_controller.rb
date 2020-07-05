@@ -8,6 +8,10 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+
+    start_time, end_time = integrated_event_datetime
+    @event.start_time = start_time
+    @event.end_time = end_time
     @event.user_id = current_user.id
     if @event.save
       add_participants_to_event(@event.id)
@@ -26,6 +30,10 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find_by(id: params[:id])
+
+    start_time, end_time = integrated_event_datetime
+    @event.start_time = start_time
+    @event.end_time = end_time
     if @event.update(event_params)
       add_participants_to_event(params[:id])
       redirect_to(pages_show_path)
@@ -52,7 +60,19 @@ class EventsController < ApplicationController
   private
     # ストロングパラメータの設定
     def event_params
-      params.require(:event).permit(:user_id, :name, :abstract, :start_time, :end_time, :open_range, :location, :add_ids => [])
+      params.require(:event).permit(:user_id, :name, :abstract, 
+                                    :start_time, :end_time, 
+                                    :start_time_date, :start_time_hour, :start_time_minute,
+                                    :end_time_date, :end_time_hour, :end_time_minute,
+                                    :open_range, :location, :add_ids => [])
+    end
+
+    def integrated_event_datetime
+      st_date = event_params[:start_time_date].split("-")
+      st_time = Time.new(st_date[0].to_i, st_date[1].to_i, st_date[2].to_i, event_params[:start_time_hour].to_i, event_params[:start_time_minute].to_i, 0).in_time_zone(Time.zone.tzinfo.identifier)
+      ed_date = event_params[:end_time_date].split("-")
+      ed_time = Time.new(ed_date[0].to_i, ed_date[1].to_i, ed_date[2].to_i, event_params[:end_time_hour].to_i, event_params[:end_time_minute].to_i, 0).in_time_zone(Time.zone.tzinfo.identifier)
+      return st_time, ed_time
     end
 
     # イベントの参加者を登録するメソッド
