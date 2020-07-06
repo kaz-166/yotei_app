@@ -18,3 +18,5 @@
 //= require data-confirm-modal
 //= require activestorage
 //= require_tree .
+
+$('.datepicker').datetimepicker();

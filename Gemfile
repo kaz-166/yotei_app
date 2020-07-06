@@ -75,6 +75,8 @@ gem 'gmaps4rails'
 gem 'gon'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 gem 'data-confirm-modal'
 gem 'dotenv-rails'
 
