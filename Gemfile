@@ -33,7 +33,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'twitter'
 # Use bootstrap
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '3.4.1'
 # Use Google map API
 gem 'gmaps4rails'
 # Use GON to exchange data between rails and javasctipt
