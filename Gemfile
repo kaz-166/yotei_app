@@ -46,7 +46,7 @@ gem 'nokogiri'
 # Use rails-erd to generate ER-Diagram
 gem 'rails-erd'
 # Use CarrierWave as an image uploader
-gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'carrierwave', '~> 1.3'
 # Use SimpleCalendar to show event calendar
 gem 'simple_calendar'
 # Use rails-admin 
